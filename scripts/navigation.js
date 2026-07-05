@@ -1,4 +1,11 @@
-// Main JavaScript file
-// Add your main scripts here
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
 
-console.log('Main script loaded');
+    menuToggle.addEventListener('click', () => {
+        // Toggle open layouts for both the link block panel container and button state changes
+        menuToggle.classList.toggle('open');
+        mainNav.classList.toggle('open');
+    });
+});
+
