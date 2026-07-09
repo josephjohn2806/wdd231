@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Directory | JJ East African Multi Business</title>
+    <meta name="description" content="Chamber of Commerce Business Directory for JJ East African Multi Business - Connecting regional trade, goods, and services.">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <h1>JJ East African <span>Multi Business</span></h1>
+            </div>
+            <!-- Toggle Button for Mobile Navigation Menu -->
+            <button id="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+            <nav>
+                <ul id="primary-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html" class="active">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="directory-wrapper">
+        <section class="directory-intro">
+            <h2>Chamber Business Directory</h2>
+            <p>Explore verified regional partner networks, trading hubs, and professional providers across East Africa.</p>
+            
+            <!-- Crucial assignment feature: Layout Toggle View Buttons -->
+            <div class="view-toggle-controls">
+                <button id="grid-view-btn" class="active-view" title="Grid View">Grid View 🟦</button>
+                <button id="list-view-btn" title="List View">List View ☰</button>
+            </div>
+        </section>
+
+        <!-- Container where cards or list items live -->
+        <article id="directory-container" class="grid-layout">
+            
+            <!-- Sample Business Card 1 -->
+            <div class="business-card">
+                <img src="images/placeholder-logo.png" alt="Amigos Cleaning Services Logo">
+                <h3>Amigos Cleaning Services</h3>
+                <p class="tagline">Premium enterprise and operational industrial cleaning.</p>
+                <p class="phone"><strong>Phone:</strong> +254 700 000000</p>
+                <p class="address"><strong>Address:</strong> Sunday Avenue, Nairobi</p>
+                <p class="url"><a href="#" target="_blank">Visit Website</a></p>
+                <p class="membership-level gold">Gold Member</p>
+            </div>
+
+            <!-- Sample Business Card 2 -->
+            <div class="business-card">
+                <img src="images/placeholder-logo.png" alt="Musembi Earthways Safaris Logo">
+                <h3>Musembi Earthways Safaris</h3>
+                <p class="tagline">Connecting regional corporate travel and logistics management.</p>
+                <p class="phone"><strong>Phone:</strong> +254 711 111111</p>
+                <p class="address"><strong>Address:</strong> Safari Trade Tower, Suite 4</p>
+                <p class="url"><a href="#" target="_blank">Visit Website</a></p>
+                <p class="membership-level silver">Silver Member</p>
+            </div>
+
+            <!-- Sample Business Card 3 -->
+            <div class="business-card">
+                <img src="images/placeholder-logo.png" alt="Spero AI Localization Logo">
+                <h3>Spero AI Localization</h3>
+                <p class="tagline">Expert cross-border language translation and data services.</p>
+                <p class="phone"><strong>Phone:</strong> +254 722 222222</p>
+                <p class="address"><strong>Address:</strong> Tech Hub Hub East, Block B</p>
+                <p class="url"><a href="#" target="_blank">Visit Website</a></p>
+                <p class="membership-level bronze">Bronze Member</p>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 <strong>JJ East African Multi Business</strong> | WDD 231 Chamber Project</p>
+            <p>Last Modified Update: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+    <script src="js/directory.js"></script>
+</body>
+</html>
