@@ -1,0 +1,134 @@
+/* Custom variables matching your brand identity design system */
+:root {
+    --primary-forest: #1b4332;       /* Forest green theme */
+    --accent-gold: #d4af37;          /* High-end trade gold color accent */
+    --text-dark: #1e293b;            /* High contrast slate text */
+    --bg-light: #f4f7f5;             /* Comfortable background tint */
+    --white: #ffffff;
+    --border: #cbd5e1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header & Navigation Area Elements */
+header {
+    background-color: var(--primary-forest);
+    border-bottom: 4px solid var(--accent-gold);
+    color: var(--white);
+    padding: 1.25rem 2rem;
+}
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-area h1 span { color: var(--accent-gold); }
+nav ul { display: flex; gap: 1.5rem; list-style: none; }
+nav a { color: #e2e8f0; text-decoration: none; font-weight: 600; }
+nav a.active { color: var(--accent-gold); border-bottom: 2px solid var(--accent-gold); }
+#menu-toggle { display: none; } /* Show with media queries on smaller screens */
+
+/* Main Directory Wrapper Space */
+.directory-wrapper {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+.directory-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.view-toggle-controls {
+    margin-top: 1.5rem;
+}
+.view-toggle-controls button {
+    background-color: var(--white);
+    border: 2px solid var(--primary-forest);
+    color: var(--primary-forest);
+    padding: 0.5rem 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 0.25rem;
+    transition: all 0.2s ease;
+}
+.view-toggle-controls button.active-view {
+    background-color: var(--primary-forest);
+    color: var(--white);
+}
+
+/* ==========================================================================
+   LAYOUT SWITCH MODES (GRID CONTRAST LIST STYLE RENDERING)
+   ========================================================================== */
+
+/* GRID VIEW MAPPING DEFAULT RULES */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.grid-layout .business-card {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.grid-layout .business-card img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* LIST VIEW MAPPING ASSIGNMENT CRITERIA */
+.list-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.list-layout .business-card {
+    background-color: var(--white);
+    border-left: 5px solid var(--primary-forest);
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.list-layout .business-card img, 
+.list-layout .business-card .tagline {
+    display: none; /* Strip decorative images/taglines in flat list arrays */
+}
+
+/* Membership labels badge tracking */
+.membership-level {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+.gold { background-color: #fef3c7; color: #d97706; }
+.silver { background-color: #f1f5f9; color: #475569; }
+
+/* Footer Design Settings */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 5rem;
+}
