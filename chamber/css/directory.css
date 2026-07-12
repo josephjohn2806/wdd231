@@ -1,1 +1,50 @@
+/* Core Styling & Layout Toggles */
+#directory-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
 
+/* Grid View Rules (Default or Selected) */
+.grid-view {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-view section {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.grid-view section img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* List View Rules (Triggered by class replacement) */
+.list-view {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.list-view section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.list-view section img {
+    display: none; /* Often hidden in simple list tables to keep them clean */
+}
+
+/* Media Query Example for clean scaling from 320px up */
+@media (max-width: 600px) {
+    .list-view section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
