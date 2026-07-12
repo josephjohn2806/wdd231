@@ -1,133 +1,167 @@
-/* ==========================================
-   1. BASE MOBILE STYLES (Starts at 320px)
-   ========================================== */
-body {
-    background-color: #f5f7fa;
-    color: #333;
-    padding: 0;
-}
+/* ==========================================================================
+   1. CORE DIRECTORY CONTAINER & TOGGLE BUTTONS
+   ========================================================================== */
 
-header, footer {
-    background-color: #1a365d; /* Example dark blue chamber theme */
-    color: #ffffff;
-    padding: 1rem;
-    text-align: center;
-}
-
-/* Navigation - Mobile Menu (Typically a single column stacked list) */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 0.75rem;
-    background-color: #2b6cb0;
-    border-radius: 4px;
-}
-
-/* Directory view buttons */
+/* Layout view buttons container */
 .menu {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin: 1.5rem 0;
+    gap: 15px;
+    margin: 20px 0;
 }
 
+/* Button Styling matching the system icons */
 .menu button {
-    padding: 10px 20px;
-    background-color: #1a365d;
-    color: white;
-    border: none;
+    padding: 8px 16px;
+    background-color: #ffffff;
+    border: 1px solid #b4c6e7;
+    color: #1a365d;
+    cursor: pointer;
+    font-size: 1.2rem;
     border-radius: 4px;
-    font-weight: bold;
+    transition: all 0.2s ease-in-out;
 }
 
-/* Default Mobile Layout for Cards (Single Column) */
+.menu button:hover {
+    background-color: #f0f4f8;
+    border-color: #1a365d;
+}
+
+/* Main target wrapper */
 #directory-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   2. GRID VIEW STYLING (Card Layout for Mobile & Desktop)
+   ========================================================================== */
+
+/* Mobile view grid (default) - Single column card stacking */
+.grid-view {
     display: grid;
-    grid-template-columns: 1fr; /* Rigid 1-column layout for small mobile targets */
-    gap: 1rem;
-    padding: 1rem;
-    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
-#directory-container section {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
+/* Individual Card Setup */
+.grid-view section {
+    background-color: #ffffff;
     border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 24px;
     text-align: center;
-}
-
-#directory-container img {
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-}
-
-/* ==========================================
-   2. TABLET MEDIA QUERY (Min-width: 640px)
-   ========================================== */
-@media (min-width: 640px) {
-    nav ul {
-        flex-direction: row; /* Horizontal navbar on wider displays */
-        justify-content: center;
-    }
-
-    /* Grid layout turns into 2 columns on tablets */
-    .grid-view {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-}
-
-/* ==========================================
-   3. DESKTOP MEDIA QUERY (Min-width: 1024px)
-   ========================================== */
-@media (min-width: 1024px) {
-    main {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    /* Grid layout scales to 3 columns on desktops */
-    .grid-view {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-}
-
-/* ==========================================
-   4. LIST VIEW SPECIFIC OVERRIDES
-   ========================================== */
-/* When JavaScript injects '.list-view', override the grids to make clean list tables */
-.list-view {
-    display: flex !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle smooth card shadow */
+    display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-}
-
-.list-view section {
-    display: flex !important;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    text-align: left !important;
-    padding: 0.75rem 1.5rem !important;
+    justify-content: center;
 }
 
-/* Hide company logos in list view on mobile screens to keep rows clean */
-.list-view section img {
-    display: none; 
+/* Logo Sizing within cards */
+.grid-view section img {
+    max-height: 75px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
 }
 
-/* Zebra striping for easy list readability */
+/* Text formatting inside cards */
+.grid-view section h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.15rem;
+    color: #2d3748;
+    display: none; /* Hide text heading in grid view if the logo contains the text */
+}
+
+.grid-view section p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    color: #4a5568;
+    line-height: 1.4;
+}
+
+.grid-view section a {
+    color: #2b6cb0;
+    text-decoration: underline;
+    font-size: 0.85rem;
+    word-break: break-all;
+}
+
+/* Desktop Grid Adjustments (Wider View) */
+@media (min-width: 600px) {
+    .grid-view {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-view {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+/* ==========================================================================
+   3. LIST VIEW STYLING (Line items with Zebra Striping)
+   ========================================================================== */
+
+.list-view {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Individual Row Item Setup */
+.list-view section {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr 1.5fr; /* 4 strict tabular columns */
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #eef2f7;
+    text-align: left;
+}
+
+/* Alternate row coloring (Zebra Striping) */
 .list-view section:nth-child(even) {
-    background-color: #edf2f7;
+    background-color: #f4f8f9; /* Light blue-grey zebra tint */
+}
+
+/* Hide images completely in the list view */
+.list-view section img {
+    display: none;
+}
+
+/* Ensure headings display inline like regular text labels in list rows */
+.list-view section h3 {
+    display: block;
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.list-view section p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.list-view section a {
+    color: #0066cc;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustment for list view on mobile devices */
+@media (max-width: 768px) {
+    .list-view section {
+        grid-template-columns: 1fr; /* Fallback to single lines if screen is too narrow */
+        gap: 6px;
+        padding: 15px;
+    }
 }
