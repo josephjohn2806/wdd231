@@ -2,10 +2,10 @@
    1. BRAND CONFIGURATION VARIABLES & GLOBAL RESET
    ========================================================================== */
 :root {
-    /* Forest Green Base Matrix */
+    /* Forest Green Base Matrix - Standardized to Hex Formats */
     --primary-blue: #1b4332;     /* Deep Forest Green (Headers, Footers, Titles) */
     --accent-blue: #d4a373;      /* Warm Amber/Gold Accent (Active Links & Buttons) */
-    --ice-blue: #2d6a4f;         /* FIXED: Darker Green to pass WCAG AA 4.5:1 Contrast Standards */
+    --ice-blue: #2d6a4f;         /* Safe Contrast Dark Green */
     --light-bg: #f4f7f5;         /* Soft Sage Tint (Zebra rows & Backgrounds) */
     --wireframe-grey: #cbd5e0;   
     --card-header-grey: #e8f0ec; /* Tinted header block background */
@@ -66,7 +66,7 @@ body {
 .sub-logo-text {
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: var(--ice-blue); /* Fixed: Now inherits high contrast dark green */
+    color: var(--ice-blue); 
     font-weight: 600;
 }
 
@@ -97,7 +97,7 @@ body {
 /* Hamburger Toggle Button */
 .nav-toggle {
     display: none;
-    background: none;
+    background: transparent;
     border: none;
     font-size: 1.5rem;
     color: var(--primary-blue);
@@ -112,7 +112,7 @@ body {
     width: 280px;
     height: 100vh;
     background-color: var(--white);
-    box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+    box-shadow: -4px 0 15px #0000001a; /* Clean standard hex opacity mapping */
     z-index: 2000;
     padding: 60px 30px;
     transition: right 0.3s ease-in-out;
@@ -126,7 +126,7 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: none;
+    background: transparent;
     border: none;
     font-size: 1.6rem;
     color: var(--text-main);
@@ -163,12 +163,12 @@ body {
     padding: 40px;
     border-radius: 8px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(27, 67, 50, 0.15);
+    box-shadow: 0 4px 15px #1b433226;
 }
 
 .banner-badge {
     display: inline-block;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: #ffffff26;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -220,11 +220,11 @@ body {
 .btn-secondary {
     background-color: transparent;
     color: var(--white);
-    border: 2px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid #ffffff66;
 }
 
 .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #ffffff1a;
     border-color: var(--white);
 }
 
@@ -256,7 +256,7 @@ body {
 
 .directory-header h2 {
     font-size: 1.2rem;
-    color: var(--ice-blue); /* Fixed: Now inherits high contrast dark green */
+    color: var(--ice-blue); 
     margin: 5px 0 0 0;
     width: 100%;
 }
@@ -303,7 +303,7 @@ body {
     overflow: hidden;
     text-align: center;
     padding: 25px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 5px #00000008;
 }
 
 .grid-view .directory-card img {
@@ -343,7 +343,7 @@ body {
 }
 
 .list-view .directory-card img {
-    display: none; /* Hide images in basic clean text list view */
+    display: none; 
 }
 
 .list-view .directory-card h3 {
@@ -394,7 +394,7 @@ body {
 
 .icon-link {
     color: var(--white);
-    background-color: rgba(255,255,255,0.1);
+    background-color: #ffffff1a;
     width: 40px;
     height: 40px;
     display: flex;
@@ -440,7 +440,6 @@ body {
         text-align: center;
     }
 
-    /* Convert list grid layout into clean stacked text items on mobile views */
     .list-view .directory-card {
         display: flex;
         flex-direction: column;
@@ -449,4 +448,5 @@ body {
         padding: 20px;
     }
 }
+
 
