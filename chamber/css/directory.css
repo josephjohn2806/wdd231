@@ -2,13 +2,14 @@
    1. BRAND CONFIGURATION VARIABLES & GLOBAL RESET
    ========================================================================== */
 :root {
-    --primary-blue: #162a45;     
-    --accent-blue: #4a90e2;      
-    --ice-blue: #6ca0dc;         
-    --light-bg: #f2f6fa;         
+  :root {
+    --primary-blue: #1b4332;     /* Deep Forest Green */
+    --accent-blue: #2d6a4f;      /* Medium Forest Green */
+    --ice-blue: #52b788;         /* Fresh Mint Accent Green */
+    --light-bg: #f4f9f6;         /* Soft Off-White/Green Tint */
     --wireframe-grey: #cbd5e0;   
     --card-header-grey: #e2e8f0; 
-    --text-main: #333333;        
+    --text-main: #2d3748;        
     --white: #ffffff;
 }
 
