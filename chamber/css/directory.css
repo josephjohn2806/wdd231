@@ -1,14 +1,14 @@
 /* ==========================================================================
-   1. BRAND ARCHITECTURE VARIABLES & RESET
+   1. BRAND CONFIGURATION VARIABLES & GLOBAL RESET
    ========================================================================== */
 :root {
-    --primary-blue: #162a45;     /* Corporate Dark Blue */
+    --primary-blue: #162a45;     /* Corporate Deep Blue */
     --accent-blue: #4a90e2;      /* Vivid Accent Light Blue */
-    --ice-blue: #6ca0dc;         /* Secondary Highlight Tint */
+    --ice-blue: #6ca0dc;         /* Highlight Tint */
     --light-bg: #f2f6fa;         /* Soft Background Sheet */
-    --wireframe-grey: #e2e8f0;   /* Muted Grey Border */
+    --wireframe-grey: #cbd5e0;   /* Muted Grey Border */
     --card-header-grey: #e2e8f0; /* Wireframe heading box fill */
-    --text-main: #333333;        /* Charcoal body copy */
+    --text-main: #333333;        /* Charcoal text copy */
     --white: #ffffff;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 /* ==========================================================================
-   2. FIXED POSITION NAV DRAWER & HEADER
+   2. STICKY APP BAR HEADER & NAVIGATION DRAWER OVERLAY
    ========================================================================== */
 .corp-header {
     background-color: var(--white);
@@ -59,7 +59,7 @@ body {
     font-weight: 600;
 }
 
-/* Hamburger Menu Icon */
+/* Hamburger Icon Structure */
 .nav-toggle {
     background: none;
     border: none;
@@ -78,22 +78,23 @@ body {
     border-radius: 2px;
 }
 
-/* Slide-out Navigation Overlay Drawer */
+/* Slide-out Overlay Drawer Layout */
 .nav-drawer {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -100%; /* Hidden off-screen by default */
     width: 280px;
     height: 100%;
     background-color: var(--white);
     box-shadow: -5px 0 25px rgba(0,0,0,0.15);
     z-index: 2000;
     padding: 40px 30px;
+    box-sizing: border-box;
     transition: right 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
 .nav-drawer.open {
-    right: 0;
+    right: 0; /* Slides open from the right side */
 }
 
 .close-drawer {
@@ -108,7 +109,7 @@ body {
 }
 
 .nav-drawer ul {
-    list-style: none;
+    list-style-type: none; /* Safely cleans and strips away menu bullet points */
     padding: 0;
     margin: 40px 0 0 0;
     display: flex;
@@ -130,7 +131,7 @@ body {
 }
 
 /* ==========================================================================
-   3. WORKSPACE WRAPPER & CONTROLS DECK
+   3. DESKTOP VIEWPORT LAYOUT & TOGGLE DECK CONTROLS
    ========================================================================== */
 .content-wrapper {
     max-width: 1200px;
@@ -168,11 +169,11 @@ body {
 }
 
 /* ==========================================================================
-   4. NEW WIREFRAME GRID VIEW (Matches Image Layout Exactly)
+   4. WIREFRAME GRID INTERFACE ARCHITECTURE (Matches Canvas Image Layout)
    ========================================================================== */
 .grid-view {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 25px;
 }
 
@@ -181,12 +182,12 @@ body {
     border: 1px solid var(--wireframe-grey);
     border-radius: 6px;
     overflow: hidden;
-    display: grid;
-    grid-template-rows: auto auto 1fr;
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
-/* Grey Blocked Header Container for Business Metadata */
+/* Header Grey Blocks containing Business Names and Taglines */
 .grid-view .card-branding {
     background-color: var(--card-header-grey);
     padding: 15px;
@@ -206,16 +207,16 @@ body {
     color: #4a5568;
 }
 
-/* Centered Project Image Representation */
+/* Center Images Inside Cards */
 .grid-view section img {
-    max-height: 80px;
-    max-width: 140px;
+    height: 60px;
+    max-width: 120px;
     object-fit: contain;
     margin: 20px auto;
     display: block;
 }
 
-/* Structured Meta Data Column Alignment */
+/* Metadata Text Custom Padding */
 .grid-view .card-meta {
     padding: 0 20px 20px 20px;
     text-align: left;
@@ -234,13 +235,14 @@ body {
 }
 
 /* ==========================================================================
-   5. WIREFRAME LIST VIEW (Zebra Stripped Lines)
+   5. WIREFRAME LIST VIEW ARCHITECTURE (Zebra Stripped Lines)
    ========================================================================== */
 .list-view {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--wireframe-grey);
     border-radius: 4px;
+    background-color: var(--white);
 }
 
 .list-view section {
@@ -255,12 +257,12 @@ body {
     border-bottom: none;
 }
 
-/* Alternating Row Tinting styling code */
+/* Zebra row color alternating changes */
 .list-view section:nth-child(even) {
     background-color: var(--light-bg);
 }
 
-/* Completely hidden visual assets in clean line layouts */
+/* Hidden visual images and sub-headings inside row view configurations */
 .list-view section img,
 .list-view .card-branding .tagline {
     display: none;
@@ -269,6 +271,8 @@ body {
 .list-view .card-branding {
     background: none;
     padding: 0;
+    border-bottom: none;
+    text-align: left;
 }
 
 .list-view .card-branding h3 {
@@ -278,7 +282,7 @@ body {
 }
 
 .list-view .card-meta {
-    display: contents; /* Flattens nested tags smoothly into parent grid alignments */
+    display: contents; /* Direct grid placement for nested paragraph metadata targets */
 }
 
 .list-view .card-meta p {
@@ -287,10 +291,10 @@ body {
 }
 
 .list-view .card-meta p strong {
-    display: none; /* Strip out prefixes (EMAIL:, PHONE:) for cleaner row readouts */
+    display: none; /* Hide standard structural label text headers on row views */
 }
 
-/* Mobile responsive fallback layout adjustments */
+/* Mobile Fallback Adjustments for Row Conversions */
 @media (max-width: 768px) {
     .list-view section {
         grid-template-columns: 1fr;
@@ -298,12 +302,12 @@ body {
         padding: 15px;
     }
     .list-view .card-meta p strong {
-        display: inline;
+        display: inline; /* Bring back bold structural prefixes for crisp vertical readability */
     }
 }
 
 /* ==========================================================================
-   6. PREMIUM CLASS WIREFRAME FOOTER ARCHITECTURE
+   6. GLOBAL APP WIREFRAME FOOTER SECTION
    ========================================================================== */
 .wireframe-footer {
     background-color: #f1f5f9;
@@ -348,7 +352,7 @@ body {
     font-size: 0.85rem;
 }
 
-/* Side by Side layout transitions for modern horizontal desktop widths */
+/* Horizontal alignment transitions for large responsive layouts */
 @media (min-width: 768px) {
     .footer-container {
         grid-template-columns: repeat(3, 1fr);
