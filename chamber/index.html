@@ -1,15 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><title>JJ COMPANY | Home</title>
-    <link rel="stylesheet" href="css/normalize.css"><link rel="stylesheet" href="css/directory.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJ COMPANY Enterprise | Home</title>
+    <!-- Normalize CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Font Awesome Icons Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Main Project Stylesheet -->
+    <link rel="stylesheet" href="css/directory.css">
 </head>
 <body>
-    <header class="corp-header"><div class="header-container"><span class="main-logo-text">JJ COMPANY</span></div></header>
+
+    <header class="corp-header">
+        <div class="header-container">
+            <div class="brand-group">
+                <span class="main-logo-text"><i class="fa-solid fa-building-columns"></i> JJ COMPANY</span>
+                <span class="sub-logo-text">Enterprise Solutions</span>
+            </div>
+            
+            <!-- Desktop Horizontal Nav Menu Bar -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+
+            <!-- Responsive Hamburger Toggle Button -->
+            <button class="nav-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide-out Mobile Navigation Drawer Overlay -->
+    <nav class="nav-drawer" id="navDrawer">
+        <button class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+
     <main class="content-wrapper">
-        <h2>Home Dashboard</h2>
-        <p>Future home of localized weather widgets, call-to-actions, and premium business spotlight cards.</p>
-        <p><a href="directory.html">👉 Access Live Business Directory Portal</a></p>
+        <!-- Main Attention Grabber Banner -->
+        <section class="hero-banner" style="background: #e2e8f0; padding: 40px; text-align: center; border-radius: 6px; margin-bottom: 25px;">
+            <h1>Welcome to JJ COMPANY Enterprise</h1>
+            <p>Driving professional synergy, business data insights, and local economic innovation.</p>
+            <a href="join.html" style="display: inline-block; padding: 10px 20px; background: var(--primary-blue); color: white; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 10px;">Join Our Chamber <i class="fa-solid fa-arrow-right"></i></a>
+        </section>
+
+        <!-- Dashboard Widgets Layout Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <article style="background: white; border: 1px solid var(--wireframe-grey); padding: 20px; border-radius: 6px;">
+                <h3><i class="fa-solid fa-cloud-sun"></i> Local Weather</h3>
+                <p>Boise, ID: 72°F / 22°C</p>
+                <p>Current Status: Clear Sky</p>
+            </article>
+
+            <article style="background: white; border: 1px solid var(--wireframe-grey); padding: 20px; border-radius: 6px;">
+                <h3><i class="fa-solid fa-bullhorn"></i> Community Events</h3>
+                <p>Join our upcoming Q3 Corporate Synergy and Networking Dinner this Thursday evening.</p>
+            </article>
+
+            <article style="background: white; border: 1px solid var(--wireframe-grey); padding: 20px; border-radius: 6px;">
+                <h3><i class="fa-solid fa-star"></i> Business Spotlights</h3>
+                <p>Proudly showcasing our premium members who push boundaries in our ecosystem daily.</p>
+                <p><a href="directory.html" style="color: var(--accent-blue); text-decoration: underline;">Explore Member Profiles</a></p>
+            </article>
+        </div>
     </main>
+
+    <!-- Wireframe Footer Structure -->
+    <footer class="wireframe-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <strong>JJ COMPANY Enterprise</strong>
+                <p><i class="fa-solid fa-location-dot"></i> 10 Rue De La Paix</p>
+                <p>Boise, ID 83705</p>
+                <p><i class="fa-solid fa-envelope"></i> info@jjcompany.org</p>
+                <p><i class="fa-solid fa-phone"></i> (254) 17747-358</p>
+            </div>
+            <div class="footer-center">
+                <div class="social-icons">
+                    <a href="#" class="icon-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="icon-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p>WDD231 Class Project</p>
+                <p>Joseph John</p>
+                <p>&copy; <span id="currentYear"></span> JJ COMPANY</p>
+                <p>Last Modification: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/directory.js" defer></script>
 </body>
 </html>
+
