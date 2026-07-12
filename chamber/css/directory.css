@@ -1,7 +1,8 @@
 /* ==========================================================================
    1. BRAND CONFIGURATION VARIABLES & GLOBAL RESET
    ========================================================================== */
-{/* Forest Green Base Matrix */
+:root {
+    /* Forest Green Base Matrix */
     --primary-blue: #1b4332;     /* Deep Forest Green (Headers, Footers, Titles) */
     --accent-blue: #d4a373;      /* Warm Amber/Gold Accent (Active Links & Buttons) */
     --ice-blue: #40916c;         /* Secondary Accent Green (Subheadings) */
@@ -12,8 +13,12 @@
     --white: #ffffff;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     color: var(--text-main);
     background-color: #fafbfc;
     margin: 0;
@@ -65,96 +70,166 @@ body {
     font-weight: 600;
 }
 
-/* Hamburger Icon Design - Placed on the right side */
-.nav-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--primary-blue);
-    display: block; /* Visible on mobile */
-    padding: 5px 10px;
-}
-
-/* Desktop Inline Horizontal Navbar (Hidden on mobile screens) */
-.desktop-nav {
-    display: none;
-}
-
+/* Desktop Navigation Menu */
 .desktop-nav ul {
-    list-style: none;
     display: flex;
-    gap: 30px;
+    list-style: none;
     margin: 0;
     padding: 0;
+    gap: 20px;
 }
 
-.desktop-nav ul li a {
+.desktop-nav a {
     text-decoration: none;
-    color: var(--primary-blue);
-    font-weight: 700;
+    color: var(--text-main);
+    font-weight: 600;
     font-size: 1rem;
+    padding: 8px 12px;
     transition: color 0.2s ease;
 }
 
-.desktop-nav ul li a:hover,
-.desktop-nav ul li a.active {
-    color: var(--accent-blue);
+.desktop-nav a:hover,
+.desktop-nav a.active {
+    color: var(--primary-blue);
     border-bottom: 2px solid var(--accent-blue);
-    padding-bottom: 4px;
 }
 
-/* ==========================================================================
-   3. MOBILE NAVIGATION DRAWER OVERLAY
-   ========================================================================== */
+/* Hamburger Toggle Button */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    cursor: pointer;
+}
+
+/* Mobile Slide-out Drawer Overlay */
 .nav-drawer {
     position: fixed;
     top: 0;
-    right: -100%; 
+    right: -280px;
     width: 280px;
-    height: 100%;
+    height: 100vh;
     background-color: var(--white);
-    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    box-shadow: -4px 0 15px rgba(0,0,0,0.1);
     z-index: 2000;
-    padding: 40px 30px;
-    box-sizing: border-box;
-    transition: right 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
+    padding: 60px 30px;
+    transition: right 0.3s ease-in-out;
 }
 
 .nav-drawer.open {
-    right: 0; 
+    right: 0;
 }
 
 .close-drawer {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 1.5rem;
     background: none;
     border: none;
+    font-size: 1.6rem;
+    color: var(--text-main);
     cursor: pointer;
-    color: #a0aec0;
 }
 
 .nav-drawer ul {
-    list-style-type: none; 
+    list-style: none;
     padding: 0;
-    margin: 40px 0 0 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 
-.nav-drawer ul li a {
+.nav-drawer a {
     text-decoration: none;
-    color: var(--primary-blue);
-    font-weight: bold;
-    font-size: 1.1rem;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    font-weight: 600;
     display: block;
 }
 
+.nav-drawer a.active {
+    color: var(--primary-blue);
+}
+
 /* ==========================================================================
-   4. LAYOUT CONTROLS DECK
+   3. CRUISE COMMUNITY CUSTOM HERO BANNER Style
+   ========================================================================== */
+.cruise-banner {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #2d6a4f 100%);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(27, 67, 50, 0.15);
+}
+
+.banner-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.cruise-banner h1 {
+    font-size: 2.2rem;
+    margin: 0 0 12px 0;
+    font-weight: 800;
+}
+
+.cruise-banner p {
+    font-size: 1.1rem;
+    margin: 0 0 25px 0;
+    max-width: 700px;
+    color: #e8f0ec;
+}
+
+.banner-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.banner-actions a {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: #1b4332;
+}
+
+.btn-primary:hover {
+    background-color: #e9c46a;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--white);
+}
+
+/* ==========================================================================
+   4. DIRECTORY WORKSPACE CONTENT & CONTROLS
    ========================================================================== */
 .content-wrapper {
     max-width: 1200px;
@@ -163,165 +238,132 @@ body {
 }
 
 .directory-header {
+    border-bottom: 3px solid var(--primary-blue);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--primary-blue);
-    padding-bottom: 10px;
-    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.directory-header h1 {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin: 0;
 }
 
 .directory-header h2 {
-    font-size: 1.25rem;
-    color: var(--primary-blue);
-    margin: 0;
+    font-size: 1.2rem;
+    color: var(--ice-blue);
+    margin: 5px 0 0 0;
+    width: 100%;
 }
 
-.menu button {
-    padding: 8px 16px;
-    background: var(--white);
-    border: 1px solid #cbd5e0;
-    cursor: pointer;
-    font-weight: 500;
+.directory-header .menu {
+    display: flex;
+    gap: 10px;
+}
+
+.directory-header button {
+    background-color: var(--white);
+    border: 1px solid var(--wireframe-grey);
+    padding: 10px 16px;
+    font-weight: 600;
     border-radius: 4px;
-    margin-left: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     transition: all 0.2s ease;
 }
 
-.menu button:hover {
-    background-color: var(--light-bg);
-    border-color: var(--ice-blue);
+.directory-header button:hover, 
+.directory-header button.active {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-color: var(--primary-blue);
 }
 
 /* ==========================================================================
-   5. WIREFRAME GRID INTERFACE ARCHITECTURE
+   5. VIEW MODES (GRID CONTRAST LIST)
    ========================================================================== */
+/* Grid Layout Mode */
 .grid-view {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
 }
 
-.grid-view section {
-    background: var(--white);
+.grid-view .directory-card {
+    background-color: var(--white);
     border: 1px solid var(--wireframe-grey);
     border-radius: 6px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-}
-
-.grid-view .card-branding {
-    background-color: var(--card-header-grey);
-    padding: 15px;
     text-align: center;
-    border-bottom: 1px solid var(--wireframe-grey);
+    padding: 25px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
 }
 
-.grid-view .card-branding h3 {
-    margin: 0 0 4px 0;
-    font-size: 1.15rem;
-    color: var(--primary-blue);
-}
-
-.grid-view .card-branding .tagline {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #4a5568;
-}
-
-.grid-view section img {
-    height: 60px;
-    max-width: 120px;
+.grid-view .directory-card img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
     object-fit: contain;
-    margin: 20px auto;
-    display: block;
 }
 
-.grid-view .card-meta {
-    padding: 0 20px 20px 20px;
-    text-align: left;
-}
-
-.grid-view .card-meta p {
-    margin: 6px 0;
-    font-size: 0.85rem;
-    color: #4a5568;
-    line-height: 1.4;
-}
-
-.grid-view .card-meta a {
-    color: var(--accent-blue);
-    text-decoration: underline;
-}
-
-/* ==========================================================================
-   6. WIREFRAME LIST VIEW ARCHITECTURE
-   ========================================================================== */
-.list-view {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--wireframe-grey);
-    border-radius: 4px;
-    background-color: var(--white);
-}
-
-.list-view section {
-    display: grid;
-    grid-template-columns: 1.5fr 2fr 1fr 1fr;
-    padding: 14px 20px;
-    border-bottom: 1px solid #edf2f7;
-    align-items: center;
-}
-
-.list-view section:last-child {
-    border-bottom: none;
-}
-
-.list-view section:nth-child(even) {
-    background-color: var(--light-bg);
-}
-
-.list-view section img,
-.list-view .card-branding .tagline {
-    display: none;
-}
-
-.list-view .card-branding {
-    background: none;
-    padding: 0;
-    border-bottom: none;
-    text-align: left;
-}
-
-.list-view .card-branding h3 {
-    font-size: 0.95rem;
-    margin: 0;
+.grid-view .directory-card h3 {
+    margin: 10px 0 5px 0;
     color: var(--primary-blue);
 }
 
-.list-view .card-meta {
-    display: contents; 
-}
-
-.list-view .card-meta p {
-    margin: 0;
+.grid-view .directory-card p {
+    margin: 5px 0;
     font-size: 0.9rem;
 }
 
-.list-view .card-meta p strong {
-    display: none; 
+/* List Layout Mode */
+.list-view {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-view .directory-card {
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr 2fr;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--wireframe-grey);
+    background-color: var(--white);
+}
+
+.list-view .directory-card:nth-child(even) {
+    background-color: var(--light-bg);
+}
+
+.list-view .directory-card img {
+    display: none; /* Hide images in basic clean text list view */
+}
+
+.list-view .directory-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.list-view .directory-card p {
+    margin: 0;
+    font-size: 0.95rem;
 }
 
 /* ==========================================================================
-   7. WIREFRAME FOOTER SECTION
+   6. FOOTER STYLING
    ========================================================================== */
 .wireframe-footer {
-    background-color: #f1f5f9;
-    border-top: 1px solid var(--wireframe-grey);
-    padding: 30px 20px;
-    color: #4a5568;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 40px 20px;
     margin-top: 60px;
 }
 
@@ -329,94 +371,81 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-    text-align: center;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 30px;
+    align-items: center;
 }
 
 .footer-left p {
-    margin: 4px 0;
+    margin: 6px 0;
     font-size: 0.9rem;
+    color: #cbd5e0;
 }
 
-.footer-left i {
-    color: var(--ice-blue);
-    margin-right: 5px;
-    width: 15px;
+.footer-center {
+    text-align: center;
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin: 10px 0;
 }
 
-.social-icons .icon-link {
-    background: var(--white);
-    color: var(--primary-blue);
-    width: 36px;
-    height: 36px;
-    border: 1px solid var(--wireframe-grey);
-    border-radius: 50%;
+.icon-link {
+    color: var(--white);
+    background-color: rgba(255,255,255,0.1);
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: background 0.2s ease;
 }
 
-.social-icons .icon-link:hover {
-    background-color: var(--primary-blue);
-    color: var(--white);
-    transform: translateY(-2px);
+.icon-link:hover {
+    background-color: var(--accent-blue);
+}
+
+.footer-right {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #cbd5e0;
 }
 
 .footer-right p {
-    margin: 4px 0;
-    font-size: 0.85rem;
+    margin: 6px 0;
 }
 
 /* ==========================================================================
-   8. RESPONSIVE MEDIA QUERIES (Desktop Layout Transformation)
+   7. RESPONSIVE BREAKPOINTS (MEDIA QUERIES)
    ========================================================================== */
-@media (min-width: 768px) {
-    /* Hide the mobile toggle button on large viewports */
-    .nav-toggle {
+@media (max-width: 768px) {
+    .desktop-nav {
         display: none;
     }
-
-    /* Show horizontal top navigation bar menu */
-    .desktop-nav {
+    
+    .nav-toggle {
         display: block;
     }
 
-    /* Transform List rows into descriptive headers */
-    .list-view section {
-        grid-template-columns: 1.5fr 2fr 1fr 1fr;
-    }
-
-    /* Expand layout footers into 3 clear workspace columns */
     .footer-container {
-        grid-template-columns: repeat(3, 1fr);
-        text-align: left;
-        align-items: center;
-    }
-    .footer-center {
+        grid-template-columns: 1fr;
         text-align: center;
     }
-    .footer-right {
-        text-align: right;
-    }
-}
 
-@media (max-width: 767px) {
-    .list-view section {
-        grid-template-columns: 1fr;
-        gap: 6px;
-        padding: 15px;
+    .footer-right {
+        text-align: center;
     }
-    .list-view .card-meta p strong {
-        display: inline; 
+
+    /* Convert list grid layout into clean stacked text items on mobile views */
+    .list-view .directory-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 20px;
     }
 }
