@@ -1,50 +1,133 @@
-/* Core Styling & Layout Toggles */
+/* ==========================================
+   1. BASE MOBILE STYLES (Starts at 320px)
+   ========================================== */
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #1a365d; /* Example dark blue chamber theme */
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Navigation - Mobile Menu (Typically a single column stacked list) */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.75rem;
+    background-color: #2b6cb0;
+    border-radius: 4px;
+}
+
+/* Directory view buttons */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 1.5rem 0;
+}
+
+.menu button {
+    padding: 10px 20px;
+    background-color: #1a365d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Default Mobile Layout for Cards (Single Column) */
 #directory-container {
     display: grid;
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: 1fr; /* Rigid 1-column layout for small mobile targets */
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 100%;
 }
 
-/* Grid View Rules (Default or Selected) */
-.grid-view {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid-view section {
-    border: 1px solid #ccc;
-    padding: 15px;
+#directory-container section {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
     text-align: center;
-    background-color: #fff;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
-.grid-view section img {
-    max-width: 150px;
-    height: auto;
+#directory-container img {
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 1rem;
 }
 
-/* List View Rules (Triggered by class replacement) */
+/* ==========================================
+   2. TABLET MEDIA QUERY (Min-width: 640px)
+   ========================================== */
+@media (min-width: 640px) {
+    nav ul {
+        flex-direction: row; /* Horizontal navbar on wider displays */
+        justify-content: center;
+    }
+
+    /* Grid layout turns into 2 columns on tablets */
+    .grid-view {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ==========================================
+   3. DESKTOP MEDIA QUERY (Min-width: 1024px)
+   ========================================== */
+@media (min-width: 1024px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Grid layout scales to 3 columns on desktops */
+    .grid-view {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* ==========================================
+   4. LIST VIEW SPECIFIC OVERRIDES
+   ========================================== */
+/* When JavaScript injects '.list-view', override the grids to make clean list tables */
 .list-view {
     display: flex !important;
     flex-direction: column;
+    gap: 0.5rem;
 }
 
 .list-view section {
-    display: flex;
+    display: flex !important;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    text-align: left !important;
+    padding: 0.75rem 1.5rem !important;
 }
 
+/* Hide company logos in list view on mobile screens to keep rows clean */
 .list-view section img {
-    display: none; /* Often hidden in simple list tables to keep them clean */
+    display: none; 
 }
 
-/* Media Query Example for clean scaling from 320px up */
-@media (max-width: 600px) {
-    .list-view section {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* Zebra striping for easy list readability */
+.list-view section:nth-child(even) {
+    background-color: #edf2f7;
 }
