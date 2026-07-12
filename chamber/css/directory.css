@@ -1,14 +1,13 @@
 /* ==========================================================================
    1. BRAND CONFIGURATION VARIABLES & GLOBAL RESET
    ========================================================================== */
-:root {
-  :root {
-    --primary-blue: #1b4332;     /* Deep Forest Green */
-    --accent-blue: #2d6a4f;      /* Medium Forest Green */
-    --ice-blue: #52b788;         /* Fresh Mint Accent Green */
-    --light-bg: #f4f9f6;         /* Soft Off-White/Green Tint */
+{/* Forest Green Base Matrix */
+    --primary-blue: #1b4332;     /* Deep Forest Green (Headers, Footers, Titles) */
+    --accent-blue: #d4a373;      /* Warm Amber/Gold Accent (Active Links & Buttons) */
+    --ice-blue: #40916c;         /* Secondary Accent Green (Subheadings) */
+    --light-bg: #f4f7f5;         /* Soft Sage Tint (Zebra rows & Backgrounds) */
     --wireframe-grey: #cbd5e0;   
-    --card-header-grey: #e2e8f0; 
+    --card-header-grey: #e8f0ec; /* Tinted header block background */
     --text-main: #2d3748;        
     --white: #ffffff;
 }
