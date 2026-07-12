@@ -1,58 +1,63 @@
-// URLs and Selectors
 const jsonURL = "data/members.json";
 const container = document.querySelector("#directory-container");
 const gridBtn = document.querySelector("#gridBtn");
 const listBtn = document.querySelector("#listBtn");
 
-// 1. Fetch JSON Data
-async function getMembers() {
+const menuToggle = document.querySelector("#menuToggle");
+const closeDrawer = document.querySelector("#closeDrawer");
+const navDrawer = document.querySelector("#navDrawer");
+
+menuToggle.addEventListener("click", () => navDrawer.classList.add("open"));
+closeDrawer.addEventListener("click", () => navDrawer.classList.remove("open"));
+
+async function fetchDirectoryData() {
     try {
         const response = await fetch(jsonURL);
         if (response.ok) {
             const data = await response.json();
-            displayMembers(data);
-        } else {
-            console.error("Could not fetch data");
+            renderDirectory(data);
         }
     } catch (error) {
-        console.error("Error parsing data: ", error);
+        console.error("Error mapping business profiles: ", error);
     }
 }
 
-// 2. Build Cards dynamically
-function displayMembers(members) {
-    container.innerHTML = ""; // Clear existing content
-
-    members.forEach((member) => {
-        let card = document.createElement("section");
+function renderDirectory(businesses) {
+    container.innerHTML = ""; 
+    businesses.forEach((business) => {
+        const card = document.createElement("section");
         
-        // Setup card structure with template literals
+        // Define human-readable labels for the tier level integers
+        let tierLabel = "General Member";
+        if (business.membership === 2) tierLabel = "Silver Partner";
+        if (business.membership === 3) tierLabel = "Gold Partner";
+
         card.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name} logo" loading="lazy">
-            <h3>${member.name}</h3>
-            <p>${member.address}</p>
-            <p>${member.phone}</p>
-            <p><a href="${member.website}" target="_blank">Visit Website</a></p>
-            <span class="membership-badge">Level: ${member.membershipLevel}</span>
+            <div class="card-branding">
+                <h3>${business.name}</h3>
+                <p class="tagline"><em>${business.tagline}</em></p>
+            </div>
+            <img src="images/${business.image}" alt="${business.name} branding visual" loading="lazy">
+            <div class="card-meta">
+                <p><strong>EMAIL:</strong> info@jjcompany.org</p>
+                <p><strong>PHONE:</strong> ${business.phone}</p>
+                <p><strong>TIER:</strong> ${tierLabel}</p>
+                <p><strong>URL:</strong> <a href="${business.website}" target="_blank">visit portal</a></p>
+            </div>
         `;
         container.appendChild(card);
     });
 }
 
-// 3. View Selection Event Listeners
 gridBtn.addEventListener("click", () => {
-    container.classList.add("grid-view");
-    container.classList.remove("list-view");
+    container.className = "grid-view";
 });
 
 listBtn.addEventListener("click", () => {
-    container.classList.add("list-view");
-    container.classList.remove("grid-view");
+    container.className = "list-view";
 });
 
-// 4. Footer Date and Last Modified values
 document.querySelector("#currentYear").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent = document.lastModified;
 
-// Initialize
-getMembers();
+fetchDirectoryData();
