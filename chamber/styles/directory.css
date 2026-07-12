@@ -5,7 +5,7 @@
     /* Forest Green Base Matrix */
     --primary-blue: #1b4332;     /* Deep Forest Green (Headers, Footers, Titles) */
     --accent-blue: #d4a373;      /* Warm Amber/Gold Accent (Active Links & Buttons) */
-    --ice-blue: #40916c;         /* Secondary Accent Green (Subheadings) */
+    --ice-blue: #2d6a4f;         /* FIXED: Darker Green to pass WCAG AA 4.5:1 Contrast Standards */
     --light-bg: #f4f7f5;         /* Soft Sage Tint (Zebra rows & Backgrounds) */
     --wireframe-grey: #cbd5e0;   
     --card-header-grey: #e8f0ec; /* Tinted header block background */
@@ -66,7 +66,7 @@ body {
 .sub-logo-text {
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: var(--ice-blue);
+    color: var(--ice-blue); /* Fixed: Now inherits high contrast dark green */
     font-weight: 600;
 }
 
@@ -256,7 +256,7 @@ body {
 
 .directory-header h2 {
     font-size: 1.2rem;
-    color: var(--ice-blue);
+    color: var(--ice-blue); /* Fixed: Now inherits high contrast dark green */
     margin: 5px 0 0 0;
     width: 100%;
 }
@@ -449,3 +449,4 @@ body {
         padding: 20px;
     }
 }
+
