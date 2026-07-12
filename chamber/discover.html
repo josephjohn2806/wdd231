@@ -1,14 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><title>JJ COMPANY | Discover</title>
-    <link rel="stylesheet" href="css/normalize.css"><link rel="stylesheet" href="css/directory.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJ COMPANY Enterprise | Discover</title>
+    <!-- Normalize CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Font Awesome Icons Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Main Project Stylesheet -->
+    <link rel="stylesheet" href="css/directory.css">
 </head>
 <body>
-    <header class="corp-header"><div class="header-container"><span class="main-logo-text">JJ COMPANY</span></div></header>
+
+    <header class="corp-header">
+        <div class="header-container">
+            <div class="brand-group">
+                <span class="main-logo-text"><i class="fa-solid fa-building-columns"></i> JJ COMPANY</span>
+                <span class="sub-logo-text">Enterprise Solutions</span>
+            </div>
+            
+            <!-- Desktop Horizontal Nav Menu Bar -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html" class="active">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+
+            <!-- Responsive Hamburger Toggle Button -->
+            <button class="nav-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide-out Mobile Navigation Drawer Overlay -->
+    <nav class="nav-drawer" id="navDrawer">
+        <button class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="discover.html" class="active">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+
     <main class="content-wrapper">
-        <h2>Discover Region</h2>
-        <p>Future home of localized history logs, regional demographics datasets, and media image montages.</p>
+        <section class="directory-header" style="border-bottom: 2px solid var(--primary-blue); margin-bottom: 25px;">
+            <h2><i class="fa-solid fa-compass"></i> Discover the Region</h2>
+        </section>
+
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px; align-items: start;">
+            <!-- Left Information Column -->
+            <aside style="background: var(--light-bg); padding: 25px; border-radius: 6px; border: 1px solid var(--wireframe-grey);">
+                <h3>Locale Details</h3>
+                <p><strong><i class="fa-solid fa-landmark"></i> History:</strong> Established as a premium technology and industry hub matching international infrastructure growth models.</p>
+                <p><strong><i class="fa-solid fa-chart-pie"></i> Demographics:</strong> Home to over 230,000 active professionals, expanding rapidly within technical and digital creative sectors.</p>
+            </aside>
+
+            <!-- Right Image Gallery Workspace Area -->
+            <section style="display: flex; flex-direction: column; gap: 20px;">
+                <h3>Image Montage</h3>
+                <div style="background: #e2e8f0; height: 180px; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: #4a5568;">
+                    <p><i class="fa-solid fa-image fa-2x"></i> Placeholder: Regional Tech Hub Center Corridor</p>
+                </div>
+                <div style="background: #e2e8f0; height: 180px; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: #4a5568;">
+                    <p><i class="fa-solid fa-image fa-2x"></i> Placeholder: Downtown Innovation District District</p>
+                </div>
+            </section>
+        </div>
     </main>
+
+    <!-- Wireframe Footer Structure -->
+    <footer class="wireframe-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <strong>JJ COMPANY Enterprise</strong>
+                <p><i class="fa-solid fa-location-dot"></i> 10 Rue De La Paix</p>
+                <p>Boise, ID 83705</p>
+                <p><i class="fa-solid fa-envelope"></i> info@jjcompany.org</p>
+                <p><i class="fa-solid fa-phone"></i> (254) 17747-358</p>
+            </div>
+            <div class="footer-center">
+                <div class="social-icons">
+                    <a href="#" class="icon-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="icon-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p>WDD231 Class Project</p>
+                <p>Joseph John</p>
+                <p>&copy; <span id="currentYear"></span> JJ COMPANY</p>
+                <p>Last Modification: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/directory.js" defer></script>
 </body>
 </html>
