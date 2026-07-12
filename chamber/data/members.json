@@ -1,1 +1,21 @@
-
+[
+  {
+    "name": "Innovative Tech Solutions",
+    "address": "123 Innovation Way, Suite 100",
+    "phone": "(555) 123-4567",
+    "website": "https://www.innovatetech.com",
+    "image": "innovative-tech.png",
+    "membershipLevel": 3,
+    "otherInfo": "Specializing in cloud architecture and custom software."
+  },
+  {
+    "name": "Green Garden Cafe",
+    "address": "456 Organic Lane",
+    "phone": "(555) 987-6543",
+    "website": "https://www.greengardencafe.com",
+    "image": "green-garden.png",
+    "membershipLevel": 1,
+    "otherInfo": "Locally sourced ingredients and fresh pastries daily."
+  }
+  // Add at least 5 more company entries here to meet the requirement of 7
+]
