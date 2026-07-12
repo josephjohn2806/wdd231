@@ -3,52 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber of Commerce - Directory</title>
-    <meta name="description" content="Business directory page for the local Chamber of Commerce.">
-    <meta name="author" content="Your Full Name">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <!-- Social Media Meta Tags (Open Graph) -->
-    <meta property="og:title" content="Chamber of Commerce Directory">
-    <meta property="og:description" content="Explore and connect with local businesses in our chamber directory.">
-    <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
-
-    <!-- CSS Links -->
+    <title>JJ COMPANY Enterprise | Directory</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/directory.css">
 </head>
 <body>
-    <header>
-        <h1>Chamber of Commerce</h1>
-        <nav>
-            <!-- Your responsive navigation goes here -->
-        </nav>
+
+    <header class="corp-header">
+        <div class="header-container">
+            <div class="brand-group">
+                <span class="main-logo-text">JJ COMPANY</span>
+                <span class="sub-logo-text">Enterprise Solutions</span>
+            </div>
+            <button class="nav-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
-    <main>
-        <h2>Business Directory</h2>
-        
-        <!-- Toggle Buttons for View Selection -->
-        <div class="menu">
-            <button id="gridBtn">Grid View 🎚️</button>
-            <button id="listBtn">List View 📋</button>
-        </div>
+    <nav class="nav-drawer" id="navDrawer">
+        <button class="close-drawer" id="closeDrawer">&times;</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="directory.html" class="active">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
 
-        <!-- The container where your JS will dynamically inject business elements -->
-        <article id="directory-container" class="grid-view">
-            <!-- Dynamic Content Loaded from JSON -->
-        </article>
+    <main class="content-wrapper">
+        <section class="directory-workspace">
+            <div class="directory-header">
+                <h2>PROJECT FUNDERS &amp; PARTNERS</h2>
+                <div class="menu">
+                    <button id="gridBtn">Grid View</button>
+                    <button id="listBtn">List View</button>
+                </div>
+            </div>
+            
+            <!-- JavaScript Injects Companies Here -->
+            <article id="directory-container" class="grid-view"></article>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; <span id="currentYear"></span> | Your Name | WDD 231</p>
-        <p>Last Modified: <span id="lastModified"></span></p>
+    <!-- Wireframe Footer Architecture -->
+    <footer class="wireframe-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <strong>JJ COMPANY Enterprise</strong>
+                <p>10 Rue De La Paix</p>
+                <p>Boise, ID 83705</p>
+                <p>info@jjcompany.org</p>
+                <p>(223) 555-2300</p>
+            </div>
+            <div class="footer-center">
+                <div class="social-icons">
+                    <span class="icon">🔵 FB</span>
+                    <span class="icon">🐦 TW</span>
+                    <span class="icon">💼 LN</span>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p>WDD231 Class Project</p>
+                <p>Your Name Here</p>
+                <p>&copy; <span id="currentYear"></span> JJ COMPANY</p>
+                <p>Last Modification: <span id="lastModified"></span></p>
+            </div>
+        </div>
     </footer>
 
-    <!-- JavaScript Link -->
     <script src="js/directory.js" defer></script>
 </body>
 </html>
