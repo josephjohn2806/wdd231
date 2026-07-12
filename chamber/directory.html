@@ -6,6 +6,8 @@
     <title>JJ COMPANY Enterprise | Directory</title>
     <!-- Normalize CSS Reset -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Font Awesome Icons Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Main Project Stylesheet -->
     <link rel="stylesheet" href="css/directory.css">
 </head>
@@ -14,18 +16,30 @@
     <header class="corp-header">
         <div class="header-container">
             <div class="brand-group">
-                <span class="main-logo-text">JJ COMPANY</span>
+                <span class="main-logo-text"><i class="fa-solid fa-building-subsidized"></i> JJ COMPANY</span>
                 <span class="sub-logo-text">Enterprise Solutions</span>
             </div>
+            
+            <!-- Desktop Desktop Horizontal Nav Menu Bar -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html" class="active">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+
+            <!-- Responsive Hamburger Toggle Action Action Button -->
             <button class="nav-toggle" id="menuToggle" aria-label="Toggle Navigation">
-                <span></span><span></span><span></span>
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </header>
 
-    <!-- Slide-out Navigation Drawer Overlay -->
+    <!-- Slide-out Mobile Navigation Drawer Overlay Template -->
     <nav class="nav-drawer" id="navDrawer">
-        <button class="close-drawer" id="closeDrawer">&times;</button>
+        <button class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="discover.html">Discover</a></li>
@@ -37,10 +51,10 @@
     <main class="content-wrapper">
         <section class="directory-workspace">
             <div class="directory-header">
-                <h2>PROJECT FUNDERS &amp; PARTNERS</h2>
+                <h2><i class="fa-solid fa-users"></i> PROJECT FUNDERS &amp; PARTNERS</h2>
                 <div class="menu">
-                    <button id="gridBtn">Grid View</button>
-                    <button id="listBtn">List View</button>
+                    <button id="gridBtn"><i class="fa-solid fa-grip"></i> Grid View</button>
+                    <button id="listBtn"><i class="fa-solid fa-list"></i> List View</button>
                 </div>
             </div>
             
@@ -54,16 +68,16 @@
         <div class="footer-container">
             <div class="footer-left">
                 <strong>JJ COMPANY Enterprise</strong>
-                <p>10 Rue De La Paix</p>
+                <p><i class="fa-solid fa-location-dot"></i> 10 Rue De La Paix</p>
                 <p>Boise, ID 83705</p>
-                <p>info@jjcompany.org</p>
-                <p>(223) 555-2300</p>
+                <p><i class="fa-solid fa-envelope"></i> info@jjcompany.org</p>
+                <p><i class="fa-solid fa-phone"></i> (223) 555-2300</p>
             </div>
             <div class="footer-center">
                 <div class="social-icons">
-                    <span class="icon">🔵 FB</span>
-                    <span class="icon">🐦 TW</span>
-                    <span class="icon">💼 LN</span>
+                    <a href="#" class="icon-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="icon-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="footer-right">
