@@ -26,6 +26,8 @@ function renderDirectory(businesses) {
     container.innerHTML = ""; 
     businesses.forEach((business) => {
         const card = document.createElement("section");
+        // FIX: Add the required CSS class name to match your stylesheet rules
+        card.classList.add("directory-card");
         
         // Define human-readable labels for the tier level integers
         let tierLabel = "General Member";
@@ -39,7 +41,7 @@ function renderDirectory(businesses) {
             </div>
             <img src="images/${business.image}" alt="${business.name} branding visual" loading="lazy">
             <div class="card-meta">
-                <p><strong>EMAIL:</strong> info@jjcompany.org</p>
+                <p><strong>EMAIL:</strong> ${business.email || 'info@jjcompany.org'}</p>
                 <p><strong>PHONE:</strong> ${business.phone}</p>
                 <p><strong>TIER:</strong> ${tierLabel}</p>
                 <p><strong>URL:</strong> <a href="${business.website}" target="_blank">visit portal</a></p>
@@ -49,12 +51,17 @@ function renderDirectory(businesses) {
     });
 }
 
+// Manage active visual state toggle on buttons
 gridBtn.addEventListener("click", () => {
     container.className = "grid-view";
+    gridBtn.classList.add("active");
+    listBtn.classList.remove("active");
 });
 
 listBtn.addEventListener("click", () => {
     container.className = "list-view";
+    listBtn.classList.add("active");
+    gridBtn.classList.remove("active");
 });
 
 document.querySelector("#currentYear").textContent = new Date().getFullYear();
