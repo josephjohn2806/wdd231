@@ -1,167 +1,364 @@
 /* ==========================================================================
-   1. CORE DIRECTORY CONTAINER & TOGGLE BUTTONS
+   1. BRAND ARCHITECTURE VARIABLES & RESET
    ========================================================================== */
-
-/* Layout view buttons container */
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px 0;
+:root {
+    --primary-blue: #162a45;     /* Corporate Dark Blue */
+    --accent-blue: #4a90e2;      /* Vivid Accent Light Blue */
+    --ice-blue: #6ca0dc;         /* Secondary Highlight Tint */
+    --light-bg: #f2f6fa;         /* Soft Background Sheet */
+    --wireframe-grey: #e2e8f0;   /* Muted Grey Border */
+    --card-header-grey: #e2e8f0; /* Wireframe heading box fill */
+    --text-main: #333333;        /* Charcoal body copy */
+    --white: #ffffff;
 }
 
-/* Button Styling matching the system icons */
-.menu button {
-    padding: 8px 16px;
-    background-color: #ffffff;
-    border: 1px solid #b4c6e7;
-    color: #1a365d;
-    cursor: pointer;
-    font-size: 1.2rem;
-    border-radius: 4px;
-    transition: all 0.2s ease-in-out;
-}
-
-.menu button:hover {
-    background-color: #f0f4f8;
-    border-color: #1a365d;
-}
-
-/* Main target wrapper */
-#directory-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px;
-    transition: all 0.3s ease;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-main);
+    background-color: #fafbfc;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 /* ==========================================================================
-   2. GRID VIEW STYLING (Card Layout for Mobile & Desktop)
+   2. FIXED POSITION NAV DRAWER & HEADER
    ========================================================================== */
+.corp-header {
+    background-color: var(--white);
+    border-bottom: 2px solid var(--primary-blue);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 20px;
+}
 
-/* Mobile view grid (default) - Single column card stacking */
-.grid-view {
-    display: grid;
-    grid-template-columns: 1fr;
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-logo-text {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    letter-spacing: 1px;
+}
+
+.sub-logo-text {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--ice-blue);
+    font-weight: 600;
+}
+
+/* Hamburger Menu Icon */
+.nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-blue);
+    border-radius: 2px;
+}
+
+/* Slide-out Navigation Overlay Drawer */
+.nav-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100%;
+    background-color: var(--white);
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    z-index: 2000;
+    padding: 40px 30px;
+    transition: right 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.nav-drawer.open {
+    right: 0;
+}
+
+.close-drawer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #a0aec0;
+}
+
+.nav-drawer ul {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
-/* Individual Card Setup */
-.grid-view section {
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    padding: 24px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle smooth card shadow */
+.nav-drawer ul li a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: bold;
+    font-size: 1.05rem;
+    display: block;
+}
+
+.nav-drawer ul li a:hover, 
+.nav-drawer ul li a.active {
+    color: var(--accent-blue);
+}
+
+/* ==========================================================================
+   3. WORKSPACE WRAPPER & CONTROLS DECK
+   ========================================================================== */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.directory-header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
 }
 
-/* Logo Sizing within cards */
-.grid-view section img {
-    max-height: 75px;
-    width: auto;
-    object-fit: contain;
-    margin-bottom: 15px;
+.directory-header h2 {
+    font-size: 1.25rem;
+    color: var(--primary-blue);
+    margin: 0;
 }
 
-/* Text formatting inside cards */
-.grid-view section h3 {
-    margin: 10px 0 5px 0;
+.menu button {
+    padding: 8px 16px;
+    background: var(--white);
+    border: 1px solid #cbd5e0;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.menu button:hover {
+    background-color: var(--light-bg);
+}
+
+/* ==========================================================================
+   4. NEW WIREFRAME GRID VIEW (Matches Image Layout Exactly)
+   ========================================================================== */
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.grid-view section {
+    background: var(--white);
+    border: 1px solid var(--wireframe-grey);
+    border-radius: 6px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Grey Blocked Header Container for Business Metadata */
+.grid-view .card-branding {
+    background-color: var(--card-header-grey);
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid var(--wireframe-grey);
+}
+
+.grid-view .card-branding h3 {
+    margin: 0 0 4px 0;
     font-size: 1.15rem;
-    color: #2d3748;
-    display: none; /* Hide text heading in grid view if the logo contains the text */
+    color: var(--primary-blue);
 }
 
-.grid-view section p {
-    margin: 4px 0;
-    font-size: 0.9rem;
+.grid-view .card-branding .tagline {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #4a5568;
+}
+
+/* Centered Project Image Representation */
+.grid-view section img {
+    max-height: 80px;
+    max-width: 140px;
+    object-fit: contain;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Structured Meta Data Column Alignment */
+.grid-view .card-meta {
+    padding: 0 20px 20px 20px;
+    text-align: left;
+}
+
+.grid-view .card-meta p {
+    margin: 6px 0;
+    font-size: 0.85rem;
     color: #4a5568;
     line-height: 1.4;
 }
 
-.grid-view section a {
-    color: #2b6cb0;
+.grid-view .card-meta a {
+    color: var(--accent-blue);
     text-decoration: underline;
-    font-size: 0.85rem;
-    word-break: break-all;
 }
 
-/* Desktop Grid Adjustments (Wider View) */
-@media (min-width: 600px) {
-    .grid-view {
-        grid-template-columns: repeat(2, 1fr);
+/* ==========================================================================
+   5. WIREFRAME LIST VIEW (Zebra Stripped Lines)
+   ========================================================================== */
+.list-view {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--wireframe-grey);
+    border-radius: 4px;
+}
+
+.list-view section {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr 1fr;
+    padding: 14px 20px;
+    border-bottom: 1px solid #edf2f7;
+    align-items: center;
+}
+
+.list-view section:last-child {
+    border-bottom: none;
+}
+
+/* Alternating Row Tinting styling code */
+.list-view section:nth-child(even) {
+    background-color: var(--light-bg);
+}
+
+/* Completely hidden visual assets in clean line layouts */
+.list-view section img,
+.list-view .card-branding .tagline {
+    display: none;
+}
+
+.list-view .card-branding {
+    background: none;
+    padding: 0;
+}
+
+.list-view .card-branding h3 {
+    font-size: 0.95rem;
+    margin: 0;
+    color: var(--primary-blue);
+}
+
+.list-view .card-meta {
+    display: contents; /* Flattens nested tags smoothly into parent grid alignments */
+}
+
+.list-view .card-meta p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.list-view .card-meta p strong {
+    display: none; /* Strip out prefixes (EMAIL:, PHONE:) for cleaner row readouts */
+}
+
+/* Mobile responsive fallback layout adjustments */
+@media (max-width: 768px) {
+    .list-view section {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 15px;
     }
-}
-
-@media (min-width: 1024px) {
-    .grid-view {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
+    .list-view .card-meta p strong {
+        display: inline;
     }
 }
 
 /* ==========================================================================
-   3. LIST VIEW STYLING (Line items with Zebra Striping)
+   6. PREMIUM CLASS WIREFRAME FOOTER ARCHITECTURE
    ========================================================================== */
-
-.list-view {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-/* Individual Row Item Setup */
-.list-view section {
-    display: grid;
-    grid-template-columns: 1.5fr 2fr 1fr 1.5fr; /* 4 strict tabular columns */
-    align-items: center;
-    padding: 12px 20px;
-    border-bottom: 1px solid #eef2f7;
-    text-align: left;
-}
-
-/* Alternate row coloring (Zebra Striping) */
-.list-view section:nth-child(even) {
-    background-color: #f4f8f9; /* Light blue-grey zebra tint */
-}
-
-/* Hide images completely in the list view */
-.list-view section img {
-    display: none;
-}
-
-/* Ensure headings display inline like regular text labels in list rows */
-.list-view section h3 {
-    display: block;
-    margin: 0;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #2d3748;
-}
-
-.list-view section p {
-    margin: 0;
-    font-size: 0.9rem;
+.wireframe-footer {
+    background-color: #f1f5f9;
+    border-top: 1px solid var(--wireframe-grey);
+    padding: 30px 20px;
     color: #4a5568;
+    margin-top: 60px;
 }
 
-.list-view section a {
-    color: #0066cc;
-    text-decoration: underline;
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+}
+
+.footer-left p {
+    margin: 4px 0;
     font-size: 0.9rem;
 }
 
-/* Responsive adjustment for list view on mobile devices */
-@media (max-width: 768px) {
-    .list-view section {
-        grid-template-columns: 1fr; /* Fallback to single lines if screen is too narrow */
-        gap: 6px;
-        padding: 15px;
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.social-icons .icon {
+    background: var(--white);
+    padding: 6px 12px;
+    border: 1px solid var(--wireframe-grey);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.footer-right p {
+    margin: 4px 0;
+    font-size: 0.85rem;
+}
+
+/* Side by Side layout transitions for modern horizontal desktop widths */
+@media (min-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+        align-items: center;
+    }
+    .footer-center {
+        text-align: center;
+    }
+    .footer-right {
+        text-align: right;
     }
 }
