@@ -1,124 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JJ COMPANY Enterprise | Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="css/directory.css">
+<title>JJ COMPANY Enterprise | Home</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="css/directory.css">
 </head>
 
 <body>
 
 <header class="corp-header">
-    <div class="header-container">
 
-        <div class="brand-group">
-            <span class="main-logo-text">
-                <i class="fa-solid fa-building-columns"></i>
-                JJ COMPANY
-            </span>
-            <span class="sub-logo-text">
-                Enterprise Solutions
-            </span>
-        </div>
+<div class="header-container">
 
-        <nav class="desktop-nav">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-            </ul>
-        </nav>
+<div class="brand-group">
+<h2><i class="fa-solid fa-building-columns"></i> JJ COMPANY</h2>
+<p>Enterprise Solutions</p>
+</div>
 
-        <button class="nav-toggle" id="menuToggle">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+<nav class="desktop-nav">
+<ul>
+<li><a href="index.html" class="active">Home</a></li>
+<li><a href="discover.html">Discover</a></li>
+<li><a href="directory.html">Directory</a></li>
+<li><a href="join.html">Join</a></li>
+</ul>
+</nav>
 
-    </div>
+<button id="menuToggle" class="nav-toggle">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+</div>
+
 </header>
 
-<nav class="nav-drawer" id="navDrawer">
-    <button class="close-drawer" id="closeDrawer">
-        <i class="fa-solid fa-xmark"></i>
-    </button>
+<nav id="navDrawer" class="nav-drawer">
+<button id="closeDrawer">
+<i class="fa-solid fa-xmark"></i>
+</button>
 
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="discover.html">Discover</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="join.html">Join</a></li>
-    </ul>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="discover.html">Discover</a></li>
+<li><a href="directory.html">Directory</a></li>
+<li><a href="join.html">Join</a></li>
+</ul>
+
 </nav>
 
 <main>
 
 <section class="hero-banner">
 
-    <img src="images/hero.jpg"
-         alt="JJ COMPANY Enterprise"
-         style="width:100%;max-height:450px;object-fit:cover;">
+<img src="images/hero.webp" alt="JJ COMPANY Enterprise Hero Image">
 
-    <div class="hero-content">
+<div class="hero-text">
 
-        <h1>Welcome to JJ COMPANY Enterprise</h1>
+<h1>Welcome to JJ COMPANY Enterprise</h1>
 
-        <p>
-            Supporting businesses, innovation, networking and economic growth in Nairobi, Kenya.
-        </p>
+<p>
+Connecting businesses, entrepreneurs and professionals to grow the local economy.
+</p>
 
-        <a href="join.html" class="join-btn">
-            Join the Chamber
-        </a>
+<a href="join.html" class="join-button">
+Join the Chamber
+</a>
 
-    </div>
+</div>
 
 </section>
 
 <section class="home-grid">
 
-    <article class="card">
+<div class="card">
 
-        <h2>
-            <i class="fa-solid fa-calendar"></i>
-            Events
-        </h2>
+<h2>Events</h2>
 
-        <p>
-            Join us this month for business networking, entrepreneurship workshops,
-            and investment forums hosted by JJ COMPANY Enterprise.
-        </p>
+<p>
+Business Networking Forum - Thursday 6:00 PM.
+</p>
 
-    </article>
+<p>
+Entrepreneurship Workshop - Saturday 10:00 AM.
+</p>
 
-    <article class="card">
+</div>
 
-        <h2>
-            <i class="fa-solid fa-cloud-sun"></i>
-            Current Weather
-        </h2>
+<div class="card">
 
-        <p id="temperature">Loading...</p>
+<h2>Current Weather</h2>
 
-        <p id="description">Loading...</p>
+<p id="weather-temp">Loading...</p>
 
-    </article>
+<p id="weather-desc"></p>
 
-    <article class="card">
+<p id="weather-forecast"></p>
 
-        <h2>
-            <i class="fa-solid fa-star"></i>
-            Member Spotlights
-        </h2>
+</div>
 
-        <div id="spotlights">
+<div class="card">
 
-        </div>
+<h2>Member Spotlights</h2>
 
-    </article>
+<div id="spotlights">
+
+<!-- Loaded by JavaScript -->
+
+</div>
+
+</div>
 
 </section>
 
@@ -126,49 +121,53 @@
 
 <footer class="wireframe-footer">
 
-    <div class="footer-container">
+<div class="footer-container">
 
-        <div>
+<div>
 
-            <strong>JJ COMPANY Enterprise</strong>
+<h3>JJ COMPANY Enterprise</h3>
 
-            <p>Nairobi, Kenya</p>
+<p>Zimmerman Ward</p>
 
-            <p>Zimmerman Ward</p>
+<p>Nairobi, Kenya</p>
 
-            <p>info@jjcompany.org</p>
+<p>info@jjcompany.org</p>
 
-            <p>+254 712 345 678</p>
+<p>+254 712 345 678</p>
 
-        </div>
+</div>
 
-        <div class="social-icons">
+<div class="social-icons">
 
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+<a href="#"><i class="fa-brands fa-facebook"></i></a>
 
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+<a href="#"><i class="fa-brands fa-linkedin"></i></a>
 
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
 
-        </div>
+<a href="#"><i class="fa-brands fa-youtube"></i></a>
 
-        <div>
+</div>
 
-            <p>WDD231 Chamber Project</p>
+<div>
 
-            <p>Joseph John</p>
+<p>WDD231 Chamber Project</p>
 
-            <p>&copy; <span id="currentYear"></span> JJ COMPANY Enterprise</p>
+<p>Joseph John</p>
 
-            <p>Last Modified: <span id="lastModified"></span></p>
+<p>&copy; <span id="currentYear"></span> JJ COMPANY Enterprise</p>
 
-        </div>
+<p>Last Modified:
+<span id="lastModified"></span>
+</p>
 
-    </div>
+</div>
+
+</div>
 
 </footer>
 
-<script src="js/index.js" defer></script>
+<script src="js/index.js"></script>
 
 </body>
 </html>
