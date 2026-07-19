@@ -1,65 +1,48 @@
 [
   {
-    "name": "JJ Web Systems",
-    "tagline": "Innovative Web & UI Architectures",
-    "address": "2115 S Vista Avenue, Boise ID 83705",
-    "phone": "(208) 342-9386",
-    "website": "https://jjwebsystems.example.com",
-    "image": "idweb.png",
-    "membership": 3
+    "name": "Beacon Media Group",
+    "logo": "images/beacon.jpg",
+    "address": "890 Enterprise Way, Nairobi",
+    "phone": "+254 20 555 0192",
+    "website": "https://beaconmedia.example.com",
+    "membershipLevel": "Gold",
+    "description": "Leading digital marketing and corporate branding agency."
   },
   {
     "name": "Surge Enterprise Design",
-    "tagline": "Scalable Digital Performance Engineering",
-    "address": "4072 E Arch Drive, Meridian ID 83646",
-    "phone": "(208) 631-0640",
+    "logo": "images/surge.jpg",
+    "address": "4072 E Arch Drive, Nairobi",
+    "phone": "+254 20 631 0640",
     "website": "https://www.surgeenterprise.example.com",
-    "image": "surge.png",
-    "membership": 2
+    "membershipLevel": "Silver",
+    "description": "High-end UI/UX architecture and custom engineering layout solutions."
   },
   {
-    "name": "Graphic Zen Agency",
-    "tagline": "Sleek Corporate Branding Elements",
-    "address": "1788 E Summerplace Court, Meridian ID 83646",
-    "phone": "(208) 631-4984",
-    "website": "https://graphiczen.example.com",
-    "image": "graphiczen.png",
-    "membership": 1
+    "name": "JJ Web Systems",
+    "logo": "images/jjweb.jpg",
+    "address": "2115 S Vista Avenue, Nairobi",
+    "phone": "+254 20 424 3111",
+    "website": "https://jjwebsystems.example.com",
+    "membershipLevel": "Gold",
+    "description": "Cloud infrastructure and scalable web technology frameworks."
   },
   {
-    "name": "Apex Tech Consulting",
-    "tagline": "Cloud Infrastructure Optimization Solutions",
-    "address": "1215 3rd Street, Nampa ID 83651",
-    "phone": "(208) 461-5070",
-    "website": "https://apexconsulting.example.com",
-    "image": "apex.png",
-    "membership": 3
+    "name": "PETER & JOHN Repair",
+    "logo": "images/peterjohn.jpg",
+    "address": "Moi Avenue, Nairobi",
+    "phone": "+254 712 345 678",
+    "website": "https://peterjohnrepair.example.com",
+    "membershipLevel": "Bronze",
+    "description": "Expert smartphone diagnostics and hardware restoration."
   },
   {
-    "name": "Beacon Media Group",
-    "tagline": "Strategic Local Business Outreach",
-    "address": "890 Enterprise Way, Boise ID 83702",
-    "phone": "(208) 555-0192",
-    "website": "https://beaconmedia.example.com",
-    "image": "beacon.png",
-    "membership": 2
-  },
-  {
-    "name": "Vanguard Security",
-    "tagline": "Corporate Data Defense Protocols",
-    "address": "554 Security Lane, Caldwell ID 83605",
-    "phone": "(208) 555-0143",
-    "website": "https://vanguardsecure.example.com",
-    "image": "vanguard.png",
-    "membership": 1
-  },
-  {
-    "name": "Quantum Analytics",
-    "tagline": "Precision Financial Data Frameworks",
-    "address": "102 Century Boulevard, Eagle ID 83616",
-    "phone": "(208) 555-0175",
-    "website": "https://quantanalytics.example.com",
-    "image": "quantum.png",
-    "membership": 3
+    "name": "Sonnie Shoe Planet",
+    "logo": "images/sonnieshoes.jpg",
+    "address": "Biashara Street, Nairobi",
+    "phone": "+254 722 987 654",
+    "website": "https://sonnieshoeplanet.example.com",
+    "membershipLevel": "Silver",
+    "description": "Premium imported footwear and athletic distribution."
   }
 ]
+
