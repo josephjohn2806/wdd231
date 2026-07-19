@@ -1,24 +1,31 @@
 /* ==========================================================================
-   JJ COMPANY Enterprise - Core Consolidated Design System Engine
+   JJ COMPANY Enterprise - Audited & Streamlined Unified Design System
    ========================================================================== */
 
 :root {
-    --primary: #0a2540;          /* Premium corporate midnight blue */
-    --accent: #2563eb;           /* High-visibility primary brand action blue */
-    --accent-hover: #1d4ed8;     /* Interaction depth state blue tint */
-    --gold: #d97706;             /* Custom typography gold color */
-    --silver: #475569;           /* Custom typography silver color */
-    --bg-light: #f8fafc;         /* Structural off-white workspace canvas background */
+    /* Standardized Design Tokens - Colors */
+    --primary: #0a2540;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --gold: #d97706;
+    --silver: #475569;
+    --bg-light: #f8fafc;
     --card-bg: #ffffff;
-    --text-main: #1e293b;        /* High-contrast content color readability element */
-    --text-muted: #64748b;       /* Metadata labels context color spacing */
-    --border-color: #e2e8f0;     /* Layout component grid guidelines separation rule */
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --shadow-color: #0000000d; /* Standardized transparent hex format to eliminate RGB */
+    --gold-bg: #fef3c7;
+    --silver-bg: #f1f5f9;
+    --error-color: #dc2626;
+
+    /* Interface Structural Mechanics */
     --radius-lg: 12px;
     --radius-md: 8px;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
 }
 
-/* Base Optimization Parameter Rules Reset */
+/* Global Document Normalization & Base Architecture */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -33,9 +40,18 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Header UI Layout Block */
+/* Unified Layout Architecture Structural Scaffolding */
+.header-container, .content-wrapper, .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 20px;
+}
+.content-wrapper { padding: 30px 20px; }
+.footer-container { padding: 40px 20px; }
+
+/* Structural Navigation Component Mechanics */
 .corp-header {
-    background: #ffffff;
+    background: var(--card-bg);
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
@@ -43,18 +59,12 @@ body {
 }
 
 .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 16px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.brand-group {
-    display: flex;
-    flex-direction: column;
-}
+.brand-group { display: flex; flex-direction: column; }
 
 .main-logo-text {
     font-size: 1.4rem;
@@ -62,11 +72,7 @@ body {
     font-weight: 700;
     letter-spacing: -0.5px;
 }
-
-.main-logo-text i {
-    color: var(--accent);
-    margin-right: 6px;
-}
+.main-logo-text i { color: var(--accent); margin-right: 6px; }
 
 .sub-logo-text {
     font-size: 0.75rem;
@@ -76,12 +82,10 @@ body {
     margin-top: 2px;
 }
 
-/* Header Main Navigation Rules Context */
-.desktop-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 28px;
-}
+/* Navigation System Nodes */
+.desktop-nav ul, .social-icons { display: flex; gap: 28px; }
+.desktop-nav ul { list-style: none; }
+.social-icons { gap: 16px; }
 
 .desktop-nav a {
     color: var(--text-main);
@@ -90,79 +94,40 @@ body {
     font-size: 0.95rem;
     transition: color 0.2s ease;
 }
-
-.desktop-nav a:hover, .desktop-nav .active {
+.desktop-nav a:hover, .desktop-nav .active, .spotlight-card a:hover {
     color: var(--accent);
 }
 
-.nav-toggle {
-    display: none;
+.nav-toggle, .close-drawer {
     background: none;
     border: none;
-    color: var(--primary);
     font-size: 1.5rem;
     cursor: pointer;
-    padding: 4px;
 }
+.nav-toggle { display: none; color: var(--primary); padding: 4px; }
+.close-drawer { align-self: flex-end; color: var(--text-main); margin-bottom: 30px; }
 
-/* Slide-out Mobile Navigation Drawer System Overhaul Layout */
+/* Responsive Overlay Menu Drawer Setup */
 .nav-drawer {
     position: fixed;
     top: 0;
     right: -100%;
     width: 280px;
     height: 100%;
-    background: #ffffff;
-    box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+    background: var(--card-bg);
+    box-shadow: -4px 0 24px var(--shadow-color);
     z-index: 2000;
     display: flex;
     flex-direction: column;
     padding: 24px;
     transition: right 0.3s ease-in-out;
 }
+.nav-drawer.open { right: 0; }
+.nav-drawer ul { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+.nav-drawer a { display: block; color: var(--text-main); text-decoration: none; font-size: 1.1rem; font-weight: 500; padding: 8px 0; }
+.nav-drawer a:hover, .nav-drawer a.active { color: var(--accent); }
 
-.nav-drawer.open {
-    right: 0;
-}
-
-.close-drawer {
-    align-self: flex-end;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--text-main);
-    cursor: pointer;
-    margin-bottom: 30px;
-}
-
-.nav-drawer ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.nav-drawer a {
-    display: block;
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: 8px 0;
-}
-
-.nav-drawer a:hover, .nav-drawer a.active {
-    color: var(--accent);
-}
-
-/* Standard Content Workspace Frame */
-.content-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 20px;
-}
-
-/* Hero Content Structural Box (Stacked to prevent overlap errors completely) */
+/* Compact Hero Content Visual Module */
 .hero-banner {
     position: relative;
     background-color: var(--primary);
@@ -176,70 +141,42 @@ body {
 
 .hero-image-bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     object-fit: cover;
     opacity: 0.25;
     pointer-events: none;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 10;
-    max-width: 640px;
-    padding: 40px;
-    color: #ffffff;
-}
+.hero-content { position: relative; z-index: 10; max-width: 640px; padding: 40px; color: var(--card-bg); }
+.hero-content h1 { font-size: 2.3rem; font-weight: 700; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.5px; }
+.hero-content p { font-size: 1.1rem; color: var(--border-color); line-height: 1.6; }
 
-.hero-content h1 {
-    font-size: 2.3rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
-}
-
-.hero-content p {
-    font-size: 1.1rem;
-    color: #cbd5e1;
-    line-height: 1.6;
-}
-
-/* Call to Action Button Core Elements */
+/* Global Call To Action Anchor Controls */
 .join-btn {
     display: inline-block;
     margin-top: 24px;
     background-color: var(--accent);
-    color: #ffffff;
+    color: var(--card-bg);
     text-decoration: none;
     padding: 12px 28px;
     border-radius: var(--radius-md);
     font-weight: 600;
     font-size: 0.95rem;
     transition: background-color 0.2s ease, transform 0.1s ease;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 4px 12px var(--shadow-color);
 }
+.join-btn:hover { background-color: var(--accent-hover); transform: translateY(-1px); }
+.join-btn i { margin-right: 6px; }
 
-.join-btn:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-1px);
-}
-
-.join-btn i {
-    margin-right: 6px;
-}
-
-/* Main Home Application Layout Cards System Grid Dashboard */
-.home-grid {
+/* Grid Dashboard Infrastructure Layout */
+.home-grid, .spotlights-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 28px;
 }
 
-/* Uniform Content Display Cards Layout */
-.card {
+/* Base Unified Card Formatting System */
+.card, .spotlight-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
@@ -258,311 +195,113 @@ body {
     align-items: center;
     gap: 8px;
 }
+.card h2 i { color: var(--accent); }
 
-.card h2 i {
-    color: var(--accent);
-}
+.section-divider, .card-divider { border: 0; height: 1px; background: var(--border-color); }
+.section-divider { margin: 20px 0; }
+.card-divider { margin: auto 0 12px 0; }
 
-.section-divider {
-    border: 0;
-    height: 1px;
-    background: var(--border-color);
-    margin: 20px 0;
-}
+.loading-placeholder { color: var(--text-muted); font-style: italic; font-size: 0.9rem; }
 
-.loading-placeholder {
-    color: var(--text-muted);
-    font-style: italic;
-    font-size: 0.9rem;
-}
+/* Events Module Data Presenter */
+.events-list { display: flex; flex-direction: column; gap: 16px; }
+.event-item { padding-left: 12px; border-left: 3px solid var(--accent); }
+.event-date { display: block; font-size: 0.8rem; color: var(--text-muted); font-weight: 500; margin-bottom: 2px; }
 
-/* Events Presentation Block List Structure */
-.events-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
+/* Current Dynamic Weather Platform Interface Elements */
+.current-weather-display, .forecast-day-card { display: flex; align-items: center; }
+.current-weather-display { gap: 16px; }
+.weather-icon { width: 64px; height: 64px; background: var(--bg-light); border-radius: 50%; }
+.weather-info { display: flex; flex-direction: column; }
+.weather-temp { font-size: 1.8rem; font-weight: 700; color: var(--primary); line-height: 1; }
+.weather-desc { font-size: 0.95rem; color: var(--text-muted); margin-top: 4px; }
 
-.event-item {
-    padding-left: 12px;
-    border-left: 3px solid var(--accent);
-}
+.card h3, .spotlight-card h3 { font-size: 1rem; color: var(--text-main); font-weight: 700; }
+.card h3 { margin-bottom: 12px; }
 
-.event-date {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    font-weight: 500;
-    margin-bottom: 2px;
-}
-
-/* Real-time Weather Integration UI Formatting Nodes */
-.current-weather-display {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.weather-icon {
-    width: 64px;
-    height: 64px;
-    background: var(--bg-light);
-    border-radius: 50%;
-}
-
-.weather-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.weather-temp {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary);
-    line-height: 1;
-}
-
-.weather-desc {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    margin-top: 4px;
-}
-
-.card h3 {
-    font-size: 1rem;
-    color: var(--text-main);
-    margin-bottom: 12px;
-    font-weight: 700;
-}
-
-.forecast-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 10px;
-}
-
+/* Future Forecast Weather Nodes Layout Grid */
+.forecast-grid { display: flex; justify-content: space-between; gap: 10px; margin-top: 10px; }
 .forecast-day-card {
     flex: 1;
     background: var(--bg-light);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.day-title {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    text-transform: uppercase;
-}
-
-.forecast-day-card img {
-    width: 40px;
-    height: 40px;
-}
-
-.day-temp {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--primary);
-}
-
-/* Spotlight Subgrid Framework Modules */
-.visual-card {
-    grid-column: 1 / -1; /* Make spotlights stretch across the full width */
-}
-
-.spotlights-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
-
-.spotlight-card {
-    background: var(--bg-light);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 20px;
-    position: relative;
-    display: flex;
     flex-direction: column;
 }
+.day-title { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+.forecast-day-card img { width: 40px; height: 40px; }
+.day-temp { font-size: 0.95rem; font-weight: 700; color: var(--primary); }
 
-/* Membership Accent Borders */
-.border-accent-gold { border-top: 4px solid #d97706; }
-.border-accent-silver { border-top: 4px solid #64748b; }
+/* Directory Map Framework Block Row Module */
+.visual-card { grid-column: 1 / -1; }
+.spotlights-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.spotlight-card { background: var(--bg-light); border-radius: var(--radius-md); padding: 20px; position: relative; }
+
+/* Structural Specific Membership Level Rules */
+.border-accent-gold { border-top: 4px solid var(--gold); }
+.border-accent-silver { border-top: 4px solid var(--silver); }
 
 .spotlight-badge {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    font-size: 0.7rem;
-    font-weight: 700;
+    top: 12px; right: 12px;
+    font-size: 0.7rem; font-weight: 700;
     text-transform: uppercase;
     padding: 2px 8px;
     border-radius: 12px;
     letter-spacing: 0.5px;
 }
+.spotlight-badge.gold { background: var(--gold-bg); color: var(--gold); }
+.spotlight-badge.silver { background: var(--silver-bg); color: var(--silver); }
 
-.spotlight-badge.gold { background: #fef3c7; color: #d97706; }
-.spotlight-badge.silver { background: #f1f5f9; color: #475569; }
+.spotlight-card h3 { font-size: 1.15rem; color: var(--primary); margin: 4px 0 8px 0; padding-right: 80px; }
+.spotlight-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4; }
 
-.spotlight-card h3 {
-    font-size: 1.15rem;
-    color: var(--primary);
-    margin: 4px 0 8px 0;
-    padding-right: 80px; /* Leave space for the badge */
-}
+.spotlight-card p { font-size: 0.85rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+.spotlight-card p i { color: var(--text-muted); width: 14px; }
+.spotlight-card a { color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-top: 4px; display: inline-block; }
 
-.spotlight-desc {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-    line-height: 1.4;
-}
+.error-msg { color: var(--error-color); font-size: 0.85rem; font-style: italic; }
 
-.card-divider {
-    border: 0;
-    height: 1px;
-    background: #e2e8f0;
-    margin: auto 0 12px 0; /* Pushes contact info to the bottom */
-}
-
-.spotlight-card p {
-    font-size: 0.85rem;
-    color: var(--text-main);
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.spotlight-card p i {
-    color: var(--text-muted);
-    width: 14px;
-}
-
-.spotlight-card a {
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-top: 4px;
-    display: inline-block;
-}
-
-.spotlight-card a:hover {
-    color: var(--accent-hover);
-    text-decoration: underline;
-}
-
-.error-msg {
-    color: #dc2626;
-    font-size: 0.85rem;
-    font-style: italic;
-}
-
-/* Global Footer Alignment Framework Layout */
+/* Standard Framework Application Footer Elements */
 .wireframe-footer {
     background: var(--primary);
-    color: #94a3b8;
+    color: var(--text-muted);
     margin-top: 60px;
     font-size: 0.85rem;
     border-top: 3px solid var(--accent);
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    align-items: center;
-}
-
-.footer-left p {
-    margin-top: 6px;
-}
-
-.footer-left i {
-    margin-right: 4px;
-    color: #cbd5e1;
-}
-
-.footer-center {
-    display: flex;
-    justify-content: center;
-}
-
-.social-icons {
-    display: flex;
-    gap: 16px;
-}
+.footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; align-items: center; }
+.footer-left p { margin-top: 6px; }
+.footer-left i { margin-right: 4px; color: var(--border-color); }
+.footer-center { display: flex; justify-content: center; }
 
 .icon-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: #1e293b;
-    color: #cbd5e1;
+    width: 36px; height: 36px;
+    background: var(--text-main);
+    color: var(--border-color);
     border-radius: 50%;
     text-decoration: none;
     transition: background 0.2s ease, color 0.2s ease;
 }
+.icon-link:hover { background: var(--accent); color: var(--card-bg); }
+.footer-right { text-align: right; }
+.footer-right p { margin-bottom: 4px; }
 
-.icon-link:hover {
-    background: var(--accent);
-    color: #ffffff;
-}
-
-.footer-right {
-    text-align: right;
-}
-
-.footer-right p {
-    margin-bottom: 4px;
-}
-
-/* Core Responsiveness Layout Rules Breakpoints */
+/* Media Breakpoint Query Framework Engine rules */
 @media (max-width: 768px) {
-    .desktop-nav {
-        display: none;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    .hero-banner {
-        min-height: auto;
-    }
-
-    .hero-content {
-        padding: 30px 20px;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 24px;
-    }
-
-    .footer-right {
-        text-align: center;
-    }
+    .desktop-nav, .footer-right { display: none; }
+    .nav-toggle { display: block; }
+    .hero-banner { min-height: auto; }
+    .hero-content { padding: 30px 20px; }
+    .hero-content h1 { font-size: 1.8rem; }
+    .footer-container { grid-template-columns: 1fr; text-align: center; gap: 24px; }
 }
+
 
 
 
