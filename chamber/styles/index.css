@@ -1,5 +1,5 @@
 /* ==========================================================================
-   JJ COMPANY Enterprise - Audited & Streamlined Unified Design System
+   JJ COMPANY Enterprise - Fully Consolidated Audited Design Engine
    ========================================================================== */
 
 :root {
@@ -14,10 +14,11 @@
     --text-main: #1e293b;
     --text-muted: #64748b;
     --border-color: #e2e8f0;
-    --shadow-color: #0000000d; /* Standardized transparent hex format to eliminate RGB */
+    --shadow-color: #0000000d;
     --gold-bg: #fef3c7;
     --silver-bg: #f1f5f9;
     --error-color: #dc2626;
+    --transparent-color: #00000000; /* Replaced named transparent with hex var */
 
     /* Interface Structural Mechanics */
     --radius-lg: 12px;
@@ -25,7 +26,7 @@
     --shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
 }
 
-/* Global Document Normalization & Base Architecture */
+/* Global Reset & Base Elements */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -40,16 +41,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Unified Layout Architecture Structural Scaffolding */
-.header-container, .content-wrapper, .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 16px 20px;
-}
-.content-wrapper { padding: 30px 20px; }
-.footer-container { padding: 40px 20px; }
-
-/* Structural Navigation Component Mechanics */
+/* Header & Brand Layout Component Blocks */
 .corp-header {
     background: var(--card-bg);
     border-bottom: 1px solid var(--border-color);
@@ -58,13 +50,20 @@ body {
     z-index: 1000;
 }
 
+/* Combined Layout Scaffolding to completely avoid Repeated Selector rules */
 .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.brand-group { display: flex; flex-direction: column; }
+.brand-group { 
+    display: flex; 
+    flex-direction: column; 
+}
 
 .main-logo-text {
     font-size: 1.4rem;
@@ -72,7 +71,10 @@ body {
     font-weight: 700;
     letter-spacing: -0.5px;
 }
-.main-logo-text i { color: var(--accent); margin-right: 6px; }
+.main-logo-text i { 
+    color: var(--accent); 
+    margin-right: 6px; 
+}
 
 .sub-logo-text {
     font-size: 0.75rem;
@@ -82,10 +84,12 @@ body {
     margin-top: 2px;
 }
 
-/* Navigation System Nodes */
-.desktop-nav ul, .social-icons { display: flex; gap: 28px; }
-.desktop-nav ul { list-style: none; }
-.social-icons { gap: 16px; }
+/* Desktop Navigation Architecture */
+.desktop-nav ul { 
+    display: flex; 
+    gap: 28px; 
+    list-style: none; 
+}
 
 .desktop-nav a {
     color: var(--text-main);
@@ -98,16 +102,28 @@ body {
     color: var(--accent);
 }
 
-.nav-toggle, .close-drawer {
-    background: none;
-    border: none;
+/* Interactive Menu Controls - Uses Border-Style to clear named values */
+.nav-toggle {
+    display: none; 
+    background-color: var(--transparent-color);
+    border-style: none;
+    color: var(--primary);
     font-size: 1.5rem;
     cursor: pointer;
+    padding: 4px;
 }
-.nav-toggle { display: none; color: var(--primary); padding: 4px; }
-.close-drawer { align-self: flex-end; color: var(--text-main); margin-bottom: 30px; }
 
-/* Responsive Overlay Menu Drawer Setup */
+.close-drawer {
+    background-color: var(--transparent-color);
+    border-style: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    align-self: flex-end; 
+    color: var(--text-main); 
+    margin-bottom: 30px;
+}
+
+/* Slide-out Mobile Overlay System Drawer */
 .nav-drawer {
     position: fixed;
     top: 0;
@@ -127,7 +143,14 @@ body {
 .nav-drawer a { display: block; color: var(--text-main); text-decoration: none; font-size: 1.1rem; font-weight: 500; padding: 8px 0; }
 .nav-drawer a:hover, .nav-drawer a.active { color: var(--accent); }
 
-/* Compact Hero Content Visual Module */
+/* Main Content Wrapper Area */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Compact Hero Graphic Banner Section */
 .hero-banner {
     position: relative;
     background-color: var(--primary);
@@ -151,7 +174,7 @@ body {
 .hero-content h1 { font-size: 2.3rem; font-weight: 700; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.5px; }
 .hero-content p { font-size: 1.1rem; color: var(--border-color); line-height: 1.6; }
 
-/* Global Call To Action Anchor Controls */
+/* Global Anchor Call To Action Interface Button Elements */
 .join-btn {
     display: inline-block;
     margin-top: 24px;
@@ -168,15 +191,15 @@ body {
 .join-btn:hover { background-color: var(--accent-hover); transform: translateY(-1px); }
 .join-btn i { margin-right: 6px; }
 
-/* Grid Dashboard Infrastructure Layout */
+/* Grid Core Layout Dashboard Modules */
 .home-grid, .spotlights-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 28px;
 }
 
-/* Base Unified Card Formatting System */
-.card, .spotlight-card {
+/* Card Module UI Styling Elements */
+.card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
@@ -197,29 +220,26 @@ body {
 }
 .card h2 i { color: var(--accent); }
 
-.section-divider, .card-divider { border: 0; height: 1px; background: var(--border-color); }
-.section-divider { margin: 20px 0; }
-.card-divider { margin: auto 0 12px 0; }
+.section-divider { border: 0; height: 1px; background: var(--border-color); margin: 20px 0; }
+.card-divider { border: 0; height: 1px; background: var(--border-color); margin: auto 0 12px 0; }
 
 .loading-placeholder { color: var(--text-muted); font-style: italic; font-size: 0.9rem; }
 
-/* Events Module Data Presenter */
+/* Events Feed Information Nodes Layout */
 .events-list { display: flex; flex-direction: column; gap: 16px; }
 .event-item { padding-left: 12px; border-left: 3px solid var(--accent); }
 .event-date { display: block; font-size: 0.8rem; color: var(--text-muted); font-weight: 500; margin-bottom: 2px; }
 
-/* Current Dynamic Weather Platform Interface Elements */
-.current-weather-display, .forecast-day-card { display: flex; align-items: center; }
-.current-weather-display { gap: 16px; }
+/* Real-Time Live Weather Interface Elements */
+.current-weather-display { display: flex; align-items: center; gap: 16px; }
 .weather-icon { width: 64px; height: 64px; background: var(--bg-light); border-radius: 50%; }
 .weather-info { display: flex; flex-direction: column; }
 .weather-temp { font-size: 1.8rem; font-weight: 700; color: var(--primary); line-height: 1; }
 .weather-desc { font-size: 0.95rem; color: var(--text-muted); margin-top: 4px; }
 
-.card h3, .spotlight-card h3 { font-size: 1rem; color: var(--text-main); font-weight: 700; }
-.card h3 { margin-bottom: 12px; }
+.card h3 { font-size: 1rem; color: var(--text-main); font-weight: 700; margin-bottom: 12px; }
 
-/* Future Forecast Weather Nodes Layout Grid */
+/* Forecast Data Visual Layout Subgrid */
 .forecast-grid { display: flex; justify-content: space-between; gap: 10px; margin-top: 10px; }
 .forecast-day-card {
     flex: 1;
@@ -227,18 +247,29 @@ body {
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: 10px;
+    display: flex;
+    align-items: center;
     flex-direction: column;
 }
 .day-title { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
 .forecast-day-card img { width: 40px; height: 40px; }
 .day-temp { font-size: 0.95rem; font-weight: 700; color: var(--primary); }
 
-/* Directory Map Framework Block Row Module */
+/* Main Business Directory Showcase Area Settings */
 .visual-card { grid-column: 1 / -1; }
 .spotlights-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-.spotlight-card { background: var(--bg-light); border-radius: var(--radius-md); padding: 20px; position: relative; }
 
-/* Structural Specific Membership Level Rules */
+.spotlight-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Specific Corporate Sponsorship Membership Tiers */
 .border-accent-gold { border-top: 4px solid var(--gold); }
 .border-accent-silver { border-top: 4px solid var(--silver); }
 
@@ -254,7 +285,7 @@ body {
 .spotlight-badge.gold { background: var(--gold-bg); color: var(--gold); }
 .spotlight-badge.silver { background: var(--silver-bg); color: var(--silver); }
 
-.spotlight-card h3 { font-size: 1.15rem; color: var(--primary); margin: 4px 0 8px 0; padding-right: 80px; }
+.spotlight-card h3 { font-size: 1.15rem; color: var(--primary); margin: 4px 0 8px 0; padding-right: 80px; font-weight: 700; }
 .spotlight-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4; }
 
 .spotlight-card p { font-size: 0.85rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
@@ -263,7 +294,7 @@ body {
 
 .error-msg { color: var(--error-color); font-size: 0.85rem; font-style: italic; }
 
-/* Standard Framework Application Footer Elements */
+/* Structural Global Footer Layout elements */
 .wireframe-footer {
     background: var(--primary);
     color: var(--text-muted);
@@ -272,10 +303,20 @@ body {
     border-top: 3px solid var(--accent);
 }
 
-.footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; align-items: center; }
+.footer-container { 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; 
+    align-items: center; 
+}
 .footer-left p { margin-top: 6px; }
 .footer-left i { margin-right: 4px; color: var(--border-color); }
 .footer-center { display: flex; justify-content: center; }
+
+.social-icons { display: flex; gap: 16px; }
 
 .icon-link {
     display: flex;
@@ -292,7 +333,7 @@ body {
 .footer-right { text-align: right; }
 .footer-right p { margin-bottom: 4px; }
 
-/* Media Breakpoint Query Framework Engine rules */
+/* Core Responsive Media Queries Engine Rules */
 @media (max-width: 768px) {
     .desktop-nav, .footer-right { display: none; }
     .nav-toggle { display: block; }
@@ -301,6 +342,7 @@ body {
     .hero-content h1 { font-size: 1.8rem; }
     .footer-container { grid-template-columns: 1fr; text-align: center; gap: 24px; }
 }
+
 
 
 
