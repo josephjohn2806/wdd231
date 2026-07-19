@@ -1,16 +1,18 @@
 /* ==========================================================================
-   JJ COMPANY Enterprise - Clean Modernist Format
+   JJ COMPANY Enterprise - Clean Modernist Layout Configuration
+   International Professional Design Standard
    ========================================================================== */
 
 :root {
-    --primary: #0a2540;       /* Ultra-premium deep navy (Stripe/Apple style) */
-    --accent: #2563eb;        /* Vibrant brand blue for links/buttons */
-    --bg-light: #f8fafc;      /* Crisp, clean slate-tinted white */
+    --primary: #0a2540;       /* Ultra-premium dark slate navy */
+    --accent: #2563eb;        /* High-contrast brand action blue */
+    --bg-light: #f8fafc;      /* Clean soft grey background canvas */
     --card-bg: #ffffff;
-    --text-main: #1e293b;     /* Dark charcoal for premium readability */
-    --text-muted: #64748b;    /* Elegant muted gray for subtext */
-    --border-color: #e2e8f0;  /* Razor-thin clean borders */
-    --radius: 8px;
+    --text-main: #1e293b;     /* Primary high-contrast readability color */
+    --text-muted: #64748b;    /* Secondary metadata gray text selection */
+    --border-color: #e2e8f0;  /* Standard UI component clean layout dividing lines */
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.08);
 }
 
 * {
@@ -23,10 +25,11 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-light);
     color: var(--text-main);
-    line-height: 1.6;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Header styling */
+/* Header & Core Site Brand Framework */
 .corp-header {
     background: #ffffff;
     border-bottom: 1px solid var(--border-color);
@@ -38,26 +41,29 @@ body {
 .header-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 16px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .brand-group h2, .main-logo-text {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     color: var(--primary);
     font-weight: 800;
     letter-spacing: -0.5px;
 }
 
 .sub-logo-text {
+    display: block;
     font-size: 0.75rem;
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
 }
 
+/* Navbar Actions Configuration */
 .desktop-nav ul {
     display: flex;
     list-style: none;
@@ -69,6 +75,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
+    transition: color 0.2s ease;
 }
 
 .desktop-nav a:hover, .desktop-nav .active {
@@ -76,68 +83,111 @@ body {
 }
 
 .nav-toggle {
-    display: none;
+    display: none; /* Safely managed natively via media optimization query below */
     background: none;
     border: none;
     color: var(--primary);
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    line-height: 1;
 }
 
-/* Completely New Hero Block (No Text Overlap) */
+/* Mobile Interactive Navigation Drawer Frame */
+.nav-drawer {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    background: #ffffff;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-drawer.show {
+    max-height: 260px; /* Safe expanded boundaries box wrapper spacing */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-drawer ul {
+    list-style: none;
+    padding: 12px 20px;
+}
+
+.nav-drawer li {
+    margin: 4px 0;
+}
+
+.nav-drawer a {
+    display: block;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 10px 0;
+}
+
+.nav-drawer a:hover, .nav-drawer a.active {
+    color: var(--accent);
+}
+
+/* Premium Minimalist Hero block Container (Zero Text Overlap Layout) */
 .hero-banner {
-    background-color: var(--primary); /* Solid, high-end corporate backdrop */
+    background-color: var(--primary); 
     color: #ffffff;
-    padding: 60px 20px;
+    padding: 64px 20px;
     text-align: center;
-    position: relative;
 }
 
-/* Hide the background image or force it to be an optional elegant accent */
+/* Strips absolute background scaling to stop layout collision bugs completely */
 .hero-banner img {
-    display: none; /* Removes the chaotic background image completely */
+    display: none;
 }
 
-.hero-text, .hero-content {
+.hero-content {
     max-width: 800px;
     margin: 0 auto;
 }
 
-.hero-text h1, .hero-content h1 {
-    font-size: 2.2rem;
+.hero-content h1 {
+    font-size: 2.25rem;
     font-weight: 800;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
+    letter-spacing: -0.75px;
+    line-height: 1.25;
     margin-bottom: 16px;
     color: #ffffff;
 }
 
-.hero-text p, .hero-content p {
+.hero-content p {
     font-size: 1.1rem;
-    color: #94a3b8; /* Clear, high-contrast readability */
+    color: #94a3b8; 
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* Clean Accent Button */
-.join-button, .join-btn {
+/* Interactive Brand Button */
+.join-btn {
     display: inline-block;
     margin-top: 24px;
     background-color: var(--accent);
     color: #ffffff;
     text-decoration: none;
     padding: 12px 32px;
-    border-radius: var(--radius);
+    border-radius: 6px;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: background 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.join-button:hover, .join-btn:hover {
+.join-btn:hover {
     background-color: #1d4ed8;
 }
 
-/* Main Minimalist Cards Layout */
+.join-btn:active {
+    transform: scale(0.98);
+}
+
+/* Content Frame Structuring Grid Layout */
 .home-grid {
     max-width: 1100px;
     margin: 40px auto;
@@ -152,18 +202,28 @@ body {
     border: 1px solid var(--border-color);
     border-radius: var(--radius);
     padding: 30px;
+    box-shadow: var(--shadow);
 }
 
 .card h2 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     color: var(--primary);
     margin-bottom: 20px;
     font-weight: 700;
     border-bottom: 2px solid var(--bg-light);
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
-/* Sleek Business Directory Spotlights */
+.card-content p {
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.card-content p strong {
+    color: var(--primary);
+}
+
+/* Showcase & Spotlights Column Grid Configuration */
 #spotlights {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -174,34 +234,48 @@ body {
     background: var(--bg-light);
     border: 1px solid var(--border-color);
     padding: 20px;
-    border-radius: var(--radius);
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
 }
 
-/* Clean placeholder layout for image spaces */
+/* Fallback protection design style parameters for local files missing images */
 .spotlight img {
     width: 100%;
     height: 150px;
     object-fit: cover;
-    border-radius: calc(var(--radius) - 2px);
-    margin-bottom: 15px;
-    background-color: #cbd5e1; /* If image paths break, it shows a clean gray panel */
+    border-radius: 6px;
+    margin-bottom: 16px;
+    background-color: #cbd5e1; /* Smooth grey backdrop placeholder handles link break states gracefully */
 }
 
 .spotlight h3 {
     font-size: 1.1rem;
     color: var(--primary);
     margin-bottom: 8px;
+    font-weight: 600;
 }
 
 .spotlight p {
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: var(--text-main);
     margin-bottom: 4px;
 }
 
-/* Premium Footer */
+.spotlight a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+.spotlight a:hover {
+    text-decoration: underline;
+}
+
+/* Premium Corporate Footer Layout */
 .wireframe-footer {
     background: var(--primary);
     color: #94a3b8;
@@ -212,30 +286,57 @@ body {
 .footer-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 48px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px;
+    gap: 32px;
 }
 
-/* Responsive Overrides */
+.footer-container h3, .footer-container h4 {
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    font-size: 1.25rem;
+    margin-top: 8px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #94a3b8;
+    transition: color 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+}
+
+/* Mobile Responsiveness Rules Overrides */
 @media (max-width: 768px) {
     .desktop-nav {
         display: none;
     }
     
     .nav-toggle {
-        display: block;
+        display: flex;
     }
     
-    .hero-text h1, .hero-content h1 {
-        font-size: 1.7rem;
+    .hero-content {
+        padding: 16px 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.75rem;
     }
     
     .card {
         padding: 20px;
     }
 }
+
 
 
