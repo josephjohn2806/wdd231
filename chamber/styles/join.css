@@ -1,0 +1,564 @@
+/* ===========================================================
+   JJ Company Enterprise — Join Page
+   Design tokens
+   =========================================================== */
+:root {
+  /* Color */
+  --ink: #22291f;
+  --paper: #f5f2ea;
+  --paper-raised: #ffffff;
+  --pine: #1f4235;
+  --pine-deep: #142a22;
+  --gold: #c98a2c;
+  --gold-deep: #a06f21;
+  --creek: #3d6e75;
+  --line: #d8d2c2;
+  --danger: #a3402f;
+
+  /* Tier colors */
+  --tier-np: #6b7280;
+  --tier-bronze: #a9673a;
+  --tier-silver: #7c8794;
+  --tier-gold: #c98a2c;
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  /* Layout */
+  --max-width: 1180px;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(20, 26, 20, 0.06), 0 8px 24px rgba(20, 26, 20, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><path d="M0 40 Q100 10 200 40 T400 40" stroke="%23e3ddc9" stroke-width="1" fill="none"/><path d="M0 120 Q100 90 200 120 T400 120" stroke="%23e3ddc9" stroke-width="1" fill="none"/><path d="M0 200 Q100 170 200 200 T400 200" stroke="%23e3ddc9" stroke-width="1" fill="none"/><path d="M0 280 Q100 250 200 280 T400 280" stroke="%23e3ddc9" stroke-width="1" fill="none"/><path d="M0 360 Q100 330 200 360 T400 360" stroke="%23e3ddc9" stroke-width="1" fill="none"/></svg>');
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--pine);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ===========================================================
+   Header / Nav
+   =========================================================== */
+.site-header {
+  background: var(--pine-deep);
+  color: var(--paper);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--paper);
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+.brand-tag {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.primary-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.primary-nav a {
+  display: inline-block;
+  padding: 0.5rem 0.85rem;
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border-bottom: 2px solid transparent;
+}
+
+.primary-nav a:hover {
+  border-bottom-color: var(--gold);
+}
+
+.primary-nav a[aria-current="page"] {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ===========================================================
+   Hero
+   =========================================================== */
+.join-hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.75rem 1.25rem 1.25rem;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--creek);
+  margin: 0 0 0.6rem;
+}
+
+.join-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  margin: 0 0 0.6rem;
+  color: var(--pine-deep);
+}
+
+.join-hero p {
+  max-width: 60ch;
+  color: #4a4f42;
+  font-size: 1.05rem;
+}
+
+.contour-rule {
+  width: 120px;
+  height: 14px;
+  margin: 1.1rem 0 0;
+  display: block;
+}
+
+/* ===========================================================
+   Layout: form + membership cards
+   =========================================================== */
+.join-layout {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.5rem 1.25rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 860px) {
+  .join-layout {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: start;
+  }
+}
+
+/* ===========================================================
+   Form
+   =========================================================== */
+.join-form {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.75rem;
+}
+
+.form-section-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--pine-deep);
+  margin: 0 0 1.1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-section-title:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.field {
+  display: block;
+  margin-bottom: 1.15rem;
+}
+
+.field .field-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 0.35rem;
+  color: var(--pine-deep);
+}
+
+.field .hint {
+  display: block;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #6b7062;
+  margin-top: 0.3rem;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #c7c1ae;
+  border-radius: 6px;
+  background: #fffdf9;
+  color: var(--ink);
+}
+
+.field input:invalid:not(:placeholder-shown) {
+  border-color: var(--danger);
+}
+
+.field textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.required-mark {
+  color: var(--danger);
+  margin-left: 0.15rem;
+}
+
+fieldset.membership-fieldset {
+  border: 1px solid #c7c1ae;
+  border-radius: 8px;
+  padding: 0.9rem 1rem 1.05rem;
+  margin: 0 0 1.15rem;
+}
+
+fieldset.membership-fieldset legend {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--pine-deep);
+  padding: 0 0.35rem;
+}
+
+.membership-option {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.membership-option input {
+  margin-top: 0.2rem;
+}
+
+.submit-row {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-submit {
+  font: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--paper);
+  background: var(--pine);
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.btn-submit:hover {
+  background: var(--pine-deep);
+}
+
+.btn-submit:active {
+  transform: translateY(1px);
+}
+
+/* ===========================================================
+   Membership cards
+   =========================================================== */
+.membership-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-content: start;
+}
+
+@media (max-width: 520px) {
+  .membership-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tier-card {
+  --tier-color: var(--tier-np);
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--tier-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem 1.1rem 1.25rem;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: card-rise 620ms cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+  animation-delay: var(--stagger, 0ms);
+}
+
+.tier-card[data-tier="np"] {
+  --tier-color: var(--tier-np);
+}
+.tier-card[data-tier="bronze"] {
+  --tier-color: var(--tier-bronze);
+}
+.tier-card[data-tier="silver"] {
+  --tier-color: var(--tier-silver);
+}
+.tier-card[data-tier="gold"] {
+  --tier-color: var(--tier-gold);
+}
+
+.tier-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin: 0 0 0.35rem;
+  color: var(--pine-deep);
+}
+
+.tier-card .tier-price {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--tier-color);
+  margin: 0 0 0.6rem;
+}
+
+.tier-card .tier-blurb {
+  font-size: 0.85rem;
+  color: #565b4c;
+  margin: 0 0 0.75rem;
+}
+
+.tier-card .tier-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  background: none;
+  color: var(--tier-color);
+  cursor: pointer;
+  padding: 0;
+}
+
+.tier-card .tier-link:hover {
+  text-decoration: underline;
+}
+
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tier-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===========================================================
+   Modals (native <dialog>)
+   =========================================================== */
+dialog.tier-modal {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0;
+  max-width: 420px;
+  width: calc(100% - 2.5rem);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+dialog.tier-modal::backdrop {
+  background: rgba(20, 26, 20, 0.55);
+}
+
+.modal-inner {
+  padding: 1.5rem;
+  border-top: 6px solid var(--modal-color, var(--pine));
+}
+
+.modal-inner h2 {
+  font-family: var(--font-display);
+  margin: 0 0 0.75rem;
+  color: var(--pine-deep);
+}
+
+.modal-inner ul {
+  padding-left: 1.1rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.92rem;
+  color: #444a3c;
+}
+
+.modal-inner li {
+  margin-bottom: 0.4rem;
+}
+
+.modal-close {
+  font: inherit;
+  font-weight: 600;
+  background: var(--pine);
+  color: var(--paper);
+  border: none;
+  border-radius: 6px;
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: var(--pine-deep);
+}
+
+/* ===========================================================
+   Footer
+   =========================================================== */
+.site-footer {
+  background: var(--pine-deep);
+  color: #d8d2c2;
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.footer-inner a {
+  color: #d8d2c2;
+}
+
+/* ===========================================================
+   Thank-you page
+   =========================================================== */
+.thankyou-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.thankyou-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.thankyou-card h1 {
+  font-family: var(--font-display);
+  color: var(--pine-deep);
+  margin-top: 0;
+}
+
+.summary-list {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.summary-list .summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.summary-list dt,
+.summary-list .label {
+  color: #6b7062;
+  margin: 0;
+}
+
+.summary-list dd {
+  margin: 0;
+}
+
+.summary-list .value {
+  font-weight: 600;
+  color: var(--ink);
+  text-align: right;
+}
