@@ -43,7 +43,6 @@ html {
 body {
   margin: 0;
   background-color: var(--paper);
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><path d="M0 40 Q100 10 200 40 T400 40" stroke="%23e3ddc9" stroke-width="1" fill="none"/><path d="M0 120 Q100 90 200 120 T400 120" stroke="%23e3ddc9" stroke-width="1" fill="none"/><path d="M0 200 Q100 170 200 200 T400 200" stroke="%23e3ddc9" stroke-width="1" fill="none"/><path d="M0 280 Q100 250 200 280 T400 280" stroke="%23e3ddc9" stroke-width="1" fill="none"/><path d="M0 360 Q100 330 200 360 T400 360" stroke="%23e3ddc9" stroke-width="1" fill="none"/></svg>');
   color: var(--ink);
   font-family: var(--font-body);
   line-height: 1.5;
@@ -405,6 +404,7 @@ fieldset.membership-fieldset legend {
 
 /* ===========================================================
    Membership cards
+   (stagger delays and tier colors moved here from inline styles)
    =========================================================== */
 .membership-cards {
   display: grid;
@@ -420,30 +420,51 @@ fieldset.membership-fieldset legend {
 }
 
 .tier-card {
-  --tier-color: var(--tier-np);
   background: var(--paper-raised);
   border: 1px solid var(--line);
-  border-top: 5px solid var(--tier-color);
+  border-top: 5px solid var(--tier-np);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 1.1rem 1.1rem 1.25rem;
   opacity: 0;
   transform: translateY(14px);
   animation: card-rise 620ms cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
-  animation-delay: var(--stagger, 0ms);
 }
 
 .tier-card[data-tier="np"] {
-  --tier-color: var(--tier-np);
+  border-top-color: var(--tier-np);
+  animation-delay: 0ms;
 }
+.tier-card[data-tier="np"] .tier-price,
+.tier-card[data-tier="np"] .tier-link {
+  color: var(--tier-np);
+}
+
 .tier-card[data-tier="bronze"] {
-  --tier-color: var(--tier-bronze);
+  border-top-color: var(--tier-bronze);
+  animation-delay: 90ms;
 }
+.tier-card[data-tier="bronze"] .tier-price,
+.tier-card[data-tier="bronze"] .tier-link {
+  color: var(--tier-bronze);
+}
+
 .tier-card[data-tier="silver"] {
-  --tier-color: var(--tier-silver);
+  border-top-color: var(--tier-silver);
+  animation-delay: 180ms;
 }
+.tier-card[data-tier="silver"] .tier-price,
+.tier-card[data-tier="silver"] .tier-link {
+  color: var(--tier-silver);
+}
+
 .tier-card[data-tier="gold"] {
-  --tier-color: var(--tier-gold);
+  border-top-color: var(--tier-gold);
+  animation-delay: 270ms;
+}
+.tier-card[data-tier="gold"] .tier-price,
+.tier-card[data-tier="gold"] .tier-link {
+  color: var(--tier-gold);
 }
 
 .tier-card h3 {
@@ -456,7 +477,6 @@ fieldset.membership-fieldset legend {
 .tier-card .tier-price {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: var(--tier-color);
   margin: 0 0 0.6rem;
 }
 
@@ -472,7 +492,6 @@ fieldset.membership-fieldset legend {
   text-decoration: none;
   border: none;
   background: none;
-  color: var(--tier-color);
   cursor: pointer;
   padding: 0;
 }
@@ -518,7 +537,20 @@ dialog.tier-modal::backdrop {
 
 .modal-inner {
   padding: 1.5rem;
-  border-top: 6px solid var(--modal-color, var(--pine));
+  border-top: 6px solid var(--pine);
+}
+
+#modal-np .modal-inner {
+  border-top-color: var(--tier-np);
+}
+#modal-bronze .modal-inner {
+  border-top-color: var(--tier-bronze);
+}
+#modal-silver .modal-inner {
+  border-top-color: var(--tier-silver);
+}
+#modal-gold .modal-inner {
+  border-top-color: var(--tier-gold);
 }
 
 .modal-inner h2 {
@@ -634,3 +666,55 @@ dialog.tier-modal::backdrop {
 /* ===========================================================
    Thank-you page
    =========================================================== */
+.thankyou-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.thankyou-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.thankyou-card h1 {
+  font-family: var(--font-display);
+  color: var(--pine-deep);
+  margin-top: 0;
+}
+
+.summary-list {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.summary-list .summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.summary-list dt,
+.summary-list .label {
+  color: #6b7062;
+  margin: 0;
+}
+
+.summary-list dd {
+  margin: 0;
+}
+
+.summary-list .value {
+  font-weight: 600;
+  color: var(--ink);
+  text-align: right;
+   }
