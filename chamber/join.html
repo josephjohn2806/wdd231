@@ -1,125 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JJ COMPANY Enterprise | Join Us</title>
-    <!-- Normalize CSS Reset -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <!-- Font Awesome Icons Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Main Project Stylesheet -->
-    <link rel="stylesheet" href="css/directory.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join | JJ Company Enterprise</title>
+  <meta name="description" content="Apply for membership with JJ Company Enterprise. Choose the tier that fits your business and join a growing network of local members." />
+
+  <!-- Replace with your existing chamber template's header/nav/footer include or markup. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/join.css" />
 </head>
 <body>
 
-    <header class="corp-header">
-        <div class="header-container">
-            <div class="brand-group">
-                <span class="main-logo-text"><i class="fa-solid fa-building-columns"></i> JJ COMPANY</span>
-                <span class="sub-logo-text">Enterprise Solutions</span>
-            </div>
-            
-            <!-- Desktop Horizontal Nav Menu Bar -->
-            <nav class="desktop-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                    <li><a href="directory.html">Directory</a></li>
-                    <li><a href="join.html" class="active">Join</a></li>
-                </ul>
-            </nav>
-
-            <!-- Responsive Hamburger Toggle Button -->
-            <button class="nav-toggle" id="menuToggle" aria-label="Toggle Navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- Slide-out Mobile Navigation Drawer Overlay -->
-    <nav class="nav-drawer" id="navDrawer">
-        <button class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M4 34 L16 14 L24 26 L30 16 L44 34 Z" fill="none" stroke="#c98a2c" stroke-width="2.5" stroke-linejoin="round"/>
+          <circle cx="24" cy="10" r="3" fill="#c98a2c"/>
+        </svg>
+        <span>
+          <span class="brand-name">JJ Company</span>
+          <span class="brand-tag">Enterprise</span>
+        </span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="discover.html">Discover</a></li>
-            <li><a href="directory.html">Directory</a></li>
-            <li><a href="join.html" class="active">Join</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html" aria-current="page">Join</a></li>
         </ul>
-    </nav>
+      </nav>
+    </div>
+  </header>
 
-    <main class="content-wrapper">
-        <section class="directory-header" style="border-bottom: 2px solid var(--primary-blue); margin-bottom: 25px;">
-            <h2><i class="fa-solid fa-file-signature"></i> Membership Application</h2>
-        </section>
+  <main>
+    <section class="join-hero">
+      <p class="eyebrow">Membership Application</p>
+      <h1>Join the Chamber</h1>
+      <p>Become part of JJ Company Enterprise's working network of local business owners. Tell us about your organization below, choose a membership tier, and we'll follow up within two business days.</p>
+      <svg class="contour-rule" viewBox="0 0 120 14" aria-hidden="true">
+        <path d="M0 7 Q15 1 30 7 T60 7 T90 7 T120 7" fill="none" stroke="#c98a2c" stroke-width="2"/>
+      </svg>
+    </section>
 
-        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start;">
-            <!-- Simple Form Structure Mockup Container -->
-            <form style="background: white; border: 1px solid var(--wireframe-grey); padding: 25px; border-radius: 6px; display: flex; flex-direction: column; gap: 15px;">
-                <div>
-                    <label style="display: block; font-weight: bold; margin-bottom: 5px;">First Name</label>
-                    <input type="text" required style="width: 100%; padding: 8px; border: 1px solid var(--wireframe-grey); border-radius: 4px; box-sizing: border-box;">
-                </div>
-                <div>
-                    <label style="display: block; font-weight: bold; margin-bottom: 5px;">Business Organization Name</label>
-                    <input type="text" required style="width: 100%; padding: 8px; border: 1px solid var(--wireframe-grey); border-radius: 4px; box-sizing: border-box;">
-                </div>
-                <div>
-                    <label style="display: block; font-weight: bold; margin-bottom: 5px;">Target Membership Tier Level Level</label>
-                    <select style="width: 100%; padding: 8px; border: 1px solid var(--wireframe-grey); border-radius: 4px; box-sizing: border-box;">
-                        <option>Level 1: General Corporate Member</option>
-                        <option>Level 2: Silver Premium Partner</option>
-                        <option>Level 3: Gold Executive Leader</option>
-                    </select>
-                </div>
-                <button type="button" style="padding: 10px; background: var(--primary-blue); color: white; border: none; font-weight: bold; border-radius: 4px; cursor: pointer;">Submit Registration Application</button>
-            </form>
+    <div class="join-layout">
+      <!-- ============ APPLICATION FORM ============ -->
+      <form class="join-form" action="thankyou.html" method="get">
 
-            <!-- Right-hand Sidebar Explaining Tier Perks -->
-            <aside style="background: var(--light-bg); padding: 20px; border-radius: 6px; border: 1px solid var(--wireframe-grey); display: flex; flex-direction: column; gap: 15px;">
-                <h3>Our Tiers</h3>
-                <div>
-                    <strong><i class="fa-solid fa-medal" style="color: #cd7f32;"></i> Tier 1: General</strong>
-                    <p style="margin: 4px 0 0 0; font-size: 0.85rem;">Standard inclusion inside our local workspace directory index database.</p>
-                </div>
-                <div>
-                    <strong><i class="fa-solid fa-medal" style="color: #c0c0c0;"></i> Tier 2: Silver</strong>
-                    <p style="margin: 4px 0 0 0; font-size: 0.85rem;">Includes specialized branding banners and landing spotlight promotion benefits.</p>
-                </div>
-                <div>
-                    <strong><i class="fa-solid fa-medal" style="color: #ffd700;"></i> Tier 3: Gold</strong>
-                    <p style="margin: 4px 0 0 0; font-size: 0.85rem;">Front-page spotlight feature positions and absolute access to strategic datasets.</p>
-                </div>
-            </aside>
+        <h2 class="form-section-title">Applicant information</h2>
+
+        <label class="field" for="firstName">
+          <span class="field-label">First name<span class="required-mark" aria-hidden="true">*</span></span>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            title="Your first name"
+            autocomplete="given-name"
+            required
+          />
+        </label>
+
+        <label class="field" for="lastName">
+          <span class="field-label">Last name<span class="required-mark" aria-hidden="true">*</span></span>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            title="Your last name"
+            autocomplete="family-name"
+            required
+          />
+        </label>
+
+        <label class="field" for="orgTitle">
+          <span class="field-label">Your title at the organization</span>
+          <input
+            type="text"
+            id="orgTitle"
+            name="orgTitle"
+            title="Your title within your organization (letters, hyphens, and spaces only, minimum 7 characters)"
+            autocomplete="organization-title"
+            pattern="[A-Za-z\-\s]{7,}"
+          />
+          <span class="hint">Letters, hyphens, and spaces only — at least 7 characters (e.g. "Co-Owner", "General Manager").</span>
+        </label>
+
+        <label class="field" for="email">
+          <span class="field-label">Email address<span class="required-mark" aria-hidden="true">*</span></span>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            title="Your email address"
+            autocomplete="email"
+            placeholder="you@yourbusiness.com"
+            required
+          />
+        </label>
+
+        <label class="field" for="mobile">
+          <span class="field-label">Mobile phone number<span class="required-mark" aria-hidden="true">*</span></span>
+          <input
+            type="tel"
+            id="mobile"
+            name="mobile"
+            title="Your mobile phone number"
+            autocomplete="tel"
+            required
+          />
+        </label>
+
+        <h2 class="form-section-title">Organization details</h2>
+
+        <label class="field" for="businessName">
+          <span class="field-label">Business/organization name<span class="required-mark" aria-hidden="true">*</span></span>
+          <input
+            type="text"
+            id="businessName"
+            name="businessName"
+            title="The name of your business or organization"
+            autocomplete="organization"
+            required
+          />
+        </label>
+
+        <fieldset class="membership-fieldset">
+          <legend>Membership level<span class="required-mark" aria-hidden="true">*</span></legend>
+
+          <div class="membership-option">
+            <input type="radio" id="tierNp" name="membership" value="np" required />
+            <label for="tierNp">NP Membership — for nonprofit organizations, no fee</label>
+          </div>
+          <div class="membership-option">
+            <input type="radio" id="tierBronze" name="membership" value="bronze" />
+            <label for="tierBronze">Bronze Membership</label>
+          </div>
+          <div class="membership-option">
+            <input type="radio" id="tierSilver" name="membership" value="silver" />
+            <label for="tierSilver">Silver Membership</label>
+          </div>
+          <div class="membership-option">
+            <input type="radio" id="tierGold" name="membership" value="gold" />
+            <label for="tierGold">Gold Membership</label>
+          </div>
+        </fieldset>
+
+        <label class="field" for="description">
+          <span class="field-label">Tell us about your organization</span>
+          <textarea
+            id="description"
+            name="description"
+            title="A short description of your business or organization"
+          ></textarea>
+        </label>
+
+        <!-- Hidden timestamp, populated by scripts/join.js on page load -->
+        <input type="hidden" id="timestamp" name="timestamp" />
+
+        <div class="submit-row">
+          <button type="submit" class="btn-submit">Submit application</button>
         </div>
-    </main>
+      </form>
 
-    <!-- Wireframe Footer Structure -->
-    <footer class="wireframe-footer">
-        <div class="footer-container">
-            <div class="footer-left">
-                <strong>JJ COMPANY Enterprise</strong>
-                <p><i class="Nairobi"></i>Kenya</p>
-                <p>Boise, ID 83705</p>
-                <p><i class="fa-solid fa-envelope"></i> info@jjcompany.org</p>
-                <p><i class="fa-solid fa-phone"></i> (254) 17747-358</p>
-            </div>
-            <div class="footer-center">
-                <div class="social-icons">
-                    <a href="#" class="icon-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="icon-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="footer-right">
-                <p>WDD231 Class Project</p>
-                <p>Joseph John</p>
-                <p>&copy; <span id="currentYear"></span> JJ COMPANY</p>
-                <p>Last Modification: <span id="lastModified"></span></p>
-            </div>
-        </div>
-    </footer>
+      <!-- ============ MEMBERSHIP CARDS ============ -->
+      <aside class="membership-cards" aria-label="Membership tiers">
 
-    <script src="js/directory.js" defer></script>
+        <article class="tier-card" data-tier="np" style="--stagger:0ms">
+          <h3>NP Membership</h3>
+          <p class="tier-price">No fee</p>
+          <p class="tier-blurb">For registered nonprofits partnering with JJ Company Enterprise.</p>
+          <button type="button" class="tier-link" data-modal="modal-np">Learn more →</button>
+        </article>
+
+        <article class="tier-card" data-tier="bronze" style="--stagger:90ms">
+          <h3>Bronze Membership</h3>
+          <p class="tier-price">Entry tier</p>
+          <p class="tier-blurb">Directory listing and access to monthly mixers.</p>
+          <button type="button" class="tier-link" data-modal="modal-bronze">Learn more →</button>
+        </article>
+
+        <article class="tier-card" data-tier="silver" style="--stagger:180ms">
+          <h3>Silver Membership</h3>
+          <p class="tier-price">Growing businesses</p>
+          <p class="tier-blurb">Everything in Bronze, plus event discounts and training.</p>
+          <button type="button" class="tier-link" data-modal="modal-silver">Learn more →</button>
+        </article>
+
+        <article class="tier-card" data-tier="gold" style="--stagger:270ms">
+          <h3>Gold Membership</h3>
+          <p class="tier-price">Top tier</p>
+          <p class="tier-blurb">Full benefits, including homepage spotlight placement.</p>
+          <button type="button" class="tier-link" data-modal="modal-gold">Learn more →</button>
+        </article>
+
+      </aside>
+    </div>
+
+    <!-- ============ MODALS ============ -->
+    <dialog id="modal-np" class="tier-modal" aria-labelledby="modal-np-title">
+      <div class="modal-inner" style="--modal-color:#6b7280">
+        <h2 id="modal-np-title">NP Membership</h2>
+        <ul>
+          <li>No membership fee for qualifying 501(c)(3) nonprofits</li>
+          <li>Directory listing on the chamber website</li>
+          <li>Access to monthly networking mixers</li>
+          <li>Eligibility to apply for community grant partnerships</li>
+        </ul>
+        <button type="button" class="modal-close" data-close>Close</button>
+      </div>
+    </dialog>
+
+    <dialog id="modal-bronze" class="tier-modal" aria-labelledby="modal-bronze-title">
+      <div class="modal-inner" style="--modal-color:#a9673a">
+        <h2 id="modal-bronze-title">Bronze Membership</h2>
+        <ul>
+          <li>Directory listing on the chamber website</li>
+          <li>Access to monthly networking mixers</li>
+          <li>Member-rate tickets to chamber events</li>
+        </ul>
+        <button type="button" class="modal-close" data-close>Close</button>
+      </div>
+    </dialog>
+
+    <dialog id="modal-silver" class="tier-modal" aria-labelledby="modal-silver-title">
+      <div class="modal-inner" style="--modal-color:#7c8794">
+        <h2 id="modal-silver-title">Silver Membership</h2>
+        <ul>
+          <li>Everything included in Bronze Membership</li>
+          <li>20% discount on all chamber-hosted events</li>
+          <li>One free training workshop seat per quarter</li>
+          <li>Priority placement in the online directory</li>
+        </ul>
+        <button type="button" class="modal-close" data-close>Close</button>
+      </div>
+    </dialog>
+
+    <dialog id="modal-gold" class="tier-modal" aria-labelledby="modal-gold-title">
+      <div class="modal-inner" style="--modal-color:#c98a2c">
+        <h2 id="modal-gold-title">Gold Membership</h2>
+        <ul>
+          <li>Everything included in Silver Membership</li>
+          <li>Rotating spotlight placement on the chamber homepage</li>
+          <li>Unlimited training workshop seats</li>
+          <li>Complimentary booth at the annual business expo</li>
+        </ul>
+        <button type="button" class="modal-close" data-close>Close</button>
+      </div>
+    </dialog>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; 2026 JJ Company Enterprise</p>
+      <p>WDD231 Chamber Project</p>
+    </div>
+  </footer>
+
+  <script src="scripts/join.js"></script>
 </body>
 </html>
