@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JJ COMPANY Enterprise | Discover</title>
+    <title>JJ Enterprise | Discover</title>
     <!-- Normalize CSS Reset -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <!-- Font Awesome Icons Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Main Project Stylesheet -->
-    <link rel="stylesheet" href="css/directory.css">
+    <link rel="stylesheet" href="css/discover.css">
 </head>
 <body>
 
     <header class="corp-header">
         <div class="header-container">
             <div class="brand-group">
-                <span class="main-logo-text"><i class="fa-solid fa-building-columns"></i> JJ COMPANY</span>
-                <span class="sub-logo-text">Enterprise Solutions</span>
+                <span class="main-logo-text"><i class="fa-solid fa-building-columns"></i> JJ ENTERPRISE</span>
+                <span class="sub-logo-text">Chamber Discover</span>
             </div>
             
-            <!-- Desktop Horizontal Nav Menu Bar -->
+            <!-- Desktop Nav Menu -->
             <nav class="desktop-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -30,16 +30,16 @@
                 </ul>
             </nav>
 
-            <!-- Responsive Hamburger Toggle Button -->
+            <!-- Responsive Toggle Button -->
             <button class="nav-toggle" id="menuToggle" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </header>
 
-    <!-- Slide-out Mobile Navigation Drawer Overlay -->
+    <!-- Slide-out Mobile Navigation Drawer -->
     <nav class="nav-drawer" id="navDrawer">
-        <button class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
+        <button class="close-drawer" id="closeDrawer" aria-label="Close Navigation"><i class="fa-solid fa-xmark"></i></button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="discover.html" class="active">Discover</a></li>
@@ -48,41 +48,39 @@
         </ul>
     </nav>
 
-    <main class="content-wrapper">
-        <section class="directory-header" style="border-bottom: 2px solid var(--primary-blue); margin-bottom: 25px;">
-            <h2><i class="fa-solid fa-compass"></i> Discover the Region</h2>
-        </section>
+    <main class="discover-layout">
+        <!-- Sidebar Area -->
+        <aside class="discover-sidebar">
+            <!-- Requirement 11: Visitor Message Banner -->
+            <div class="visit-card" id="visitMessage">
+                <h3><i class="fa-solid fa-clock"></i> Welcome!</h3>
+                <p id="visitText">Loading visitor information...</p>
+            </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px; align-items: start;">
-            <!-- Left Information Column -->
-            <aside style="background: var(--light-bg); padding: 25px; border-radius: 6px; border: 1px solid var(--wireframe-grey);">
-                <h3>Locale Details</h3>
-                <p><strong><i class="fa-solid fa-landmark"></i> History:</strong> Established as a premium technology and industry hub matching international infrastructure growth models.</p>
+            <!-- Demographics and Info Card -->
+            <div class="info-card">
+                <h3><i class="fa-solid fa-compass"></i> Locale Details</h3>
+                <p><strong><i class="fa-solid fa-landmark"></i> History:</strong> Established as a premium technology and commerce hub matching international infrastructure growth models.</p>
                 <p><strong><i class="fa-solid fa-chart-pie"></i> Demographics:</strong> Home to over 230,000 active professionals, expanding rapidly within technical and digital creative sectors.</p>
-            </aside>
+            </div>
+        </aside>
 
-            <!-- Right Image Gallery Workspace Area -->
-            <section style="display: flex; flex-direction: column; gap: 20px;">
-                <h3>Image Montage</h3>
-                <div style="background: #e2e8f0; height: 180px; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: #4a5568;">
-                    <p><i class="fa-solid fa-image fa-2x"></i> Placeholder: Regional Tech Hub Center Corridor</p>
-                </div>
-                <div style="background: #e2e8f0; height: 180px; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: #4a5568;">
-                    <p><i class="fa-solid fa-image fa-2x"></i> Placeholder: Downtown Innovation District District</p>
-                </div>
-            </section>
-        </div>
+        <!-- Main Items Container Area -->
+        <section class="discover-gallery">
+            <h2><i class="fa-solid fa-location-dot"></i> Points of Interest</h2>
+            <!-- Dynamically populated via JS module -->
+            <div id="cardsContainer" class="cards-grid"></div>
+        </section>
     </main>
 
-    <!-- Wireframe Footer Structure -->
+    <!-- Footer Structure -->
     <footer class="wireframe-footer">
         <div class="footer-container">
             <div class="footer-left">
-                <strong>JJ COMPANY Enterprise</strong>
-                <p><i class="Nairobi"></i>Kenya</p>
-                <p>Boise, ID 83705</p>
+                <strong>JJ ENTERPRISE</strong>
+                <p><i class="fa-solid fa-location-dot"></i> Nairobi, Kenya</p>
                 <p><i class="fa-solid fa-envelope"></i> info@jjcompany.org</p>
-                <p><i class="fa-solid fa-phone"></i> (254) 17747-358</p>
+                <p><i class="fa-solid fa-phone"></i> +254 700 000 000</p>
             </div>
             <div class="footer-center">
                 <div class="social-icons">
@@ -94,12 +92,14 @@
             <div class="footer-right">
                 <p>WDD231 Class Project</p>
                 <p>Joseph John</p>
-                <p>&copy; <span id="currentYear"></span> JJ COMPANY</p>
+                <p>&copy; <span id="currentYear"></span> JJ ENTERPRISE</p>
                 <p>Last Modification: <span id="lastModified"></span></p>
             </div>
         </div>
     </footer>
 
-    <script src="js/directory.js" defer></script>
+    <!-- Module Script Insertion (Requirement 8 & 11) -->
+    <script type="module" src="js/discover.js"></script>
 </body>
 </html>
+
