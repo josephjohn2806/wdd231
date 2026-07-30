@@ -1,0 +1,50 @@
+export const items = [
+    {
+        "name": "Nairobi National Park",
+        "address": "Langata Road, Nairobi, Kenya",
+        "description": "A unique wildlife park bordering the city skyline, home to lions, rhinos, and giraffes.",
+        "image": "images/nairobi-park.webp"
+    },
+    {
+        "name": "Giraffe Centre",
+        "address": "Duma Rd, Nairobi, Kenya",
+        "description": "Conservation center dedicated to the endangered Rothschild giraffe with interactive feeding platforms.",
+        "image": "images/giraffe-centre.webp"
+    },
+    {
+        "name": "National Museum of Kenya",
+        "address": "Museum Hill, Nairobi, Kenya",
+        "description": "Multi-disciplinary facility showcasing natural heritage, history, paleontology, and contemporary art.",
+        "image": "images/national-museum.webp"
+    },
+    {
+        "name": "Kenyatta International Convention Centre",
+        "address": "City Square, Nairobi, Kenya",
+        "description": "An iconic 28-story landmark featuring a helipad with 360-degree panoramic views of Nairobi.",
+        "image": "images/kicc.webp"
+    },
+    {
+        "name": "Karura Forest Reserve",
+        "address": "Limuru Road, Nairobi, Kenya",
+        "description": "An expansive urban forest featuring walking trails, waterfalls, caves, and serene natural ecosystems.",
+        "image": "images/karura-forest.webp"
+    },
+    {
+        "name": "Karen Blixen Museum",
+        "address": "Karen Rd, Nairobi, Kenya",
+        "description": "Historic farmhouse once belonging to author Karen Blixen, surrounded by tranquil gardens.",
+        "image": "images/karen-blixen.webp"
+    },
+    {
+        "name": "Bomas of Kenya",
+        "address": "Forest Edge Rd, Nairobi, Kenya",
+        "description": "Cultural center demonstrating traditional homesteads and vibrant music/dance performances.",
+        "image": "images/bomas-kenya.webp"
+    },
+    {
+        "name": "Nairobi Arboretum",
+        "address": "State House Rd, Nairobi, Kenya",
+        "description": "A 30-hectare wooded park containing over 350 species of indigenous and exotic trees.",
+        "image": "images/arboretum.webp"
+    }
+];
