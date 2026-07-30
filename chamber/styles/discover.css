@@ -1,0 +1,119 @@
+:root {
+    --primary-blue: #0f172a;
+    --secondary-blue: #2563eb;
+    --light-bg: #f8fafc;
+    --wireframe-grey: #cbd5e1;
+    --text-dark: #334155;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* Requirement 10: Responsive Layout with grid-template-areas */
+.discover-layout {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-areas:
+        "sidebar"
+        "gallery";
+}
+
+/* Medium Screens (624px to 1024px) */
+@media (min-width: 624px) {
+    .discover-layout {
+        grid-template-columns: 280px 1fr;
+        grid-template-areas:
+            "sidebar gallery";
+    }
+}
+
+/* Assign Grid Areas */
+.discover-sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.discover-gallery {
+    grid-area: gallery;
+}
+
+/* Card Grid Layout */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Requirement 9 & 12: Card styling and Hover effects */
+.discover-card {
+    border: 1px solid var(--wireframe-grey);
+    border-radius: 8px;
+    padding: 15px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-image-wrapper {
+    margin: 10px 0;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Requirement 12: Hover Effects (Desktop only) */
+@media (min-width: 1025px) {
+    .card-image-wrapper img:hover {
+        transform: scale(1.05);
+        filter: brightness(0.9);
+    }
+}
+
+.btn-learn {
+    background-color: var(--secondary-blue);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Sidebar Info Cards */
+.visit-card, .info-card {
+    background: var(--light-bg);
+    border: 1px solid var(--wireframe-grey);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Mobile Nav Drawer Styles */
+.nav-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background: var(--primary-blue);
+    transition: right 0.3s ease;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.nav-drawer.open {
+    right: 0;
+}
