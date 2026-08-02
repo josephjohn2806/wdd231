@@ -13,13 +13,18 @@
 </head>
 <body>
 
+    <!-- CSS-only nav toggle: this checkbox drives the mobile drawer with :checked,
+         so the menu works even if discover.js fails to load. Must stay BEFORE
+         .nav-drawer in the DOM for the ~ sibling selector to reach it. -->
+    <input type="checkbox" id="navToggleCheckbox" class="nav-toggle-checkbox">
+
     <header class="corp-header">
         <div class="header-container">
             <div class="brand-group">
                 <span class="main-logo-text"><i class="fa-solid fa-building-columns"></i> JJ ENTERPRISE</span>
                 <span class="sub-logo-text">Chamber Discover</span>
             </div>
-            
+
             <!-- Desktop Nav Menu -->
             <nav class="desktop-nav">
                 <ul>
@@ -30,16 +35,18 @@
                 </ul>
             </nav>
 
-            <!-- Responsive Toggle Button -->
-            <button class="nav-toggle" id="menuToggle" aria-label="Toggle Navigation">
+            <!-- Responsive Toggle: label bound to the checkbox above -->
+            <label class="nav-toggle" for="navToggleCheckbox" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars"></i>
-            </button>
+            </label>
         </div>
     </header>
 
     <!-- Slide-out Mobile Navigation Drawer -->
     <nav class="nav-drawer" id="navDrawer">
-        <button class="close-drawer" id="closeDrawer" aria-label="Close Navigation"><i class="fa-solid fa-xmark"></i></button>
+        <label class="close-drawer" for="navToggleCheckbox" aria-label="Close Navigation">
+            <i class="fa-solid fa-xmark"></i>
+        </label>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="discover.html" class="active">Discover</a></li>
@@ -102,4 +109,5 @@
     <script type="module" src="js/discover.js"></script>
 </body>
 </html>
+
 
