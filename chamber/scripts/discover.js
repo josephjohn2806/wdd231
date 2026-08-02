@@ -5,12 +5,8 @@
    =========================================================== */
 
 // ---------- Mobile nav drawer ----------
-const menuToggle = document.getElementById('menuToggle');
-const navDrawer = document.getElementById('navDrawer');
-const closeDrawer = document.getElementById('closeDrawer');
-
-menuToggle?.addEventListener('click', () => navDrawer.classList.add('open'));
-closeDrawer?.addEventListener('click', () => navDrawer.classList.remove('open'));
+// Handled entirely by CSS via the #navToggleCheckbox :checked state in discover.html/discover.css.
+// No JS needed here, so the menu still works even if this script fails to load.
 
 // ---------- Footer: current year + last modified ----------
 document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -105,4 +101,5 @@ function buildCards() {
 // ---------- Init ----------
 showVisitMessage();
 buildCards();
+
 
