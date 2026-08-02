@@ -151,20 +151,39 @@ a:focus-visible, button:focus-visible {
   cursor: pointer;
 }
 
-/* Mobile drawer — driven purely by :checked, no JS required */
+/* Mobile drawer — driven purely by :checked, no JS required.
+   Matches the home page style: white background, near full-width,
+   large stacked links, dark X close icon top-right. */
 .nav-drawer {
   position: fixed;
   top: 0;
-  right: -280px;
-  width: 260px;
+  right: -100%;
+  width: 82%;
+  max-width: 360px;
   height: 100%;
-  background: var(--navy-dark);
-  padding: 1.5rem;
+  background: var(--bg-white);
+  padding: 1.75rem 2rem;
+  box-shadow: -8px 0 24px rgba(15, 23, 41, 0.12);
   transition: right 0.3s ease;
   z-index: 100;
 }
 
 .nav-toggle-checkbox:checked ~ .nav-drawer { right: 0; }
+
+/* Dim the page behind the drawer while it's open */
+.nav-toggle-checkbox:checked ~ .discover-layout,
+.nav-toggle-checkbox:checked ~ .wireframe-footer {
+  position: relative;
+}
+
+.nav-toggle-checkbox:checked ~ .discover-layout::after,
+.nav-toggle-checkbox:checked ~ .wireframe-footer::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 41, 0.35);
+  z-index: 90;
+}
 
 .nav-toggle-checkbox:focus-visible ~ .corp-header .nav-toggle {
   outline: 3px solid var(--blue-accent);
@@ -173,27 +192,29 @@ a:focus-visible, button:focus-visible {
 
 .nav-drawer ul {
   list-style: none;
-  margin: 2.5rem 0 0;
+  margin: 3.5rem 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 2.25rem;
 }
 
 .nav-drawer a {
-  color: var(--bg-white);
-  font-weight: 600;
-  font-size: 1.05rem;
+  color: var(--navy-dark);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.85rem;
 }
 
-.nav-drawer a.active { color: var(--blue-accent-hi); }
+.nav-drawer a.active { color: var(--blue-accent); }
 
 .close-drawer {
   display: inline-flex;
+  justify-content: flex-end;
   background: none;
   border: none;
-  color: var(--bg-white);
-  font-size: 1.4rem;
+  color: var(--navy-dark);
+  font-size: 1.6rem;
   cursor: pointer;
 }
 
