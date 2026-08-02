@@ -4,7 +4,9 @@
    navy header/footer, royal-blue accent, white content areas
    =========================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+/* Google Fonts are loaded via <link> + preconnect tags in discover.html <head>
+   (not @import, which validators flag and which blocks the browser's
+   preload scanner). */
 
 :root {
   /* ---- Color tokens (matched to home page) ---- */
@@ -229,6 +231,12 @@ a:focus-visible, button:focus-visible {
   grid-template-columns: 300px 1fr;
   gap: 2rem;
   align-items: start;
+}
+
+.page-title {
+  grid-column: 1 / -1;
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
 }
 
 /* ---- Sidebar ---- */
@@ -461,4 +469,5 @@ a:focus-visible, button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
 
