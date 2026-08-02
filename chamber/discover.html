@@ -19,7 +19,7 @@
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
 
-    <!-- Google Fonts (link method, not @import) -->
+    <!-- Google Fonts (link method) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -34,8 +34,7 @@
 <body>
 
     <!-- CSS-only nav toggle: this checkbox drives the mobile drawer with :checked,
-         so the menu works even if discover.js fails to load. Must stay BEFORE
-         .nav-drawer in the DOM for the ~ sibling selector to reach it. -->
+         so the menu works even if discover.js fails to load. -->
     <input type="checkbox" id="navToggleCheckbox" class="nav-toggle-checkbox">
 
     <header class="corp-header">
@@ -127,10 +126,11 @@
         </div>
     </footer>
 
-    <!-- Module Script Insertion (Requirement 8 & 11) -->
+    <!-- Referenced JS File at end of body -->
     <script type="module" src="js/discover.js"></script>
 </body>
 </html>
+
 
 
 
