@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Inquiry — JJ Enterprise</title>
+<meta name="description" content="Send JJ Enterprise an inquiry, check current business hours, or find your nearest service region.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">JJ <span>Enterprise</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html">Services &amp; Catalog</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero blueprint-bg" style="padding: 60px 0 40px;">
+    <div class="container">
+      <span class="eyebrow">JJE-CTC-03 · Contact &amp; Inquiry</span>
+      <h1 style="font-size: clamp(1.9rem, 4vw, 2.8rem);">Tell us about your facility</h1>
+      <p class="lede">Send an inquiry and a JJ Enterprise engineer will follow up. Or check whether we're open right now before you call.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 44px;">
+    <div class="container contact-grid">
+
+      <!-- Inquiry form -->
+      <div>
+        <h2 style="font-size: 1.4rem;">Send an inquiry</h2>
+        <form id="inquiry-form" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Full name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name">
+              <p class="field-error" id="name-error">Enter your full name.</p>
+            </div>
+            <div class="form-field">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" autocomplete="organization">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email">
+              <p class="field-error" id="email-error">Enter a valid email address.</p>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(555) 555-5555">
+              <p class="field-error" id="phone-error">Enter a valid phone number, or leave blank.</p>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="topic">What can we help with? <span class="req">*</span></label>
+            <select id="topic" name="topic">
+              <option value="">Select one…</option>
+              <option value="equipment">Equipment purchase</option>
+              <option value="service">Maintenance / service plan</option>
+              <option value="consulting">Consulting engagement</option>
+              <option value="emergency">Emergency support</option>
+              <option value="other">Something else</option>
+            </select>
+            <p class="field-error" id="topic-error">Choose a topic.</p>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Message <span class="req">*</span></label>
+            <textarea id="message" name="message" placeholder="Describe your facility and what you need…"></textarea>
+            <p class="field-error" id="message-error">Message must be at least 20 characters.</p>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send inquiry</button>
+          <p class="form-status" id="form-status">Inquiry received. We'll follow up within one business day.</p>
+        </form>
+      </div>
+
+      <!-- Sidebar: hours + browser/location integration -->
+      <div>
+        <div class="info-card">
+          <h3>Business hours</h3>
+          <div id="status-badge-wrap"></div>
+          <table class="hours-table" id="hours-table"></table>
+        </div>
+
+        <div class="info-card">
+          <h3>Find your service region</h3>
+          <p style="margin-bottom: 0;">Share your location and we'll flag the nearest JJ Enterprise service hub, using your browser's location API.</p>
+          <div class="locate-box">
+            <button class="btn btn-secondary" id="locate-btn">Use my location</button>
+            <p class="locate-result" id="locate-result"></p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h3>Your session</h3>
+          <p style="margin-bottom: 12px;">Detected automatically from your browser, so our support team knows your setup before you even call.</p>
+          <ul class="env-list" id="env-list"></ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <p>© <span data-year></span> JJ Enterprise. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html">Catalog</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>
