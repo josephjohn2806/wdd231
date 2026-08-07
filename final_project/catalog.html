@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services &amp; Product Catalog — JJ Enterprise</title>
+<meta name="description" content="Search and filter JJ Enterprise's full catalog of equipment, services, and consulting engagements.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">JJ <span>Enterprise</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html" aria-current="page">Services &amp; Catalog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero blueprint-bg" style="padding: 60px 0 40px;">
+    <div class="container">
+      <span class="eyebrow">JJE-CAT-02 · Full Catalog</span>
+      <h1 style="font-size: clamp(1.9rem, 4vw, 2.8rem);">Search the catalog</h1>
+      <p class="lede">Every product and service we offer, pulled live from our catalog data. Filter by category or search by name.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 44px;">
+    <div class="container">
+
+      <div class="catalog-controls">
+        <div class="search-field">
+          <input type="text" id="catalog-search" placeholder="Search by name or keyword…" aria-label="Search catalog">
+        </div>
+        <div class="filter-chips" id="filter-chips" role="group" aria-label="Filter by category">
+          <button class="chip" data-category="All" aria-pressed="true">All</button>
+          <button class="chip" data-category="Equipment" aria-pressed="false">Equipment</button>
+          <button class="chip" data-category="Services" aria-pressed="false">Services</button>
+          <button class="chip" data-category="Consulting" aria-pressed="false">Consulting</button>
+        </div>
+      </div>
+
+      <p class="results-count" id="results-count">Loading catalog…</p>
+
+      <div class="product-grid" id="product-grid" aria-live="polite">
+        <!-- populated by catalog.js -->
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- Product detail modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Close details">✕</button>
+    <span class="plate" id="modal-id"></span>
+    <h3 id="modal-title" style="margin-top: 10px;"></h3>
+    <p id="modal-desc"></p>
+    <div class="modal-specs">
+      <div class="hero-panel-row"><span>Pricing model</span><span id="modal-pricing-model"></span></div>
+      <div class="hero-panel-row"><span>Rate</span><span id="modal-pricing-amount"></span></div>
+      <div class="hero-panel-row"><span>Lead time</span><span id="modal-lead"></span></div>
+    </div>
+    <a href="contact.html" class="btn btn-primary" style="margin-top: 22px; width: 100%; justify-content: center;">Request a quote</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <p>© <span data-year></span> JJ Enterprise. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>
