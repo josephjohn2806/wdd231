@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form Submitted — JJ Enterprise</title>
-<link rel="stylesheet" href="styles/finalproject.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Submission Received — JJ Enterprise</title>
+  <link rel="stylesheet" href="styles/finalproject.css">
 </head>
 <body>
-<header class="site-header">
-  <nav class="nav">
-    <a href="index.html" class="logo">JOSEPH JOHN</a>
-  </nav>
-</header>
+  <header class="site-header">
+    <nav class="nav container" role="navigation" aria-label="Main">
+      <a href="index.html" class="logo" aria-label="JJ Enterprise homepage">JJ ENTERPRISE</a>
+    </nav>
+  </header>
 
-<main class="container section">
-  <h1>Submission Received</h1>
-  <div id="results" class="card" style="margin-top:20px;"></div>
-  <a href="index.html" class="btn btn-primary" style="margin-top:20px;">Return Home</a>
-</main>
+  <main class="container section container--narrow">
+    <h1>Submission Received</h1>
+    <div id="results" class="card" style="margin-top:16px;"></div>
+    <p style="margin-top:16px;"><a class="btn btn-primary" href="index.html">Return Home</a></p>
+  </main>
 
-<script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const container = document.getElementById('results');
-  container.innerHTML = `
-    <p><strong>Name:</strong> ${urlParams.get('fullname') || 'N/A'}</p>
-    <p><strong>Email:</strong> ${urlParams.get('email') || 'N/A'}</p>
-    <p><strong>Service Requested:</strong> ${urlParams.get('service') || 'N/A'}</p>
-    <p><strong>Comments:</strong> ${urlParams.get('comments') || 'None'}</p>
-  `;
-</script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const container = document.getElementById('results');
+    if (container) {
+      container.innerHTML = `
+        <p><strong>Name:</strong> ${urlParams.get('fullname') || 'N/A'}</p>
+        <p><strong>Email:</strong> ${urlParams.get('email') || 'N/A'}</p>
+        <p><strong>Service Requested:</strong> ${urlParams.get('service') || 'N/A'}</p>
+        <p><strong>Comments:</strong> ${(urlParams.get('comments') || 'None').replace(/</g,'&lt;')}</p>
+      `;
+    }
+  </script>
 </body>
 </html>
-

@@ -1,73 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JJ Enterprise — Industrial Equipment &amp; Services</title>
-<meta name="description" content="JJ Enterprise supplies facility equipment, maintenance services, and operations consulting.">
-<meta name="author" content="Joseph John">
-<!-- OpenGraph & SEO Metadata -->
-<link rel="canonical" href="https://josephjohn2806.github.io/wdd231/finalproject/">
-<meta property="og:title" content="JJ Enterprise Facility Services">
-<meta property="og:type" content="website">
-<meta property="og:image" content="images/favicon.ico">
-<meta property="og:url" content="https://josephjohn2806.github.io/wdd231/finalproject/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="JJ Enterprise — Industrial Equipment & Services">
-<link rel="icon" href="images/favicon.ico">
-<link rel="stylesheet" href="styles/finalproject.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>JJ Enterprise — Industrial Equipment &amp; Services</title>
+  <meta name="description" content="JJ Enterprise supplies facility equipment, maintenance services, and operations consulting.">
+  <link rel="canonical" href="https://josephjohn2806.github.io/wdd231/finalproject/">
+  <meta property="og:title" content="JJ Enterprise — Industrial Equipment & Services">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://josephjohn2806.github.io/wdd231/finalproject/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="styles/finalproject.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" role="navigation" aria-label="Main">
+      <a href="index.html" class="logo" aria-label="JJ Enterprise homepage"><span class="globe-icon" aria-hidden="true">🌐</span> JJ ENTERPRISE</a>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<a class="skip-link" href="#main-content">Skip to content</a>
+  <main id="main-content" class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Equipment, service, and expertise for facilities that can't afford downtime.</h1>
+        <p class="lead">JJ Enterprise outfits production floors with dependable equipment, keeps it running with scheduled preventive maintenance, and advises operations teams to improve uptime.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="catalog.html">Browse Catalog</a>
+          <a class="btn btn-secondary" href="contact.html">Request a Quote</a>
+        </div>
+      </div>
+    </section>
 
-<header class="site-header">
-  <nav class="nav">
-    <a href="index.html" class="logo" aria-label="Joseph John homepage"><span class="globe-icon" aria-hidden="true">🌐</span> JOSEPH JOHN</a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html" aria-current="page">HOME</a></li>
-      <li><a href="catalog.html">CHAMBER PROJECT</a></li>
-      <li><a href="contact.html">FINAL PROJECT</a></li>
-    </ul>
-  </nav>
-</header>
+    <section class="section">
+      <h2>Featured Offerings</h2>
+      <div id="featured-grid" class="card-grid" aria-live="polite"></div>
+    </section>
+  </main>
 
-<div class="ticker-wrap">
-  <div class="ticker-inner">
-    <span class="ticker-dot" aria-hidden="true"></span>
-    <span class="ticker-text" id="ticker-text">Loading announcements…</span>
-    <div class="ticker-nav">
-      <button id="ticker-prev" aria-label="Previous announcement">‹</button>
-      <button id="ticker-next" aria-label="Next announcement">›</button>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span data-year></span> JJ Enterprise. <a href="attributions.html">Attributions</a></p>
+      <p><a href="https://www.youtube.com/watch?v=1QvGh8K5YsQ" target="_blank" rel="noopener">Project Video Demonstration (placeholder)</a></p>
     </div>
-  </div>
-</div>
+  </footer>
 
-<main id="main-content" class="container">
-  <section class="hero">
-    <h1>Equipment, service, and expertise for facilities that can't afford downtime.</h1>
-    <p class="lead">JJ Enterprise outfits production floors with dependable equipment, keeps it running with scheduled service, and advises operators.</p>
-    <div class="hero-actions">
-      <a href="catalog.html" class="btn btn-primary">Browse Catalog</a>
-      <a href="contact.html" class="btn btn-secondary">Request a Quote</a>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Featured Offerings</h2>
-    <div id="featured-grid" class="card-grid"></div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <p>© <span data-year></span> Joseph John. <a href="attributions.html" style="color:#fff; text-decoration:underline;">Attributions</a></p>
-    <p><a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener" style="color:var(--nav-bg);">Project Video Demonstration</a></p>
-  </div>
-</footer>
-
-<script type="module" src="scripts/main.js"></script>
-<script type="module" src="scripts/home.js"></script>
+  <script type="module" src="scripts/main.js"></script>
+  <script type="module" src="scripts/catalog.mjs"></script>
 </body>
 </html>

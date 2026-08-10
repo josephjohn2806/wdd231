@@ -1,0 +1,8 @@
+[
+  { "id": "EQ-001", "category": "Equipment", "title": "Industrial Air Handling Unit", "price": "$12,400", "description": "High-capacity HVAC unit suitable for industrial production environments." },
+  { "id": "EQ-002", "category": "Equipment", "title": "Heavy-Duty Electric Motor", "price": "$1,250", "description": "Premium efficiency motor for continuous operation lines." },
+  { "id": "SV-100", "category": "Services", "title": "Preventive Maintenance Plan", "price": "$650 / month", "description": "Scheduled inspections, parts replacement, and emergency response SLA." },
+  { "id": "SV-200", "category": "Services", "title": "On-site Repair Service", "price": "$140 / hour", "description": "Experienced technicians dispatched with stocked parts for urgent repairs." },
+  { "id": "CS-01", "category": "Consulting", "title": "Operations Efficiency Audit", "price": "$4,500", "description": "On-site assessment and recommendations to improve throughput and reduce downtime." },
+  { "id": "CS-02", "category": "Consulting", "title": "Safety & Compliance Review", "price": "$3,200", "description": "Regulatory compliance audit and staff safety training plan." }
+]
