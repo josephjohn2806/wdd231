@@ -14,9 +14,11 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 <header class="site-header">
   <nav class="nav">
-    <a href="index.html" class="logo"><span class="globe-icon" aria-hidden="true">🌐</span> JOSEPH JOHN</a>
+    <a href="index.html" class="logo" aria-label="Joseph John homepage"><span class="globe-icon" aria-hidden="true">🌐</span> JOSEPH JOHN</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">HOME</a></li>
@@ -26,17 +28,17 @@
   </nav>
 </header>
 
-<main class="container section">
+<main id="main-content" class="container section">
   <h1>Contact Our Operations Team</h1>
   
   <form action="form-results.html" method="get" class="card" style="max-width: 600px; display: flex; flex-direction: column; gap: 15px;">
     <div>
       <label for="fullname">Full Name *</label>
-      <input type="text" id="fullname" name="fullname" required style="width: 100%; padding: 10px;">
+      <input type="text" id="fullname" name="fullname" required aria-required="true" style="width: 100%; padding: 10px;">
     </div>
     <div>
       <label for="email">Email Address *</label>
-      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px;">
+      <input type="email" id="email" name="email" required aria-required="true" style="width: 100%; padding: 10px;">
     </div>
     <div>
       <label for="service">Service Category</label>
@@ -57,10 +59,10 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <p>© <span data-year></span> Joseph John. <a href="attributions.html" style="color:#fff;">Attributions</a></p>
+    <p><a href="https://www.youtube.com/watch?v=1QvGh8K5YsQ" target="_blank" rel="noopener" style="color:var(--nav-bg);">Project Video Demonstration</a></p>
   </div>
 </footer>
 
-<script type="module" src="scripts/main.mjs"></script>
+<script type="module" src="scripts/main.js"></script>
 </body>
 </html>
-
