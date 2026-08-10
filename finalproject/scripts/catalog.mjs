@@ -1,9 +1,4 @@
-import { initNav } from './main.mjs';
-
-const modal = document.getElementById('item-modal');
-const closeModalBtn = document.getElementById('close-modal');
-const modalContent = document.getElementById('modal-content');
-const catalogGrid = document.getElementById('catalog-grid');
+import { initNav } from './main.js';
 
 let itemsData = [];
 
@@ -16,12 +11,16 @@ async function fetchItems() {
     renderCatalog(itemsData);
   } catch (error) {
     console.error('Data loading error:', error);
-    catalogGrid.innerHTML = `<p>Error loading catalog. Please try again later.</p>`;
+    const catalogGrid = document.getElementById('catalog-grid');
+    if (catalogGrid) catalogGrid.innerHTML = `<p>Error loading catalog. Please try again later.</p>`;
   }
 }
 
 // Render dynamic catalog items (Template Literals & Array Methods)
 function renderCatalog(items) {
+  const catalogGrid = document.getElementById('catalog-grid');
+  if (!catalogGrid) return;
+
   catalogGrid.innerHTML = items.map(item => `
     <div class="card">
       <span class="card-index">${item.id} · ${item.category}</span>
@@ -31,10 +30,10 @@ function renderCatalog(items) {
     </div>
   `).join('');
 
-  // Attach event listeners for Modal Dialogs
+  // Attach event listeners for Modal Dialogs (added after DOM update)
   document.querySelectorAll('.view-details-btn').forEach(button => {
     button.addEventListener('click', (e) => {
-      const id = e.target.getAttribute('data-id');
+      const id = e.currentTarget.getAttribute('data-id');
       openModal(id);
     });
   });
@@ -42,34 +41,68 @@ function renderCatalog(items) {
 
 // Modal open handler
 function openModal(id) {
-  const item = itemsData.find(i => i.id === id);
-  if (item && modal) {
+  const item = itemsData.find(i => String(i.id) === String(id));
+  const modal = document.getElementById('item-modal');
+  const modalContent = document.getElementById('modal-content');
+  if (item && modal && modalContent) {
     modalContent.innerHTML = `
       <h2>${item.title} (${item.id})</h2>
       <p class="eyebrow">Category: ${item.category}</p>
       <p style="font-size: 1.2rem; font-weight: bold;">Cost: ${item.price}</p>
       <p>${item.description}</p>
     `;
-    modal.showModal();
+    // Use dialog API if available, otherwise fallback to toggling a class
+    if (typeof modal.showModal === 'function') {
+      try { modal.showModal(); } catch (e) { modal.classList.add('open'); }
+    } else {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
   }
 }
 
-// Modal close handler
-if (closeModalBtn) {
-  closeModalBtn.addEventListener('click', () => modal.close());
-}
+// Modal close handler will be attached on DOMContentLoaded (safe guard below)
 
-// Filter Event Listeners using Array filter
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    const cat = e.target.getAttribute('data-category');
-    if (cat === 'All') {
-      renderCatalog(itemsData);
-    } else {
-      const filtered = itemsData.filter(item => item.category === cat);
-      renderCatalog(filtered);
-    }
+// Filter Event Listeners using Array filter (attached on DOMContentLoaded)
+
+document.addEventListener('DOMContentLoaded', () => {
+  initNav();
+
+  // Modal close button setup
+  const modal = document.getElementById('item-modal');
+  const closeModalBtn = document.getElementById('close-modal');
+  if (closeModalBtn && modal) {
+    closeModalBtn.addEventListener('click', () => {
+      if (typeof modal.close === 'function') modal.close();
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    });
+  }
+
+  // Escape key closes modal
+  if (modal) {
+    modal.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (typeof modal.close === 'function') modal.close();
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
+
+  // Filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const cat = e.currentTarget.getAttribute('data-category');
+      if (cat === 'All') {
+        renderCatalog(itemsData);
+      } else {
+        const filtered = itemsData.filter(item => item.category === cat);
+        renderCatalog(filtered);
+      }
+    });
   });
-});
 
-document.addEventListener('DOMContentLoaded', fetchItems);
+  // Kick off data load
+  fetchItems();
+});
