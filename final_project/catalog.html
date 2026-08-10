@@ -3,85 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services &amp; Product Catalog — JJ Enterprise</title>
-<meta name="description" content="Search and filter JJ Enterprise's full catalog of equipment, services, and consulting engagements.">
+<title>JJ Enterprise — Services &amp; Catalog</title>
+<meta name="description" content="Browse facility hardware, maintenance options, and consulting packages offered by JJ Enterprise.">
 <link rel="stylesheet" href="styles/finalproject.css">
 </head>
 <body>
 
 <header class="site-header">
   <nav class="nav">
-    <a href="index.html" class="logo">JJ <span>Enterprise</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="catalog.html" aria-current="page">Services &amp; Catalog</a></li>
-      <li><a href="contact.html">Contact</a></li>
+    <a href="index.html" class="logo">
+      <span class="globe-icon" aria-hidden="true">🌐</span> JOSEPH JOHN
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="catalog.html" aria-current="page">CHAMBER PROJECT</a></li>
+      <li><a href="contact.html">FINAL PROJECT</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
   </nav>
 </header>
 
 <main>
-  <section class="hero blueprint-bg" style="padding: 60px 0 40px;">
+  <section class="section">
     <div class="container">
-      <span class="eyebrow">JJE-CAT-02 · Full Catalog</span>
-      <h1 style="font-size: clamp(1.9rem, 4vw, 2.8rem);">Search the catalog</h1>
-      <p class="lede">Every product and service we offer, pulled live from our catalog data. Filter by category or search by name.</p>
-    </div>
-  </section>
+      <span class="eyebrow">Equipment & Services</span>
+      <h1>Services &amp; Catalog</h1>
+      <p>Explore production equipment, maintenance service packages, and industrial consulting options.</p>
 
-  <section class="section" style="padding-top: 44px;">
-    <div class="container">
-
-      <div class="catalog-controls">
-        <div class="search-field">
-          <input type="text" id="catalog-search" placeholder="Search by name or keyword…" aria-label="Search catalog">
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-index">EQ-101</span>
+          <h3>Conveyor Monitoring Systems</h3>
+          <p>Real-time line tracking sensors and automated alert kits designed to prevent operational bottlenecks.</p>
+          <a href="contact.html" class="btn btn-secondary" style="margin-top: 15px;">Inquire Details</a>
         </div>
-        <div class="filter-chips" id="filter-chips" role="group" aria-label="Filter by category">
-          <button class="chip" data-category="All" aria-pressed="true">All</button>
-          <button class="chip" data-category="Equipment" aria-pressed="false">Equipment</button>
-          <button class="chip" data-category="Services" aria-pressed="false">Services</button>
-          <button class="chip" data-category="Consulting" aria-pressed="false">Consulting</button>
+        <div class="card">
+          <span class="card-index">EQ-204</span>
+          <h3>Backup Power Units</h3>
+          <p>Heavy-duty industrial generator units built for immediate cut-over to protect sensitive equipment.</p>
+          <a href="contact.html" class="btn btn-secondary" style="margin-top: 15px;">Inquire Details</a>
+        </div>
+        <div class="card">
+          <span class="card-index">SV-301</span>
+          <h3>24/7 Preventive Maintenance</h3>
+          <p>Scheduled inspections and rapid emergency field dispatch for continuous factory uptime.</p>
+          <a href="contact.html" class="btn btn-secondary" style="margin-top: 15px;">Inquire Details</a>
+        </div>
+        <div class="card">
+          <span class="card-index">CS-402</span>
+          <h3>Operations Advisory</h3>
+          <p>Comprehensive layout analysis, safety compliance audits, and system optimization reviews.</p>
+          <a href="contact.html" class="btn btn-secondary" style="margin-top: 15px;">Inquire Details</a>
         </div>
       </div>
-
-      <p class="results-count" id="results-count">Loading catalog…</p>
-
-      <div class="product-grid" id="product-grid" aria-live="polite">
-        <!-- populated by catalog.js -->
-      </div>
-
     </div>
   </section>
 </main>
-
-<!-- Product detail modal -->
-<div class="modal-overlay" id="modal-overlay">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button class="modal-close" id="modal-close" aria-label="Close details">✕</button>
-    <span class="plate" id="modal-id"></span>
-    <h3 id="modal-title" style="margin-top: 10px;"></h3>
-    <p id="modal-desc"></p>
-    <div class="modal-specs">
-      <div class="hero-panel-row"><span>Pricing model</span><span id="modal-pricing-model"></span></div>
-      <div class="hero-panel-row"><span>Rate</span><span id="modal-pricing-amount"></span></div>
-      <div class="hero-panel-row"><span>Lead time</span><span id="modal-lead"></span></div>
-    </div>
-    <a href="contact.html" class="btn btn-primary" style="margin-top: 22px; width: 100%; justify-content: center;">Request a quote</a>
-  </div>
-</div>
 
 <footer class="site-footer">
   <div class="container footer-grid">
     <p>© <span data-year></span> JJ Enterprise. All rights reserved.</p>
     <ul class="footer-links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html">Catalog</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 </footer>
 
 <script src="scripts/main.js"></script>
-<script src="scripts/catalog.js"></script>
 </body>
 </html>
+
