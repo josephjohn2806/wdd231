@@ -14,9 +14,11 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 <header class="site-header">
   <nav class="nav">
-    <a href="index.html" class="logo"><span class="globe-icon" aria-hidden="true">🌐</span> JOSEPH JOHN</a>
+    <a href="index.html" class="logo" aria-label="Joseph John homepage"><span class="globe-icon" aria-hidden="true">🌐</span> JOSEPH JOHN</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">HOME</a></li>
@@ -26,7 +28,7 @@
   </nav>
 </header>
 
-<main class="container section">
+<main id="main-content" class="container section">
   <h1>Equipment &amp; Services Catalog</h1>
   
   <!-- Filter Controls -->
@@ -41,7 +43,8 @@
   <div id="catalog-grid" class="card-grid"></div>
 
   <!-- Modal Dialog Structure -->
-  <dialog id="item-modal" class="modal">
+  <dialog id="item-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <h2 id="modal-title" class="sr-only">Item details</h2>
     <div id="modal-content"></div>
     <button id="close-modal" class="btn btn-primary" style="margin-top: 15px;">Close</button>
   </dialog>
@@ -50,12 +53,11 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <p>© <span data-year></span> Joseph John. <a href="attributions.html" style="color:#fff;">Attributions</a></p>
-    <p><a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" style="color:var(--nav-bg);">Video Demo</a></p>
+    <p><a href="https://www.youtube.com/watch?v=1QvGh8K5YsQ" target="_blank" rel="noopener" style="color:var(--nav-bg);">Video Demo</a></p>
   </div>
 </footer>
 
-<script type="module" src="scripts/main.mjs"></script>
+<script type="module" src="scripts/main.js"></script>
 <script type="module" src="scripts/catalog.mjs"></script>
 </body>
 </html>
-
