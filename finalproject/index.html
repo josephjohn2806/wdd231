@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JJ Enterprise — Industrial Equipment, Services &amp; Consulting</title>
+<meta name="description" content="JJ Enterprise supplies facility equipment, maintenance services, and operations consulting for production floors of every size.">
+<link rel="stylesheet" href="styles/finalproject.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <span class="globe-icon" aria-hidden="true">🌐</span> JOSEPH JOHN
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" aria-current="page">HOME</a></li>
+      <li><a href="catalog.html">CHAMBER PROJECT</a></li>
+      <li><a href="contact.html">FINAL PROJECT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Dynamic customer announcements: rotating ticker driven by JS -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-dot" aria-hidden="true"></span>
+    <span class="ticker-text" id="ticker-text">Loading announcements…</span>
+    <div class="ticker-nav">
+      <button id="ticker-prev" aria-label="Previous announcement">‹</button>
+      <button id="ticker-next" aria-label="Next announcement">›</button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section class="hero blueprint-bg">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">JJE-HOME-01 · Facility Operations Partner</span>
+        <h1>Equipment, service, and expertise for facilities that can't afford downtime.</h1>
+        <p class="lede">JJ Enterprise outfits production floors with dependable equipment, keeps it running with scheduled service, and advises operators on how to get more out of the systems they already own.</p>
+        <div class="hero-actions">
+          <a href="catalog.html" class="btn btn-primary">Browse the catalog</a>
+          <a href="contact.html" class="btn btn-secondary">Request a quote</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-panel-row"><span>Facilities served</span><span>340+</span></div>
+        <div class="hero-panel-row"><span>Avg. emergency response</span><span>&lt; 4 hrs</span></div>
+        <div class="hero-panel-row"><span>Service coverage</span><span>7 regions</span></div>
+        <div class="hero-panel-row"><span>Years operating</span><span>18</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Core Services</span>
+          <h2>Three ways we keep your floor running</h2>
+        </div>
+        <p>Every engagement starts in one of these lanes — equipment, ongoing service, or independent consulting — and most clients end up using all three.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-index">01 / Equipment</span>
+          <h3>Facility hardware</h3>
+          <p>Monitoring systems, conveyor kits, and backup power units sized to your line, sold outright with full documentation.</p>
+        </div>
+        <div class="card">
+          <span class="card-index">02 / Services</span>
+          <h3>Maintenance &amp; response</h3>
+          <p>Scheduled preventive maintenance and 24-hour emergency dispatch, so equipment problems get caught before they cost you a shift.</p>
+        </div>
+        <div class="card">
+          <span class="card-index">03 / Consulting</span>
+          <h3>Operations advisory</h3>
+          <p>Independent reviews of your layout, compliance records, and new-site plans from engineers who don't sell you their own findings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Not sure where to start?</h2>
+          <p>Tell us what your floor looks like and we'll point you to the right service tier.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Talk to our team</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <p>© <span data-year></span> JJ Enterprise. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="catalog.html">Catalog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="scripts/main.js"></script>
+<script src="scripts/home.js"></script>
+</body>
+</html>
