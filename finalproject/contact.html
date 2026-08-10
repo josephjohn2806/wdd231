@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JJ Enterprise — Contact</title>
+<meta name="description" content="Get in touch with the JJ Enterprise team for quotes, service requests, and consultations.">
+<link rel="stylesheet" href="styles/finalproject.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <span class="globe-icon" aria-hidden="true">🌐</span> JOSEPH JOHN
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="catalog.html">CHAMBER PROJECT</a></li>
+      <li><a href="contact.html" aria-current="page">FINAL PROJECT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Get in Touch</span>
+      <h1>Contact Our Team</h1>
+      <p>Have questions about equipment or need emergency response support? Reach out using the form below.</p>
+
+      <div class="hero-grid" style="align-items: start;">
+        <form class="card" style="display: flex; flex-direction: column; gap: 15px;" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+          <div>
+            <label style="display:block; font-weight:600; margin-bottom: 5px;">Full Name</label>
+            <input type="text" required style="width:100%; padding: 10px; border: 1px solid var(--line-strong); border-radius: var(--radius);">
+          </div>
+          <div>
+            <label style="display:block; font-weight:600; margin-bottom: 5px;">Email Address</label>
+            <input type="email" required style="width:100%; padding: 10px; border: 1px solid var(--line-strong); border-radius: var(--radius);">
+          </div>
+          <div>
+            <label style="display:block; font-weight:600; margin-bottom: 5px;">Service Inquiry</label>
+            <select style="width:100%; padding: 10px; border: 1px solid var(--line-strong); border-radius: var(--radius);">
+              <option>Equipment Purchasing</option>
+              <option>Maintenance Request</option>
+              <option>Consulting Audit</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block; font-weight:600; margin-bottom: 5px;">Message</label>
+            <textarea rows="4" required style="width:100%; padding: 10px; border: 1px solid var(--line-strong); border-radius: var(--radius);"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self: start;">Send Request</button>
+        </form>
+
+        <div class="hero-panel">
+          <span class="eyebrow">Direct Contact</span>
+          <div class="hero-panel-row"><span>Emergency Line:</span><span>1-800-555-JJE1</span></div>
+          <div class="hero-panel-row"><span>Support Email:</span><span>support@jjenterprise.com</span></div>
+          <div class="hero-panel-row"><span>Main Office:</span><span>Building B, Suite 400</span></div>
+          <div class="hero-panel-row"><span>Hours:</span><span>24/7 Operations</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <p>© <span data-year></span> JJ Enterprise. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="catalog.html">Catalog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>
