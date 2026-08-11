@@ -1,0 +1,17 @@
+[
+  {"id":1,"name":"Atlas Notebook","short":"Durable hardcover notebook","long":"A 200-page durable hardcover notebook, perfect for notes and sketches.","price":"$12.99","category":"Stationery","stock":24,"image":"/final/assets/data/img1.svg"},
+  {"id":2,"name":"Orion Pen Set","short":"Smooth-writing pen set","long":"Three premium, smooth-writing pens with ergonomic grip.","price":"$9.50","category":"Stationery","stock":40,"image":"/final/assets/data/img2.svg"},
+  {"id":3,"name":"Lumen Lamp","short":"Adjustable LED desk lamp","long":"Energy-efficient LED lamp with adjustable color temperature and brightness.","price":"$29.99","category":"Home","stock":12,"image":"/final/assets/data/img3.svg"},
+  {"id":4,"name":"Aero Bottle","short":"Double-wall stainless bottle","long":"Insulated stainless steel bottle keeps drinks cold or hot for hours.","price":"$18.00","category":"Outdoors","stock":50,"image":"/final/assets/data/img4.svg"},
+  {"id":5,"name":"Nimbus Headphones","short":"Comfort over-ear headphones","long":"Comfortable over-ear headphones with balanced sound and noise isolation.","price":"$49.99","category":"Electronics","stock":8,"image":"/final/assets/data/img5.svg"},
+  {"id":6,"name":"Flux Charger","short":"USB-C fast charger","long":"Compact fast charger compatible with modern USB-C devices.","price":"$15.75","category":"Electronics","stock":60,"image":"/final/assets/data/img6.svg"},
+  {"id":7,"name":"Terra Tote","short":"Canvas everyday tote","long":"Durable canvas tote with reinforced handles and interior pocket.","price":"$22.00","category":"Apparel","stock":35,"image":"/final/assets/data/img7.svg"},
+  {"id":8,"name":"Vista Mug","short":"Ceramic travel mug","long":"Ceramic travel mug with spill-resistant lid and silicone sleeve.","price":"$11.25","category":"Home","stock":28,"image":"/final/assets/data/img8.svg"},
+  {"id":9,"name":"Pulse Tracker","short":"Activity tracker band","long":"Lightweight activity tracker with step counting and sleep tracking.","price":"$39.95","category":"Electronics","stock":20,"image":"/final/assets/data/img9.svg"},
+  {"id":10,"name":"Sage Planter","short":"Self-watering planter","long":"Compact self-watering planter suitable for indoor herbs and succulents.","price":"$24.50","category":"Home","stock":14,"image":"/final/assets/data/img10.svg"},
+  {"id":11,"name":"Echo Notebook","short":"Smartnote companion","long":"A companion notebook optimized for smart pen digitization.","price":"$19.99","category":"Stationery","stock":30,"image":"/final/assets/data/img11.svg"},
+  {"id":12,"name":"Nova Backpack","short":"Lightweight commuter pack","long":"Water-resistant backpack with padded laptop sleeve.","price":"$59.00","category":"Apparel","stock":16,"image":"/final/assets/data/img12.svg"},
+  {"id":13,"name":"Canvas Shoes","short":"Casual slip-on shoes","long":"Comfortable slip-on canvas shoes for everyday wear.","price":"$34.50","category":"Apparel","stock":22,"image":"/final/assets/data/img13.svg"},
+  {"id":14,"name":"Orbit Speaker","short":"Portable Bluetooth speaker","long":"Compact speaker with clear sound and 8-hour battery life.","price":"$27.99","category":"Electronics","stock":18,"image":"/final/assets/data/img14.svg"},
+  {"id":15,"name":"Grove Cutting Board","short":"Bamboo cutting board","long":"Eco-friendly bamboo cutting board with juice groove.","price":"$16.00","category":"Home","stock":44,"image":"/final/assets/data/img15.svg"}
+]

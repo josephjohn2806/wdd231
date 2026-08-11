@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Form Submission — JJ Enterprises</title>
+  <meta name="author" content="Joseph John" />
+  <link rel="stylesheet" href="/final/css/styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Form Submission</h1>
+    <p>The page below shows the data you submitted from the contact form.</p>
+    <div id="submission"></div>
+    <p><a href="contact.html">Back to contact</a></p>
+  </main>
+
+  <script>
+    // Display GET query parameters in a safe way
+    const out = document.getElementById('submission');
+    const params = new URLSearchParams(location.search);
+    if (!params.toString()) {
+      out.textContent = 'No form data received.';
+    } else {
+      const list = document.createElement('dl');
+      for (const [k,v] of params.entries()){
+        const dt = document.createElement('dt'); dt.textContent = k;
+        const dd = document.createElement('dd'); dd.textContent = v;
+        list.appendChild(dt); list.appendChild(dd);
+      }
+      out.appendChild(list);
+    }
+  </script>
+</body>
+</html>
