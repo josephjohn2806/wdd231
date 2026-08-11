@@ -6,11 +6,19 @@
   <title>JJ Enterprises — Products</title>
   <meta name="description" content="Products from JJ Enterprises. Browse our catalog of curated offerings." />
   <meta name="author" content="Joseph John" />
+
+  <!-- Open Graph & Twitter -->
   <meta property="og:title" content="JJ Enterprises — Products" />
   <meta property="og:description" content="Browse our catalog of curated offerings." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/final/assets/logo.svg" />
+  <meta property="og:video" content="https://drive.google.com/file/d/1kpYig7Sdz5x5PQlvq2oKx0aFRil0k5Pz/view?usp=drivesdk" />
+  <meta property="og:video:type" content="video/*" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@josephjohn2806" />
 
   <link rel="icon" href="/final/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/final/css/styles.css">
+  <link rel="stylesheet" href="/final/css/styles.min.css">
 </head>
 <body>
   <header class="site-header">
@@ -38,18 +46,18 @@
   <footer class="site-footer">
     <div class="container">
       <p>&copy; <span id="year"></span> JJ Enterprises</p>
-      <p><a href="#" id="videoLink2">Demo video (placeholder)</a></p>
+      <p><a href="https://drive.google.com/file/d/1kpYig7Sdz5x5PQlvq2oKx0aFRil0k5Pz/view?usp=drivesdk" id="videoLink2">Demo video</a></p>
     </div>
   </footer>
 
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
-    <div class="modal-content">
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title" aria-describedby="modal-body">
+    <div class="modal-content" role="document">
       <button class="modal-close" aria-label="Close dialog">✕</button>
       <h3 id="modal-title"></h3>
       <div id="modal-body"></div>
     </div>
   </div>
 
-  <script type="module" src="/final/js/main.js"></script>
+  <script type="module" src="/final/js/main.min.js"></script>
 </body>
 </html>
