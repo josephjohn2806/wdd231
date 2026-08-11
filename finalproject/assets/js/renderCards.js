@@ -1,7 +1,5 @@
-export function renderCards(data, container, onItemClick){
-  if(!Array.isArray(data)) return;
-  // ensure at least 15 items
-  const items = data.slice(0, 15);
+export function renderCards(items, container, onItemClick){
+  if(!Array.isArray(items)) return;
   container.innerHTML = '';
   items.forEach(item => {
     const card = document.createElement('article');
@@ -18,7 +16,6 @@ export function renderCards(data, container, onItemClick){
     const favBtn = card.querySelector('button[data-fav]');
     favBtn && favBtn.addEventListener('click', ()=>{
       const id = favBtn.getAttribute('data-fav');
-      // dispatch event to toggle favorite via storage module by importing dynamically
       import('./storage.js').then(mod=>{mod.toggleFavorite(id); favBtn.textContent = mod.getFavorites().includes(id)?'❤':'♡'});
     });
     container.appendChild(card);
