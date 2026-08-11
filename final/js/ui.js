@@ -18,6 +18,14 @@ export function setupUI(){
     if (e.target.matches('.modal-close')) closeModal();
   });
 
+  // close modal on backdrop click
+  const modal = document.getElementById('modal');
+  if (modal){
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
   // favorites in localStorage
   const theme = localStorage.getItem('theme');
   if (theme === 'dark') document.documentElement.classList.add('dark');
@@ -48,7 +56,10 @@ export function renderGrid(container, items, opts={}){
     const btn = document.createElement('button');
     btn.className = 'btn';
     btn.textContent = 'Details';
-    btn.addEventListener('click', () => showDetails(item));
+    btn.addEventListener('click', (e) => { showDetails(item, e.currentTarget); });
+
+    // allow keyboard Enter on the whole card to open details
+    card.addEventListener('keydown', (e) => { if (e.key === 'Enter') showDetails(item, card); });
 
     card.appendChild(img);
     card.appendChild(h3);
@@ -69,7 +80,7 @@ export function renderGrid(container, items, opts={}){
 }
 
 // modal behavior
-function showDetails(item){
+function showDetails(item, trigger){
   const modalTitle = document.getElementById('modal-title');
   const modalBody = document.getElementById('modal-body');
   modalTitle.textContent = item.name;
@@ -81,7 +92,7 @@ function showDetails(item){
       <li><strong>Stock:</strong> ${item.stock}</li>
     </ul>
   `;
-  openModal();
+  openModal(trigger || null);
 }
 
 // favorites using localStorage
