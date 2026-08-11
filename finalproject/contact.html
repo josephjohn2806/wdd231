@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JJ Enterprise — Contact & Inquiry</title>
+  <meta name="description" content="Contact JJ Enterprise — submit inquiries and view business hours." />
+  <meta name="author" content="Joseph John" />
+  <link rel="icon" href="images/favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><a href="index.html">JJ Enterprise</a></div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">☰</button>
+    <nav id="primary-navigation" class="primary-navigation" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services & Catalog</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact JJ Enterprise</h1>
+    <p>Business hours: Mon–Fri 09:00–17:00</p>
+
+    <form id="inquiry-form" action="form-result.html" method="GET" novalidate>
+      <label for="name">Full name</label>
+      <input id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required />
+
+      <label for="service">Interested service</label>
+      <select id="service" name="service" required>
+        <option value="">Choose...</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <div>
+        <label><input id="hours-check" type="checkbox" /> I confirm I contacted during business hours</label>
+      </div>
+
+      <button type="button" id="get-location">Add my location</button>
+      <input type="hidden" id="location" name="location" />
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2026 JJ Enterprise</p>
+    <p><a href="video/demo_link.txt">Demo Video Link</a></p>
+  </footer>
+
+  <script type="module">
+    // Simple client-side form validation, geolocation, and hours check
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('inquiry-form');
+      const getLocationBtn = document.getElementById('get-location');
+      const locationInput = document.getElementById('location');
+      const hoursCheck = document.getElementById('hours-check');
+
+      getLocationBtn.addEventListener('click', async () => {
+        if (!navigator.geolocation) {
+          alert('Geolocation not supported.');
+          return;
+        }
+        navigator.geolocation.getCurrentPosition((pos) => {
+          const coords = `${pos.coords.latitude.toFixed(4)},${pos.coords.longitude.toFixed(4)}`;
+          locationInput.value = coords;
+          getLocationBtn.textContent = 'Location added';
+        }, () => alert('Unable to retrieve location.'));
+      });
+
+      form.addEventListener('submit', (e) => {
+        // Example operational hours check (server-side would be more reliable)
+        const now = new Date();
+        const day = now.getDay(); // 0 Sun .. 6 Sat
+        const hour = now.getHours();
+        const inBusinessHours = (day >= 1 && day <= 5) && (hour >= 9 && hour < 17);
+        if (!inBusinessHours && !hoursCheck.checked) {
+          e.preventDefault();
+          alert('Please confirm you are submitting during business hours or check the box.');
+          return;
+        }
+        // Browser will submit to form-result.html with query params
+      });
+    });
+  </script>
+</body>
+</html>

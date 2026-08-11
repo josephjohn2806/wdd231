@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inquiry Submitted — JJ Enterprise</title>
+  <meta name="description" content="Form submission results" />
+</head>
+<body>
+  <main>
+    <h1>Inquiry Submitted</h1>
+    <p>Thank you. Below is what you submitted:</p>
+    <pre id="result"></pre>
+    <p><a href="contact.html">Return to contact page</a></p>
+  </main>
+
+  <script>
+    // Simple: parse query string and display
+    const params = new URLSearchParams(window.location.search);
+    const out = {};
+    for (const [k, v] of params.entries()) out[k] = v;
+    document.getElementById('result').textContent = JSON.stringify(out, null, 2);
+  </script>
+</body>
+</html>

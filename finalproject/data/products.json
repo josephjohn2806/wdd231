@@ -1,0 +1,17 @@
+[
+  {"id":1,"name":"Cloud Integration Plan","category":"Services","price":1999,"description":"Enterprise cloud migration planning.","image":"images/placeholder.svg"},
+  {"id":2,"name":"Managed Security","category":"Services","price":1499,"description":"24/7 managed cybersecurity.","image":"images/placeholder.svg"},
+  {"id":3,"name":"Analytics Suite","category":"Product","price":899,"description":"SaaS analytics dashboard license.","image":"images/placeholder.svg"},
+  {"id":4,"name":"API Gateway","category":"Product","price":499,"description":"High-throughput API gateway appliance.","image":"images/placeholder.svg"},
+  {"id":5,"name":"Consulting (half-day)","category":"Services","price":299,"description":"Strategic half-day consulting session.","image":"images/placeholder.svg"},
+  {"id":6,"name":"Onboarding Package","category":"Services","price":799,"description":"New-client onboarding package.","image":"images/placeholder.svg"},
+  {"id":7,"name":"Mobile App License","category":"Product","price":699,"description":"White-label mobile app license.","image":"images/placeholder.svg"},
+  {"id":8,"name":"Data Backup Plan","category":"Product","price":249,"description":"Automated backups and recovery.","image":"images/placeholder.svg"},
+  {"id":9,"name":"Performance Tuning","category":"Services","price":599,"description":"Database and app performance tuning.","image":"images/placeholder.svg"},
+  {"id":10,"name":"Integration SDK","category":"Product","price":129,"description":"Developer SDK for integrations.","image":"images/placeholder.svg"},
+  {"id":11,"name":"Custom Development","category":"Services","price":2999,"description":"Custom solution development.","image":"images/placeholder.svg"},
+  {"id":12,"name":"Support Retainer","category":"Services","price":499,"description":"Monthly support retainer.","image":"images/placeholder.svg"},
+  {"id":13,"name":"Licensing Tier A","category":"Product","price":1299,"description":"Priority Tier A licensing.","image":"images/placeholder.svg"},
+  {"id":14,"name":"Training Workshop","category":"Services","price":399,"description":"Onsite or virtual training workshop.","image":"images/placeholder.svg"},
+  {"id":15,"name":"Monitoring Add-on","category":"Product","price":59,"description":"Advanced monitoring add-on per month.","image":"images/placeholder.svg"}
+]
