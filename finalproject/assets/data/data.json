@@ -1,0 +1,17 @@
+[
+  {"id":"1","title":"Green Garden","description":"A small urban garden design.","category":"Design","price":"Free","image":"assets/images/item-1.svg"},
+  {"id":"2","title":"Eco Lamp","description":"Sustainable desk lamp prototype.","category":"Product","price":"$29","image":"assets/images/item-2.svg"},
+  {"id":"3","title":"Herbal Starter","description":"Starter kit for home herbs.","category":"Kit","price":"$15","image":"assets/images/item-3.svg"},
+  {"id":"4","title":"Compost Guide","description":"Beginner's guide to composting.","category":"Article","price":"Free","image":"assets/images/item-1.svg"},
+  {"id":"5","title":"Green Workshop","description":"A community workshop event.","category":"Event","price":"$10","image":"assets/images/item-2.svg"},
+  {"id":"6","title":"Plant Care App","description":"Mockup of a plant care app.","category":"App","price":"Free","image":"assets/images/item-3.svg"},
+  {"id":"7","title":"Herb Markers","description":"Printable herb garden markers.","category":"Download","price":"Free","image":"assets/images/item-1.svg"},
+  {"id":"8","title":"Rain Barrel","description":"DIY rain barrel instructions.","category":"DIY","price":"$8","image":"assets/images/item-2.svg"},
+  {"id":"9","title":"Green Roof","description":"Overview of green roof systems.","category":"Article","price":"Free","image":"assets/images/item-3.svg"},
+  {"id":"10","title":"Seed Swap","description":"Organize a local seed swap.","category":"Community","price":"Free","image":"assets/images/item-1.svg"},
+  {"id":"11","title":"Eco Tote","description":"Design for reusable tote bags.","category":"Product","price":"$12","image":"assets/images/item-2.svg"},
+  {"id":"12","title":"Soil Test Kit","description":"How to test your soil at home.","category":"Guide","price":"$7","image":"assets/images/item-3.svg"},
+  {"id":"13","title":"Watering Schedule","description":"Automated schedule templates.","category":"Tool","price":"Free","image":"assets/images/item-1.svg"},
+  {"id":"14","title":"Seedlings Care","description":"Tips for seedling success.","category":"Article","price":"Free","image":"assets/images/item-2.svg"},
+  {"id":"15","title":"Compost Bin","description":"Plans for a backyard compost bin.","category":"DIY","price":"$18","image":"assets/images/item-3.svg"}
+]

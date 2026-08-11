@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — Final Project</title>
+  <meta name="description" content="About page for the final project site.">
+  <meta name="author" content="Joseph John">
+  <meta property="og:title" content="Final Project — About">
+  <meta property="og:description" content="About the project and design choices.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-brand">My Final Project</h1>
+      <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">☰<span class="visually-hidden">Menu</span></button>
+      <nav id="primary-navigation" class="primary-navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="form-action.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <article>
+      <h2>About This Project</h2>
+      <p>This final project demonstrates the skills learned in the course: semantic HTML, responsive CSS, and modern JavaScript. It uses a green design system, accessible components, and dynamic data fetched from a local JSON file.</p>
+      <h3>Design Goals</h3>
+      <ul>
+        <li>Responsive layout that works on small (320px) and large screens.</li>
+        <li>Accessible navigation and modal dialogs.</li>
+        <li>Performance-minded assets and lazy-loading images.</li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> My Final Project — <a href="#">Attributions</a> — <a href="#">Demo Video</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
