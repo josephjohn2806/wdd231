@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270" role="img" aria-label="Instagram icon">
+  <rect width="100%" height="100%" rx="20" fill="#E1306C" />
+  <circle cx="360" cy="80" r="36" fill="#fff" opacity="0.9" />
+  <rect x="64" y="48" width="352" height="176" rx="12" fill="#fff" opacity="0.06" />
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" fill="#fff">IG</text>
+</svg>
