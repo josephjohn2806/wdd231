@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>JJ Enterprises — Contact</title>
+  <meta name="description" content="Contact JJ Enterprises for inquiries or quotes." />
+  <meta name="author" content="Joseph John" />
+
+  <!-- Open Graph & Twitter -->
+  <meta property="og:title" content="JJ Enterprises — Contact" />
+  <meta property="og:description" content="Contact JJ Enterprises for inquiries or quotes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.svg" />
+  <meta property="og:video" content="https://drive.google.com/file/d/1kpYig7Sdz5x5PQlvq2oKx0aFRil0k5Pz/view?usp=drivesdk" />
+  <meta property="og:video:type" content="video/*" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@josephjohn2806" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="JJ Enterprises logo" width="48" height="48"> JJ Enterprises
+      </a>
+      <button id="navToggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">☰<span class="sr-only">Toggle navigation</span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="attributions.html">Attributions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Contact Us</h1>
+    <p>Use the form below to send us a message. This form uses GET so the action page can display the submitted data.</p>
+
+    <form id="contactForm" action="form-action.html" method="get">
+      <label for="name">Name</label>
+      <input id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> JJ Enterprises</p>
+      <p><a href="https://drive.google.com/file/d/1kpYig7Sdz5x5PQlvq2oKx0aFRil0k5Pz/view?usp=drivesdk" id="videoLink3">Demo video</a></p>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title" aria-describedby="modal-body">
+    <div class="modal-content" role="document">
+      <button class="modal-close" aria-label="Close dialog">✕</button>
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.min.js"></script>
+</body>
+</html>
