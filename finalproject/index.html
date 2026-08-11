@@ -1,72 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JJ Enterprise — Home</title>
-  <meta name="description" content="JJ Enterprise — mission, featured services, and company announcements." />
-  <meta name="author" content="Joseph John" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="JJ Enterprise — Professional Services" />
-  <meta property="og:description" content="Explore JJ Enterprise services, product catalog, and resources." />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="images/favicon.svg" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JJ Enterprise | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/main.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <a href="index.html" aria-label="JJ Enterprise Home">JJ Enterprise</a>
-    </div>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">☰</button>
-    <nav id="primary-navigation" class="primary-navigation" aria-label="Main">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services & Catalog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <header>
+      <div class="logo">JJ Enterprise</div>
+      <nav class="nav-pill">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="attributions.html">Attributions</a>
+      </nav>
+      <a href="#product-gallery" class="btn-donate">Shop Catalog</a>
+    </header>
 
-  <main>
-    <section class="hero">
-      <h1>JJ Enterprise Web Portal</h1>
-      <p>Professional solutions, tailored for your business needs.</p>
-      <a class="btn" href="services.html">Browse Catalog</a>
+    <section class="hero-section">
+      <p class="hero-sub">Thousands of products delivered. Premium satisfaction guaranteed. Shop today.</p>
+      <h1 class="hero-title">One store. One choice. One<br>unmatched catalog</h1>
+      <p class="hero-desc">Explore top-quality products tailored to fit your daily style and enterprise needs.<br>Because every order we deliver brings reliability right to your door.</p>
+      <div class="hero-buttons">
+        <a href="#product-gallery" class="btn-donate">Shop Now</a>
+        <a href="contact.html" class="btn-secondary">Inquire details &rsaquo;</a>
+      </div>
+      <div class="floating-badge">JJ Enterprise</div>
     </section>
 
-    <section class="announcements" aria-live="polite">
-      <h2>Company Announcements</h2>
-      <ul id="announcements-list">
-        <!-- Could be filled dynamically -->
-        <li>Q3 Pricing update released — effective next month.</li>
-        <li>New service: Cloud Integration Advisory.</li>
-      </ul>
+    <!-- Asynchronous Dynamic Product Catalog -->
+    <main class="gallery-grid" id="product-gallery">
+      <!-- Dynamic Products Injected via JS -->
+    </main>
+
+    <section class="about-text">
+      <p>JJ Enterprise is a premier product provider committed to offering top-tier consumer goods and enterprise equipment fast, easy, and with unmatched reliability. Browse through our dynamic product catalog and get in touch with our team for bulk orders or direct deliveries.</p>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="footer-products">
-      <h3>Featured Products</h3>
-      <div class="product-thumbs">
-        <img src="images/product-1.svg" alt="Cloud Integration Plan thumbnail" loading="lazy" width="120" height="68">
-        <img src="images/product-3.svg" alt="Analytics Suite thumbnail" loading="lazy" width="120" height="68">
-        <img src="images/product-4.svg" alt="API Gateway thumbnail" loading="lazy" width="120" height="68">
-        <img src="images/product-7.svg" alt="Mobile App License thumbnail" loading="lazy" width="120" height="68">
+    <footer>
+      <p>&copy; 2026 JJ Enterprise. All Rights Reserved.</p>
+      
+      <div class="footer-links">
+        <a href="attributions.html">Attributions</a>
+        <a href="https://youtube.com" target="_blank" rel="noopener">Video Demonstration</a>
       </div>
-    </div>
 
-    <div class="footer-meta">
-      <p>© 2026 JJ Enterprise</p>
-      <div class="social-links" aria-label="Social media links">
-        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><img src="images/instagram.svg" alt="Instagram logo" width="28" height="28"></a>
-        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><img src="images/facebook.svg" alt="Facebook logo" width="28" height="28"></a>
-        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><img src="images/twitter.svg" alt="Twitter logo" width="28" height="28"></a>
+      <div class="social-icons">
+        <a href="https://facebook.com" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://twitter.com" class="social-icon" target="_blank" rel="noopener" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
       </div>
-      <p><a href="attributions.html">Attributions</a> | <a href="video/demo_link.txt">Demo Video Link</a></p>
-    </div>
-  </footer>
-
-  <script type="module" src="js/app.js"></script>
+    </footer>
+  </div>
 </body>
 </html>
+
