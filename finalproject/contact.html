@@ -1,113 +1,151 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JJ Enterprise — Contact & Inquiry</title>
-  <meta name="description" content="Contact JJ Enterprise — submit inquiries and view business hours." />
-  <meta name="author" content="Joseph John" />
-  <link rel="icon" href="images/favicon.svg" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | JJ Enterprise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/main.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand"><a href="index.html">JJ Enterprise</a></div>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">☰</button>
-    <nav id="primary-navigation" class="primary-navigation" aria-label="Main">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services & Catalog</a></li>
-        <li><a href="contact.html" aria-current="page">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <header>
+      <div class="logo">JJ Enterprise</div>
+      <nav class="nav-pill">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="attributions.html">Attributions</a>
+      </nav>
+      <a href="index.html#product-gallery" class="btn-donate">Shop Catalog</a>
+    </header>
 
-  <main>
-    <h1>Contact JJ Enterprise</h1>
-    <p>Business hours: Mon–Fri 09:00–17:00</p>
+    <main class="contact-wrapper">
+      <h1>Contact JJ Enterprise</h1>
+      <p>Have questions about our products, order statuses, or business partnerships? Send us a message below.</p>
 
-    <form id="inquiry-form" action="form-result.html" method="GET" novalidate>
-      <label for="name">Full name</label>
-      <input id="name" name="name" required />
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
 
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" required />
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
 
-      <label for="service">Interested service</label>
-      <select id="service" name="service" required>
-        <option value="">Choose...</option>
-      </select>
+        <div class="form-group">
+          <label for="message">Product Inquiry / Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Which products or services are you inquiring about?" required></textarea>
+        </div>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+      <div id="form-feedback"></div>
+    </main>
 
-      <div>
-        <label><input id="hours-check" type="checkbox" /> I confirm I contacted during business hours</label>
+    <footer>
+      <p>&copy; 2026 JJ Enterprise. All Rights Reserved.</p>
+      
+      <div class="footer-links">
+        <a href="attributions.html">Attributions</a>
+        <a href="https://youtube.com" target="_blank" rel="noopener">Video Demonstration</a>
       </div>
 
-      <button type="button" id="get-location">Add my location</button>
-      <input type="hidden" id="location" name="location" />
-
-      <button type="submit">Submit</button>
-    </form>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-products">
-      <h3>Featured Products</h3>
-      <div class="product-thumbs">
-        <img src="images/product-1.svg" alt="Cloud Integration Plan thumbnail" loading="lazy" width="120" height="68">
-        <img src="images/product-3.svg" alt="Analytics Suite thumbnail" loading="lazy" width="120" height="68">
-        <img src="images/product-4.svg" alt="API Gateway thumbnail" loading="lazy" width="120" height="68">
-        <img src="images/product-7.svg" alt="Mobile App License thumbnail" loading="lazy" width="120" height="68">
+      <div class="social-icons">
+        <a href="https://facebook.com" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://twitter.com" class="social-icon" target="_blank" rel="noopener" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
       </div>
-    </div>
-
-    <div class="footer-meta">
-      <p>© 2026 JJ Enterprise</p>
-      <div class="social-links" aria-label="Social media links">
-        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><img src="images/instagram.svg" alt="Instagram logo" width="28" height="28"></a>
-        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><img src="images/facebook.svg" alt="Facebook logo" width="28" height="28"></a>
-        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><img src="images/twitter.svg" alt="Twitter logo" width="28" height="28"></a>
-      </div>
-      <p><a href="video/demo_link.txt">Demo Video Link</a></p>
-    </div>
-  </footer>
-
-  <script type="module">
-    // Simple client-side form validation, geolocation, and hours check
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('inquiry-form');
-      const getLocationBtn = document.getElementById('get-location');
-      const locationInput = document.getElementById('location');
-      const hoursCheck = document.getElementById('hours-check');
-
-      getLocationBtn.addEventListener('click', async () => {
-        if (!navigator.geolocation) {
-          alert('Geolocation not supported.');
-          return;
-        }
-        navigator.geolocation.getCurrentPosition((pos) => {
-          const coords = `${pos.coords.latitude.toFixed(4)},${pos.coords.longitude.toFixed(4)}`;
-          locationInput.value = coords;
-          getLocationBtn.textContent = 'Location added';
-        }, () => alert('Unable to retrieve location.'));
-      });
-
-      form.addEventListener('submit', (e) => {
-        // Example operational hours check (server-side would be more reliable)
-        const now = new Date();
-        const day = now.getDay(); // 0 Sun .. 6 Sat
-        const hour = now.getHours();
-        const inBusinessHours = (day >= 1 && day <= 5) && (hour >= 9 && hour < 17);
-        if (!inBusinessHours && !hoursCheck.checked) {
-          e.preventDefault();
-          alert('Please confirm you are submitting during business hours or check the box.');
-          return;
-        }
-        // Browser will submit to form-result.html with query params
-      });
-    });
-  </script>
+    </footer>
+  </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | JJ Enterprise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/main.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">JJ Enterprise</div>
+      <nav class="nav-pill">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="attributions.html">Attributions</a>
+      </nav>
+      <a href="index.html#product-gallery" class="btn-donate">Shop Catalog</a>
+    </header>
+
+    <main class="contact-wrapper">
+      <h1>Contact JJ Enterprise</h1>
+      <p>Have questions about our products, order statuses, or business partnerships? Send us a message below.</p>
+
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Product Inquiry / Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Which products or services are you inquiring about?" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+      <div id="form-feedback"></div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 JJ Enterprise. All Rights Reserved.</p>
+      
+      <div class="footer-links">
+        <a href="attributions.html">Attributions</a>
+        <a href="https://youtube.com" target="_blank" rel="noopener">Video Demonstration</a>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://facebook.com" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://twitter.com" class="social-icon" target="_blank" rel="noopener" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+
