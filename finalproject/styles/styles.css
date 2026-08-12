@@ -255,7 +255,7 @@ footer {
 }
 
 @media (min-width: 900px) {
-  header {
+  .site-header {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -268,5 +268,3 @@ footer {
     font-size: 3rem;
   }
 }
-
-
