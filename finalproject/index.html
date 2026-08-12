@@ -3,70 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore top quality products tailored to fit your daily style and enterprise needs at JJ Enterprise.">
   <title>JJ Enterprise | Home</title>
-  
-  <!-- Required SEO meta tags -->
-  <meta name="description" content="JJ Enterprise offers a curated catalog of premium products and services tailored for daily life and business">
-  <meta name="author" content="Joseph John">
-
-  <!-- Open Graph / Social sharing -->
-  <meta property="og:title" content="JJ Enterprise | Home">
-  <meta property="og:description" content="JJ Enterprise offers a curated catalog of premium products and services tailored for daily life and business — shop top-quality items with fast delivery and satisfaction guaranteed.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/josephjohn2806/wdd231/main/finalproject/images/product-3.svg">
-  <meta property="og:url" content="https://josephjohn2806.github.io/wdd231/finalproject/index.html">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Favicon -->
-  <link rel="icon" href="./images/favicon.svg">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/styles.css">
-  <link rel="stylesheet" href="./styles/base.css">
   
- <script src="./scripts/main.js" defer></script>
+  <!-- Exactly 2 linked CSS files -->
+  <link rel="stylesheet" href="./styles/base.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+
+  <script src="./scripts/main.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">JJ Enterprise</div>
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="brand-logo">JJ Enterprise</div>
 
-      <!-- Clean Navigation Links -->
       <nav class="nav-pill" id="nav-menu">
         <a href="index.html">Home</a>
         <a href="contact.html">Contact</a>
         <a href="attributions.html">Attributions</a>
       </nav>
 
-      <a href="#product-gallery" class="btn-donate">Shop Catalog</a>
+      <a href="#product-gallery" class="btn-primary-cta">Shop Catalog</a>
     </header>
 
     <section class="hero-section">
       <p class="hero-sub">Thousands of products delivered. Premium satisfaction guaranteed. Shop today.</p>
-      <h2 class="hero-title">One store. One choice. One<br>unmatched catalog</h2>
+      <h1 class="hero-title">One store. One choice. One<br>unmatched catalog</h1>
       <p class="hero-desc">Explore top-quality products tailored to fit your daily style and enterprise needs.</p>
       <div class="hero-buttons">
-        <a href="#product-gallery" class="btn-donate">Shop Now</a>
-        <a href="contact.html" class="btn-secondary">Inquire details &rsaquo;</a>
+        <a href="#product-gallery" class="btn-primary-cta">Shop Now</a>
+        <a href="contact.html" class="btn-outline-cta">Inquire details &rsaquo;</a>
       </div>
     </section>
 
-    <!-- Dynamic Product Grid -->
     <main class="gallery-grid" id="product-gallery">
-      <h1 class="visually-hidden">JJ Enterprise — Product Catalog</h1>
       <!-- Dynamic Products Injected via JS -->
     </main>
 
-    <footer>
+    <footer class="site-footer">
       <p>&copy; 2026 JJ Enterprise. All Rights Reserved.</p>
       <div class="social-icons">
         <a href="https://facebook.com" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook">
           <svg width="18" height="18" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
         </a>
         <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
         </a>
         <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg width="18" height="18" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
@@ -76,3 +60,4 @@
   </div>
 </body>
 </html>
+
