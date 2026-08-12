@@ -247,3 +247,26 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+@media (min-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+
